@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Mode Enquête</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#0f172a;
+  color:white;
+  text-align:center;
+}
+
+.container{
+  max-width:800px;
+  margin:auto;
+  padding:20px;
+}
+
+h1{
+  color:#3b82f6;
+}
+
+.question{
+  font-size:20px;
+  margin:20px 0;
+}
+
+.answers button{
+  display:block;
+  width:100%;
+  margin:10px 0;
+  padding:10px;
+  border:none;
+  border-radius:8px;
+  background:#1e293b;
+  color:white;
+  cursor:pointer;
+}
+
+.answers button:hover{
+  background:#3b82f6;
+}
+
+#indices{
+  margin-top:20px;
+  background:#020617;
+  padding:15px;
+  border-radius:10px;
+}
+
+.suspects button{
+  margin:10px;
+  padding:10px 20px;
+  border:none;
+  background:#334155;
+  color:white;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+.suspects button:hover{
+  background:#ef4444;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>🔍 Mode Enquête</h1>
+
+<p id="story">
+Un diamant a été volé. Trouve le coupable !
+</p>
+
+<div class="question" id="question"></div>
+
+<div class="answers" id="answers"></div>
+
+<div id="indices">
+<h3>🧾 Indices :</h3>
+<div id="listeIndices"></div>
+</div>
+
+<div class="suspects" id="suspects" style="display:none;">
+<h3>Qui est le coupable ?</h3>
+<button onclick="choisir('Alex')">Alex</button>
+<button onclick="choisir('Sarah')">Sarah</button>
+<button onclick="choisir('Marc')">Marc</button>
+</div>
+
+</div>
+
+<script>
+
+// QUESTIONS
+let questions = [
+  {
+    q:"Qui a accès aux caméras ?",
+    options:["Alex","Sarah","Marc"],
+    correct:"Alex",
+    indice:"Le gardien contrôle les caméras"
+  },
+  {
+    q:"Qui possède la clé du coffre ?",
+    options:["Alex","Sarah","Marc"],
+    correct:"Marc",
+    indice:"Le directeur a la clé"
+  },
+  {
+    q:"Qui était présent à 22h ?",
+    options:["Alex","Sarah","Marc"],
+    correct:"Alex",
+    indice:"Le gardien était sur place à 22h"
+  }
+];
+
+let index = 0;
+let indices = [];
+let erreurs = 0;
+
+// AFFICHER QUESTION
+function afficherQuestion(){
+  let q = questions[index];
+  document.getElementById("question").innerText = q.q;
+
+  let html = "";
+  q.options.forEach(rep=>{
+    html += `<button onclick="repondre('${rep}')">${rep}</button>`;
+  });
+
+  document.getElementById("answers").innerHTML = html;
+}
+
+// REPONSE
+function repondre(rep){
+  let q = questions[index];
+
+  if(rep === q.correct){
+    indices.push(q.indice);
+    afficherIndice(q.indice);
+  } else {
+    erreurs++;
+    alert("❌ Mauvaise réponse !");
+  }
+
+  index++;
+
+  if(index < questions.length){
+    afficherQuestion();
+  } else {
+    finJeu();
+  }
+}
+
+// AFFICHER INDICE
+function afficherIndice(indice){
+  let div = document.getElementById("listeIndices");
+  div.innerHTML += "<p>🔍 "+indice+"</p>";
+}
+
+// FIN DU JEU
+function finJeu(){
+  document.getElementById("question").innerText = "Analyse les indices...";
+  document.getElementById("answers").innerHTML = "";
+  document.getElementById("suspects").style.display = "block";
+}
+
+// CHOIX FINAL
+function choisir(nom){
+  if(nom === "Alex"){
+    alert("🎉 Bravo ! Tu as trouvé le coupable !");
+  } else {
+    alert("💀 Mauvaise accusation !");
+  }
+}
+
+// START
+afficherQuestion();
+
+</script>
+
+</body>
+</html>
