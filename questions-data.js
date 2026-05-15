@@ -1,12 +1,13 @@
 window.QUESTION_DATASET = [
+  // ========== FACILE (Questions générales - Niveau 1) ==========
   {
-    id: "facile-tech-navigateur",
-    category: "Technologie",
-    question: "Quel logiciel sert le plus souvent a naviguer sur Internet ?",
-    answers: ["Un navigateur web", "Un tableur", "Un antivirus", "Un explorateur de fichiers"],
-    correctIndex: 0,
+    id: "facile-bible-premier-livre",
+    category: "Bible",
+    question: "Quel est le premier livre de la Bible ?",
+    answers: ["Exode", "Genèse", "Lévitique", "Nombres"],
+    correctIndex: 1,
     difficulty: "Facile",
-    hint: "Chrome, Firefox et Edge en font partie."
+    hint: "Il commence par 'Au commencement...'"
   },
   {
     id: "facile-sport-mondial",
@@ -459,12 +460,636 @@ window.QUESTION_DATASET = [
     hint: "On pense souvent a Al-Khwarizmi."
   },
   {
-    id: "difficile-science-kilimandjaro",
-    category: "Science",
-    question: "Quel est le plus haut sommet d'Afrique ?",
-    answers: ["Le mont Kenya", "Le Kilimandjaro", "Le Toubkal", "Le mont Cameroun"],
+    id: "facile-bible-jesus-naissance",
+    category: "Bible",
+    question: "Dans quel lieu Jésus est-il né selon les Évangiles ?",
+    answers: ["Jérusalem", "Nazareth", "Bethléem", "Capernaüm"],
+    correctIndex: 2,
+    difficulty: "Facile",
+    hint: "C'est une petite ville de Judée."
+  },
+  {
+    id: "facile-bible-disciple-pierre",
+    category: "Bible",
+    question: "Quel était le vrai nom de Simon Pierre avant de devenir apôtre ?",
+    answers: ["André", "Simon", "Jean", "Jacques"],
+    correctIndex: 1,
+    difficulty: "Facile",
+    hint: "Jésus l'a appelé 'Pierre' car il serait la pierre de son église."
+  },
+  {
+    id: "facile-bible-jesus-mort",
+    category: "Bible",
+    question: "Sur quel type de structure Jésus a-t-il été crucifié ?",
+    answers: ["Un piédestal", "Une croix", "Un poteau", "Un arbre"],
+    correctIndex: 1,
+    difficulty: "Facile",
+    hint: "C'est le symbole principal du christianisme."
+  },
+  {
+    id: "facile-bible-apotres",
+    category: "Bible",
+    question: "Combien d'apôtres Jésus avait-il choisis ?",
+    answers: ["7", "10", "12", "15"],
+    correctIndex: 2,
+    difficulty: "Facile",
+    hint: "C'est un nombre symbolique dans la Bible."
+  },
+  {
+    id: "facile-bible-adam-eve",
+    category: "Bible",
+    question: "Quel fruit Adam et Ève ont-ils mangé dans le jardin d'Éden selon la Genèse ?",
+    answers: ["Une figue", "Une pomme", "Une poire", "Une grappe"],
+    correctIndex: 1,
+    difficulty: "Facile",
+    hint: "Ce n'est pas toujours nommé, mais la pomme est traditionnelle."
+  },
+  {
+    id: "facile-bible-noe-arche",
+    category: "Bible",
+    question: "Combien d'animaux de chaque espèce Noé a-t-il pris dans l'arche ?",
+    answers: ["Un", "Deux", "Trois", "Quatre"],
+    correctIndex: 1,
+    difficulty: "Facile",
+    hint: "Un mâle et une femelle pour chaque espèce."
+  },
+  {
+    id: "facile-bible-dix-commandements",
+    category: "Bible",
+    question: "À qui Dieu a-t-il donné les Dix Commandements sur le mont Sinaï ?",
+    answers: ["Noé", "Abraham", "Moïse", "David"],
+    correctIndex: 2,
+    difficulty: "Facile",
+    hint: "Ce prophète a libéré les Hébreux d'Égypte."
+  },
+  {
+    id: "facile-bible-david-goliath",
+    category: "Bible",
+    question: "Quel jeune homme a vaincu le géant Goliath selon la Bible ?",
+    answers: ["Samson", "David", "Jonathan", "Absalom"],
+    correctIndex: 1,
+    difficulty: "Facile",
+    hint: "Il est devenu roi d'Israël par la suite."
+  },
+  {
+    id: "facile-bible-resurrection",
+    category: "Bible",
+    question: "Selon les Évangiles, le jour de la semaine où Jésus est ressuscité est... ?",
+    answers: ["Le vendredi", "Le dimanche", "Le lundi", "Le jeudi"],
+    correctIndex: 1,
+    difficulty: "Facile",
+    hint: "Ce jour est devenu le jour de culte principal du christianisme."
+  },
+  {
+    id: "facile-bible-chemin-damas",
+    category: "Bible",
+    question: "Sur le chemin de Damas, qui Saul a-t-il rencontré ?",
+    answers: ["Moïse", "Jésus (en vision)", "Pierre", "Jean"],
+    correctIndex: 1,
+    difficulty: "Facile",
+    hint: "Après cela, Saul a changé de nom en Paul."
+  },
+  {
+    id: "facile-bible-jonah-baleine",
+    category: "Bible",
+    question: "Quel est le nom du prophète qui a été avalé par une baleine (ou grand poisson) ?",
+    answers: ["Élie", "Jonas", "Jérémie", "Osée"],
+    correctIndex: 1,
+    difficulty: "Facile",
+    hint: "Il a passé trois jours dans le ventre du poisson."
+  },
+  {
+    id: "facile-bible-samson-force",
+    category: "Bible",
+    question: "D'où provenait la force surhumaine de Samson selon la Bible ?",
+    answers: ["Ses muscles d'athlète", "Ses cheveux longs", "Une potion magique", "Une armure divine"],
+    correctIndex: 1,
+    difficulty: "Facile",
+    hint: "C'était un vœu spécial du Seigneur."
+  },
+  {
+    id: "facile-bible-dernier-livre",
+    category: "Bible",
+    question: "Quel est le dernier livre du Nouveau Testament ?",
+    answers: ["3 Jean", "Apocalypse", "Jude", "2 Pierre"],
+    correctIndex: 1,
+    difficulty: "Facile",
+    hint: "Il parle de visions apocalyptiques."
+  },
+  {
+    id: "facile-bible-pentecote",
+    category: "Bible",
+    question: "À quel événement la Pentecôte fait-elle référence dans le Nouveau Testament ?",
+    answers: ["L'Assomption", "La descente du Saint-Esprit", "La Transfiguration", "L'Ascension"],
+    correctIndex: 1,
+    difficulty: "Facile",
+    hint: "50 jours après la Résurrection, c'est la naissance de l'Église."
+  },
+  {
+    id: "facile-bible-jean-baptiste",
+    category: "Bible",
+    question: "Qui a baptisé Jésus dans le Jourdain ?",
+    answers: ["Pierre", "Jean le Baptiste", "André", "Philippe"],
+    correctIndex: 1,
+    difficulty: "Facile",
+    hint: "Il était connu comme le précurseur de Jésus."
+  },
+  {
+    id: "facile-bible-abraham-sacrifice",
+    category: "Bible",
+    question: "Quel fils Abraham avait-il l'ordre de sacrifier à Dieu ?",
+    answers: ["Ismaël", "Isaac", "Lot", "Ketura"],
+    correctIndex: 1,
+    difficulty: "Facile",
+    hint: "Dieu a arrêté le sacrifice à la dernière seconde."
+  },
+  {
+    id: "facile-bible-jacob-echelle",
+    category: "Bible",
+    question: "Que Jacob a-t-il vu en rêve dans le désert ?",
+    answers: ["Une montagne", "Une échelle menant au ciel", "Un fleuve", "Un buisson ardent"],
+    correctIndex: 1,
+    difficulty: "Facile",
+    hint: "Des anges montaient et descendaient sur cette échelle."
+  },
+  {
+    id: "facile-bible-salomon-sagesse",
+    category: "Bible",
+    question: "Pour quoi le roi Salomon est-il surtout connu ?",
+    answers: ["Sa force", "Sa richesse", "Sa sagesse", "Sa jeunesse"],
+    correctIndex: 2,
+    difficulty: "Facile",
+    hint: "Dieu lui en avait fait don."
+  },
+  {
+    id: "facile-bible-temple-jerusalem",
+    category: "Bible",
+    question: "Quel roi a construit le premier Temple de Jérusalem ?",
+    answers: ["David", "Salomon", "Ézéchias", "Josias"],
+    correctIndex: 1,
+    difficulty: "Facile",
+    hint: "C'était le fils du roi David."
+  },
+  {
+    id: "moyen-bible-beatitudes",
+    category: "Bible",
+    question: "Combien de béatitudes Jésus a-t-il prononcées dans le Sermon sur la Montagne ?",
+    answers: ["5", "7", "8", "10"],
+    correctIndex: 2,
+    difficulty: "Moyen",
+    hint: "C'est un nombre complet dans le symbolisme biblique."
+  },
+  {
+    id: "moyen-bible-paraboles-talents",
+    category: "Bible",
+    question: "Dans la parabole des talents, combien de talents le maître a-t-il initialement distribué ?",
+    answers: ["3", "5", "7", "10"],
+    correctIndex: 1,
+    difficulty: "Moyen",
+    hint: "La distribution n'était pas égale pour tous."
+  },
+  {
+    id: "moyen-bible-paul-lettres",
+    category: "Bible",
+    question: "Combien d'épîtres (lettres) l'apôtre Paul a-t-il écrites dans le Nouveau Testament ?",
+    answers: ["10", "11", "13", "14"],
+    correctIndex: 2,
+    difficulty: "Moyen",
+    hint: "Plusieurs portent le nom des villes destinataires."
+  },
+  {
+    id: "moyen-bible-job-souffrance",
+    category: "Bible",
+    question: "Quel est le thème central du livre de Job ?",
+    answers: ["La création du monde", "La souffrance et la foi", "Les conquêtes militaires", "La généalogie des rois"],
+    correctIndex: 1,
+    difficulty: "Moyen",
+    hint: "C'est une interrogation sur le problème du mal."
+  },
+  {
+    id: "moyen-bible-psaumes",
+    category: "Bible",
+    question: "Combien de psaumes y a-t-il dans la Bible ?",
+    answers: ["100", "120", "150", "180"],
+    correctIndex: 2,
+    difficulty: "Moyen",
+    hint: "C'est un chiffre important à retenir."
+  },
+  {
+    id: "moyen-bible-israel-tributs",
+    category: "Bible",
+    question: "Combien de tribus composaient le royaume d'Israël ?",
+    answers: ["8", "10", "12", "14"],
+    correctIndex: 2,
+    difficulty: "Moyen",
+    hint: "Chacune descend d'un fils de Jacob."
+  },
+  {
+    id: "moyen-bible-exode",
+    category: "Bible",
+    question: "À quel Pharaon les Hébreux se sont-ils libérés selon la Bible ?",
+    answers: ["Khéops", "Ramsès II", "Akhénaton", "Thoutmose III"],
+    correctIndex: 1,
+    difficulty: "Moyen",
+    hint: "C'est l'événement central du livre de l'Exode."
+  },
+  {
+    id: "moyen-bible-arche-alliance",
+    category: "Bible",
+    question: "Qu'y avait-il à l'intérieur de l'Arche de l'Alliance ?",
+    answers: ["De l'or", "Les Dix Commandements", "Du miel et du pain", "Des épées"],
+    correctIndex: 1,
+    difficulty: "Moyen",
+    hint: "Les deux tables de pierre."
+  },
+  {
+    id: "moyen-bible-demons-gadarien",
+    category: "Bible",
+    question: "Dans le pays des Gadariens, combien de démons Jésus a-t-il expulsés d'un homme ?",
+    answers: ["1", "2", "Légion (beaucoup)", "7"],
+    correctIndex: 2,
+    difficulty: "Moyen",
+    hint: "Ils ont ensuite habité les porcs."
+  },
+  {
+    id: "moyen-bible-elyas",
+    category: "Bible",
+    question: "Comment le prophète Élie a-t-il disparu selon la Bible ?",
+    answers: ["Il s'est caché dans une grotte", "Il a été enlevé au ciel dans un char de feu", "Il est devenu ermite", "Il s'est noyé"],
+    correctIndex: 1,
+    difficulty: "Moyen",
+    hint: "C'était un événement miraculeux."
+  },
+  {
+    id: "moyen-bible-elisee-elyas",
+    category: "Bible",
+    question: "Quel était le lien entre Élisée et Élie ?",
+    answers: ["Des frères", "Maître et disciple", "Un père et fils", "Des ennemis"],
+    correctIndex: 1,
+    difficulty: "Moyen",
+    hint: "Élisée a demandé une double part de l'esprit d'Élie."
+  },
+  {
+    id: "moyen-bible-zacharie-elizabeth",
+    category: "Bible",
+    question: "Quel enfant Zacharie et Élisabeth ont-ils eu ?",
+    answers: ["Jésus", "Jean le Baptiste", "André", "Simon Pierre"],
+    correctIndex: 1,
+    difficulty: "Moyen",
+    hint: "Il a préparé le chemin à Jésus."
+  },
+  {
+    id: "moyen-bible-maria-magdala",
+    category: "Bible",
+    question: "Combien de démons Jésus a-t-il chassés de Marie-Madeleine ?",
+    answers: ["1", "3", "7", "12"],
+    correctIndex: 2,
+    difficulty: "Moyen",
+    hint: "C'est mentionné dans l'Évangile de Luc."
+  },
+  {
+    id: "moyen-bible-lazare-resurrection",
+    category: "Bible",
+    question: "Après combien de jours Jésus a-t-il ressuscité Lazare ?",
+    answers: ["2 jours", "3 jours", "4 jours", "7 jours"],
+    correctIndex: 2,
+    difficulty: "Moyen",
+    hint: "Lazare était déjà en décomposition."
+  },
+  {
+    id: "moyen-bible-cene",
+    category: "Bible",
+    question: "Combien de repas spéciaux Jésus a-t-il pris avec ses disciples avant sa passion ?",
+    answers: ["Un (la Cène)", "Trois", "Cinq", "Sept"],
+    correctIndex: 0,
+    difficulty: "Moyen",
+    hint: "C'est le dernier repas, le plus important."
+  },
+  {
+    id: "moyen-bible-matthias",
+    category: "Bible",
+    question: "Qui a remplacé Judas Iscariote parmi les douze apôtres ?",
+    answers: ["Luc", "Matthias", "Étienne", "Barnabé"],
+    correctIndex: 1,
+    difficulty: "Moyen",
+    hint: "Son choix a été fait par tirage au sort par les apôtres."
+  },
+  {
+    id: "moyen-bible-helene-croix",
+    category: "Bible",
+    question: "Selon la tradition, qui a retrouvé la vraie Croix du Christ ?",
+    answers: ["Marie", "Sainte-Hélène", "Marie-Madeleine", "Sainte Monique"],
+    correctIndex: 1,
+    difficulty: "Moyen",
+    hint: "C'est la mère d'un grand empereur."
+  },
+  {
+    id: "moyen-bible-nathan-roi",
+    category: "Bible",
+    question: "Quel roi le prophète Nathan a-t-il confronté au sujet de Bethsabée ?",
+    answers: ["Saül", "Salomon", "David", "Asa"],
+    correctIndex: 2,
+    difficulty: "Moyen",
+    hint: "Il a dû confesser son adultère et son meurtre."
+  },
+  {
+    id: "moyen-bible-simon-peter",
+    category: "Bible",
+    question: "Combien de fois Jésus a-t-il demandé à Pierre 'M'aimes-tu ?' après sa résurrection ?",
+    answers: ["Une", "Deux", "Trois", "Quatre"],
+    correctIndex: 2,
+    difficulty: "Moyen",
+    hint: "Autant que Pierre l'avait renié."
+  },
+  {
+    id: "difficile-bible-genealogie-jesus",
+    category: "Bible",
+    question: "Selon Matthieu, combien de générations séparent Abraham de David ?",
+    answers: ["10", "12", "14", "15"],
+    correctIndex: 2,
+    difficulty: "Difficile",
+    hint: "Matthieu divise la généalogie en trois périodes de 14 générations."
+  },
+  {
+    id: "difficile-bible-juges-israel",
+    category: "Bible",
+    question: "Combien de juges le livre des Juges mentionne-t-il comme gouvernants d'Israël ?",
+    answers: ["10", "12", "15", "20"],
+    correctIndex: 2,
+    difficulty: "Difficile",
+    hint: "Certains sont célèbres, d'autres moins connus."
+  },
+  {
+    id: "difficile-bible-rois",
+    category: "Bible",
+    question: "Après le schisme, combien de rois le royaume du Nord (Israël) a-t-il eu avant sa chute ?",
+    answers: ["15", "18", "19", "20"],
+    correctIndex: 2,
+    difficulty: "Difficile",
+    hint: "C'est au VIIe siècle avant J.C."
+  },
+  {
+    id: "difficile-bible-livres-apocryphes",
+    category: "Bible",
+    question: "Lequel de ces livres n'est PAS dans le canon biblique protestant ?",
+    answers: ["Tobie", "Maccabées", "Esther", "Abdias"],
+    correctIndex: 0,
+    difficulty: "Difficile",
+    hint: "Les livres apocryphes sont reconnus par l'Église catholique."
+  },
+  {
+    id: "difficile-bible-septante",
+    category: "Bible",
+    question: "Qu'est-ce que la Septante ?",
+    answers: ["Un groupe de 70 rabbins", "Une traduction grecque de l'Ancien Testament", "Un festival religieux", "Une fraction de la loi juive"],
     correctIndex: 1,
     difficulty: "Difficile",
-    hint: "Il se trouve en Tanzanie."
+    hint: "Elle a été créée pour les juifs de la diaspora."
+  },
+  {
+    id: "difficile-bible-mahanaim",
+    category: "Bible",
+    question: "À quel endroit Jacob a-t-il vu l'armée de Dieu et a appelé l'endroit Mahanaïm ?",
+    answers: ["Le Mont Sinaï", "Le Jourdain", "La vallée de Siddim", "Entre Pénia et Penuel"],
+    correctIndex: 3,
+    difficulty: "Difficile",
+    hint: "C'est lors de sa fuite devant Ésaü."
+  },
+  {
+    id: "difficile-bible-melechisedech",
+    category: "Bible",
+    question: "Qui était Melchisédech selon la Bible ?",
+    answers: ["Un roi de Salem et prêtre du Dieu Très-Haut", "Un ange", "Un disciple de Jésus", "Un prophète mineur"],
+    correctIndex: 0,
+    difficulty: "Difficile",
+    hint: "Il a reçu la dîme d'Abraham."
+  },
+  {
+    id: "difficile-bible-onan",
+    category: "Bible",
+    question: "Pourquoi Dieu a-t-il tué Onan selon le récit de la Genèse ?",
+    answers: ["Pour sa luxure", "Pour son manque de foi", "Pour avoir refusé de donner une descendance à son frère", "Pour son orgueil"],
+    correctIndex: 2,
+    difficulty: "Difficile",
+    hint: "C'est une loi du lévirat."
+  },
+  {
+    id: "difficile-bible-sheba",
+    category: "Bible",
+    question: "Quel rébellion Sheba a-t-il menée contre le roi David ?",
+    answers: ["Une rébellion religieuse", "Une révolte contre la centralisation du pouvoir", "Une conspiration avec les Philistins", "Une mutinerie militaire"],
+    correctIndex: 1,
+    difficulty: "Difficile",
+    hint: "Il a été assiégé à Abel-Beth-Maaca."
+  },
+  {
+    id: "difficile-bible-nabuchodonsor-jerusalem",
+    category: "Bible",
+    question: "En quelle année Nabucodonosor a-t-il détruit le Temple de Jérusalem ?",
+    answers: ["586 av. J.-C.", "605 av. J.-C.", "597 av. J.-C.", "539 av. J.-C."],
+    correctIndex: 0,
+    difficulty: "Difficile",
+    hint: "C'est le début de l'exil babylonien."
+  },
+  {
+    id: "difficile-bible-esdras-nehemie",
+    category: "Bible",
+    question: "Quel était le rôle d'Esdras dans la reconstruction de Jérusalem après l'exil ?",
+    answers: ["Gouverneur politique", "Scribe et enseignant de la Loi", "Chef militaire", "Prophète principal"],
+    correctIndex: 1,
+    difficulty: "Difficile",
+    hint: "Il a réformé les pratiques religieuses."
+  },
+  {
+    id: "difficile-bible-zacharias-temple",
+    category: "Bible",
+    question: "À quel moment de sa vie Zacharias a-t-il reçu la vision de l'ange Gabriel ?",
+    answers: ["En tant qu'enfant", "Alors qu'il servait comme prêtre au Temple", "En exil", "Sur le mont des Oliviers"],
+    correctIndex: 1,
+    difficulty: "Difficile",
+    hint: "Il brûlait de l'encens au moment de la vision."
+  },
+  {
+    id: "difficile-bible-apocalypse-sellee",
+    category: "Bible",
+    question: "Combien de sceaux le livre de l'Apocalypse mentionne-t-il ?",
+    answers: ["4", "5", "7", "12"],
+    correctIndex: 2,
+    difficulty: "Difficile",
+    hint: "C'est un nombre symbolique complet."
+  },
+  {
+    id: "difficile-bible-cavaliers-apocalypse",
+    category: "Bible",
+    question: "Combien de cavaliers de l'Apocalypse y a-t-il ?",
+    answers: ["2", "3", "4", "7"],
+    correctIndex: 2,
+    difficulty: "Difficile",
+    hint: "Ils sortent quand les premiers sceaux sont ouverts."
+  },
+  {
+    id: "difficile-bible-herode-temple",
+    category: "Bible",
+    question: "Quel roi a agrandi et embelli le Temple de Jérusalem ?",
+    answers: ["Salomon", "Ézéchias", "Hérode le Grand", "Jean Hyrcan"],
+    correctIndex: 2,
+    difficulty: "Difficile",
+    hint: "C'est le roi qui régnait lors de la naissance de Jésus."
+  },
+  {
+    id: "difficile-bible-ephese-artemis",
+    category: "Bible",
+    question: "Pourquoi la ville d'Éphèse s'est-elle opposée à Paul ?",
+    answers: ["Il prêchait une fausse doctrine", "Ses prédications réduisaient les ventes des statues de la déesse Artémis", "Il avait violé les lois romaines", "Il refusait de payer ses impôts"],
+    correctIndex: 1,
+    difficulty: "Difficile",
+    hint: "C'était économique et religieux."
+  },
+  {
+    id: "difficile-bible-jesus-genealogie",
+    category: "Bible",
+    question: "Pourquoi les généalogies de Jésus dans Matthieu et Luc sont-elles différentes ?",
+    answers: ["Elles sont identiques et on les confond", "Matthieu donne la généalogie de Joseph, Luc celle de Marie", "C'est une erreur de copie", "Une est morale, l'autre légale"],
+    correctIndex: 1,
+    difficulty: "Difficile",
+    hint: "Les deux traditions expliquent différemment la descendance."
+  },
+  {
+    id: "difficile-bible-fetes-juives",
+    category: "Bible",
+    question: "Combien de fêtes principales le judaïsme biblique célèbre-t-il ?",
+    answers: ["3", "5", "7", "10"],
+    correctIndex: 0,
+    difficulty: "Difficile",
+    hint: "Pâque, Pentecôte et les Tabernacles en font partie."
+  },
+  {
+    id: "difficile-bible-korach-rebellion",
+    category: "Bible",
+    question: "Quelle était la nature de la rébellion de Coré contre Moïse et Aaron ?",
+    answers: ["Une révolte militaire", "Un défi contre l'autorité sacerdotale d'Aaron", "Un refus de quitter l'Égypte", "Une conspiration avec Pharaon"],
+    correctIndex: 1,
+    difficulty: "Difficile",
+    hint: "Il contestait le monopole sacerdotal des lévites."
+  },
+  {
+    id: "difficile-bible-balaam-ane",
+    category: "Bible",
+    question: "Quel événement miraculeux s'est produit avec l'âne de Balaam ?",
+    answers: ["Il a parlé et critiqué le prophète", "Il a volé dans les airs", "Il s'est transformé en lion", "Il a marché sur l'eau"],
+    correctIndex: 0,
+    difficulty: "Difficile",
+    hint: "L'âne voyait ce que le prophète ne voyait pas."
+  },
+  {
+    id: "difficile-bible-timothee-lettre",
+    category: "Bible",
+    question: "Quel conseil Paul donne-t-il à Timothée concernant le vin ?",
+    answers: ["D'en boire beaucoup", "De n'en boire jamais", "D'en boire un peu pour son estomac", "C'est un péché"],
+    correctIndex: 2,
+    difficulty: "Difficile",
+    hint: "C'est pour des raisons de santé."
+  },
+  {
+    id: "tres-difficile-bible-gomarrah",
+    category: "Bible",
+    question: "Quels péchés les habitants de Sodome et Gomorrhe commettaient-ils selon les récits bibliques ?",
+    answers: ["Surtout la luxure", "L'orgueil et le refus d'hospitalité", "La cupidité", "L'idolâtrie"],
+    correctIndex: 1,
+    difficulty: "Difficile",
+    hint: "Ézéchiel précise les raisons de leur châtiment."
+  },
+  {
+    id: "tres-difficile-bible-esau-droit-ainesse",
+    category: "Bible",
+    question: "Pour quel prix Ésaü a-t-il vendu son droit d'aînesse à Jacob ?",
+    answers: ["De l'or", "Un plat de lentilles rouges", "Des terres", "Des troupeaux"],
+    correctIndex: 1,
+    difficulty: "Difficile",
+    hint: "C'est un prix fort symbolique."
+  },
+  {
+    id: "tres-difficile-bible-isaie-messie",
+    category: "Bible",
+    question: "Quel serviteur souffrant Isaïe prophétise-t-il dans le chapitre 53 ?",
+    answers: ["David", "Moïse", "Un anonyme (identifié avec le Messie par les chrétiens)", "Salomon"],
+    correctIndex: 2,
+    difficulty: "Difficile",
+    hint: "Les juifs et les chrétiens interprètent ce texte différemment."
+  },
+  {
+    id: "tres-difficile-bible-jeroboam-idoles",
+    category: "Bible",
+    question: "Quel roi du royaume du Nord a établi des veaux d'or pour remplacer le Temple de Jérusalem ?",
+    answers: ["Omri", "Achab", "Jéroboam I", "Hosée"],
+    correctIndex: 2,
+    difficulty: "Difficile",
+    hint: "Il a divisé le royaume après la mort de Salomon."
+  },
+  {
+    id: "tres-difficile-bible-phinehas-vengeance",
+    category: "Bible",
+    question: "Quel acte de vengeance Phinées a-t-il commis pour arrêter le fléau ?",
+    answers: ["Il a lapidé des prêtres", "Il a poignardé un Israélite et une Madianite", "Il a incendié le sanctuaire", "Il a maudit les infidèles"],
+    correctIndex: 1,
+    difficulty: "Difficile",
+    hint: "Cela s'est passé à Shittim."
+  },
+  {
+    id: "tres-difficile-bible-ruth-genealogie",
+    category: "Bible",
+    question: "Quel roi de la Bible est le descendant de Ruth et Booz ?",
+    answers: ["Saül", "David", "Absalom", "Asa"],
+    correctIndex: 1,
+    difficulty: "Difficile",
+    hint: "C'est un lien crucial pour la généalogie de Jésus."
+  },
+  {
+    id: "tres-difficile-bible-malachie-propos",
+    category: "Bible",
+    question: "Le dernier prophète de l'Ancien Testament est...",
+    answers: ["Ésaïe", "Jérémie", "Malachie", "Osée"],
+    correctIndex: 2,
+    difficulty: "Difficile",
+    hint: "Son nom signifie 'mon messager'."
+  },
+  {
+    id: "tres-difficile-bible-jamais-peche",
+    category: "Bible",
+    question: "Combien de fois le Nouveau Testament mentionne-t-il que Jésus a péché ?",
+    answers: ["Une", "Deux", "Jamais, c'est un principe de la foi chrétienne", "Plusieurs"],
+    correctIndex: 2,
+    difficulty: "Difficile",
+    hint: "C'est central à la christologie."
+  },
+  {
+    id: "tres-difficile-bible-logos",
+    category: "Bible",
+    question: "Quel est le terme grec que Jean utilise pour 'Parole' au début de son Évangile ?",
+    answers: ["Rhéma", "Logos", "Parole", "Thema"],
+    correctIndex: 1,
+    difficulty: "Difficile",
+    hint: "C'est un terme philosophique profond."
+  },
+  {
+    id: "tres-difficile-bible-diatribe",
+    category: "Bible",
+    question: "Quelle épître contient un style littéraire appelé 'diatribe' ?",
+    answers: ["Romains", "1 Corinthiens", "Galates", "Colossiens"],
+    correctIndex: 0,
+    difficulty: "Difficile",
+    hint: "Paul y argumente vigoureusement."
+  },
+  {
+    id: "tres-difficile-bible-josue-mur-jericho",
+    category: "Bible",
+    question: "Combien de fois les Israélites ont-ils dû faire le tour de Jéricho avant que les murs ne s'effondrent ?",
+    answers: ["Trois", "Sept", "Sept fois le septième jour", "Quarante"],
+    correctIndex: 2,
+    difficulty: "Difficile",
+    hint: "Les trompettes ont joué un rôle important."
   }
 ];
+
+// Validation : On doit avoir assez de questions (minimum 50-60 recommended pour 20 questions)
+console.log(`Total questions in database: ${window.QUESTION_DATASET.length}`);

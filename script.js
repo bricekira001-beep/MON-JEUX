@@ -1,8 +1,8 @@
 const QUESTION_BANK = Array.isArray(window.QUESTION_DATASET) ? window.QUESTION_DATASET : [];
 
-const GAINS = [1000, 5000, 10000, 20000, 50000, 100000, 250000, 500000, 750000, 1000000, 1500000, 2000000];
-const QUESTION_TIME = 60;
-const QUESTIONS_PER_RUN = 12;
+const GAINS = [500, 1000, 2000, 5000, 10000, 20000, 50000, 100000, 200000, 500000, 750000, 1000000, 1500000, 2000000, 2500000, 3000000, 4000000, 5000000, 7500000, 10000000];
+const QUESTION_TIME = 40;
+const QUESTIONS_PER_RUN = 20;
 const LEADERBOARD_KEY = "lakota-leaderboard";
 const USERS_KEY = "lakota-users";
 const SESSION_KEY = "lakota-session";
@@ -79,14 +79,9 @@ const screens = {
 
 const elements = {
   authStatus: document.getElementById("authStatus"),
-  loginForm: document.getElementById("loginForm"),
-  registerForm: document.getElementById("registerForm"),
-  loginPseudo: document.getElementById("loginPseudo"),
-  loginPassword: document.getElementById("loginPassword"),
-  registerPseudo: document.getElementById("registerPseudo"),
-  registerRegion: document.getElementById("registerRegion"),
-  registerPassword: document.getElementById("registerPassword"),
-  registerConfirmPassword: document.getElementById("registerConfirmPassword"),
+  startForm: document.getElementById("startForm"),
+  playerPseudo: document.getElementById("playerPseudo"),
+  playerAvatarFile: document.getElementById("playerAvatarFile"),
   homeTokensDisplay: document.getElementById("homeTokensDisplay"),
   homeBestScore: document.getElementById("homeBestScore"),
   scoreDisplay: document.getElementById("scoreDisplay"),
@@ -168,8 +163,6 @@ const elements = {
   leaderboardPodium: document.getElementById("leaderboardPodium"),
   leaderboardListCaption: document.getElementById("leaderboardListCaption"),
   leaderboardTabs: document.querySelectorAll(".leaderboard-tab"),
-  registerAvatarFile: document.getElementById("registerAvatarFile"),
-  registerAvatarPresets: document.querySelectorAll("#registerAvatarPresets .avatar-preset"),
   profileAvatarPresets: document.querySelectorAll("#profileAvatarPresets .avatar-preset"),
   lifeline5050Button: document.getElementById("lifeline5050Button"),
   lifelineHintButton: document.getElementById("lifelineHintButton"),
@@ -181,8 +174,6 @@ const elements = {
 const answerButtons = Array.from(document.querySelectorAll(".answer-btn"));
 const difficultyButtons = Array.from(document.querySelectorAll(".difficulty-btn"));
 
-document.getElementById("showLoginButton").addEventListener("click", () => switchAuthTab("login"));
-document.getElementById("showRegisterButton").addEventListener("click", () => switchAuthTab("register"));
 document.getElementById("startButton").addEventListener("click", startGame);
 document.getElementById("leaderboardButton").addEventListener("click", showLeaderboard);
 document.getElementById("restartButton").addEventListener("click", startGame);
@@ -201,12 +192,7 @@ document.getElementById("closeInfoModalButton").addEventListener("click", closeI
 document.getElementById("profileButton").addEventListener("click", showProfile);
 document.getElementById("closeProfileButton").addEventListener("click", backToHome);
 document.getElementById("profileAvatarFile").addEventListener("change", handleAvatarFileChange);
-document.getElementById("registerAvatarFile").addEventListener("change", handleRegisterAvatarChange);
-document.getElementById("changePasswordButton").addEventListener("click", openPasswordModal);
-document.getElementById("savePasswordButton").addEventListener("click", handleSavePassword);
-document.getElementById("cancelPasswordButton").addEventListener("click", closePasswordModal);
-elements.loginForm.addEventListener("submit", handleLogin);
-elements.registerForm.addEventListener("submit", handleRegister);
+elements.startForm.addEventListener("submit", handleStart);
 elements.pseudoInput.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
     savePseudo();
@@ -620,63 +606,44 @@ function switchAuthTab(tab) {
   setAuthStatus("");
 }
 
-async function handleRegister(event) {
+async function handleStart(event) {
   event.preventDefault();
 
-  const pseudo = sanitizePseudo(elements.registerPseudo.value);
-  const region = sanitizeRegion(elements.registerRegion ? elements.registerRegion.value : "");
-  const password = elements.registerPassword.value;
-  const confirm = elements.registerConfirmPassword.value;
-
+  const pseudo = sanitizePseudo(elements.playerPseudo.value);
   if (!pseudo || pseudo.length < 3) {
-    setAuthStatus("Le pseudo doit contenir au moins 3 caracteres.", "error");
-    return;
-  }
-
-  if (password.length < 4) {
-    setAuthStatus("Le mot de passe doit contenir au moins 4 caracteres.", "error");
-    return;
-  }
-
-  if (password !== confirm) {
-    setAuthStatus("Les mots de passe ne correspondent pas.", "error");
+    setAuthStatus("Le nom doit contenir au moins 3 caractères.", "error");
     return;
   }
 
   const users = getUsers();
   const alreadyExists = users.some((user) => user.pseudo.toLowerCase() === pseudo.toLowerCase());
   if (alreadyExists) {
-    setAuthStatus("Ce pseudo existe deja. Choisis-en un autre.", "error");
+    setAuthStatus("Ce nom est déjà utilisé. Choisis-en un autre.", "error");
     return;
   }
 
-  const passwordHash = await hashPassword(password);
   const newUser = {
     id: createId(),
     pseudo,
-    passwordHash,
+    passwordHash: "",
     createdAt: new Date().toISOString(),
     tokens: 2,
     bestScore: 0,
-    region: "Côte d'Ivoire",
+    region: "Monde",
     avatar: null,
-    avatarStyle: getSelectedRegisterAvatarStyle(),
+    avatarStyle: AVATAR_STYLE_FALLBACK,
     stats: createEmptyProfileStats()
   };
-  if (region) {
-    newUser.region = region;
-  }
 
-  if (elements.registerAvatarFile && elements.registerAvatarFile.files.length > 0) {
-    newUser.avatar = await readImageFile(elements.registerAvatarFile.files[0]);
+  if (elements.playerAvatarFile && elements.playerAvatarFile.files.length > 0) {
+    newUser.avatar = await readImageFile(elements.playerAvatarFile.files[0]);
   }
 
   users.push(newUser);
   saveUsers(users);
   createSession(newUser);
-  elements.registerForm.reset();
-  syncAvatarPresetSelection(AVATAR_STYLE_FALLBACK, "register");
-  setAuthStatus("Compte cree avec 2 jetons de bienvenue. Tu es connecte.", "success");
+  elements.startForm.reset();
+  setAuthStatus("Bienvenue ! Ton nom et ta photo sont enregistrés localement.", "success");
   enterAuthenticatedArea();
 }
 
@@ -709,7 +676,6 @@ function hydrateSession() {
   const session = getSession();
   if (!session) {
     showScreen("auth");
-    switchAuthTab("login");
     return;
   }
 
@@ -821,7 +787,6 @@ function logout() {
   state.lifelinesUsed = createEmptyLifelineState();
   updateHud();
   showScreen("auth");
-  switchAuthTab("login");
   setAuthStatus("Tu as ete deconnecte.", "success");
 }
 
@@ -1117,7 +1082,7 @@ function applyCorrectAnswerRewards() {
   }
 
   addTokens(baseTokens + bonusTokens, {
-    message: bonusTokens > 0 ? `Bonus ! +${baseTokens + bonusTokens} jetons` : `+${baseTokens} jetons !`,
+    message: bonusTokens > 0 ? `Bonus ! +${baseTokens + bonusTokens} FCFA` : `+${baseTokens} FCFA !`,
     caption: bonusTokens > 0 ? "Bien joue ! Serie en feu." : "Bien joue ! 🔥"
   });
 
@@ -1134,22 +1099,22 @@ function addTokens(amount, options = {}) {
   elements.tokenCard.classList.remove("gain-flash");
   void elements.tokenCard.offsetWidth;
   elements.tokenCard.classList.add("gain-flash");
-  elements.tokenCaption.textContent = options.caption || "Jetons ajoutes.";
-  showToast(options.message || `+${amount} jetons !`);
+  elements.tokenCaption.textContent = options.caption || "FCFA ajoutes.";
+  showToast(options.message || `+${amount} FCFA !`);
   playTokenTone();
   updateHud();
 }
 
 function spendTokens(amount, reason) {
   if (!state.currentUser || state.currentUser.tokens < amount) {
-    showToast("Jetons insuffisants pour cet avantage.");
+    showToast("FCFA insuffisants pour cet avantage.");
     playFailureTone();
     return false;
   }
 
   state.currentUser.tokens -= amount;
   persistCurrentUser();
-  elements.tokenCaption.textContent = `-${amount} jeton${amount > 1 ? "s" : ""} pour ${reason}.`;
+  elements.tokenCaption.textContent = `-${amount} FCFA${amount > 1 ? "s" : ""} pour ${reason}.`;
   updateHud();
   return true;
 }
@@ -1327,7 +1292,7 @@ function finishGame(completed) {
   }
 
   elements.finalScore.textContent = `${formatFCFA(state.score)} FCFA`;
-  elements.endTokensDisplay.textContent = `${state.currentUser ? state.currentUser.tokens : 0} jetons`;
+  elements.endTokensDisplay.textContent = `${state.currentUser ? state.currentUser.tokens : 0} FCFA`;
   elements.endStreakDisplay.textContent = `${state.bestStreak}`;
   elements.resultMessage.textContent = completed ? getVictoryMessage(state.score) : getFailureMessage(state.score);
   showScreen("end");
@@ -1356,7 +1321,7 @@ function requireAuth() {
 function updateHud() {
   elements.scoreDisplay.textContent = `${formatFCFA(state.score)} FCFA`;
   elements.levelDisplay.textContent = state.currentQuestion ? state.currentQuestion.difficulty : state.selectedDifficulty;
-  elements.tokensDisplay.textContent = `${state.currentUser ? state.currentUser.tokens : 0} jetons`;
+  elements.tokensDisplay.textContent = `${state.currentUser ? state.currentUser.tokens : 0} FCFA`;
   elements.homeTokensDisplay.textContent = `${state.currentUser ? state.currentUser.tokens : 0}`;
   elements.homeBestScore.textContent = `${formatFCFA(state.currentUser ? state.currentUser.bestScore || 0 : 0)} FCFA`;
   updateTimerVisual();
@@ -1756,7 +1721,7 @@ function getFailureMessage(score) {
     return "Aie... tu etais presque arrive au gros palier.";
   }
   if (score >= 50000) {
-    return "Bien tente. Tu peux revenir plus fort avec tes jetons.";
+    return "Bien tente. Tu peux revenir plus fort avec tes FCFA.";
   }
   return "On repart doucement. La prochaine peut changer beaucoup de choses.";
 }

@@ -433,10 +433,10 @@
         <p class="eyebrow">Jeu de culture générale</p>
         <h1 class="brand-title">LAKOTA</h1>
         <p class="hero-subtitle">Une ambiance télévisée moderne avec une élégance africaine.</p>
-        <p class="hero-copy">Crée ton compte, garde tes jetons, reviens sans refaire l'inscription et affronte un quiz multi-thèmes qui se renouvelle vraiment.</p>
+        <p class="hero-copy">Crée ton compte, garde tes FCFA, reviens sans refaire l'inscription et affronte un quiz multi-thèmes qui se renouvelle vraiment.</p>
         <div class="hero-badges">
           <span>15 modes de jeu</span>
-          <span>Jetons persistants</span>
+          <span>FCFA persistants</span>
           <span>Questions variées</span>
         </div>
       </div>
@@ -480,7 +480,7 @@
       <div class="home-center">
         <h1 class="brand-title">LAKOTA</h1>
         <p class="hero-subtitle">Teste ta culture générale sur des thèmes variés avec style.</p>
-        <p class="hero-copy">Relève les questions, dépense tes jetons avec intelligence et fais monter la pression comme dans un grand jeu télévisé.</p>
+        <p class="hero-copy">Relève les questions, dépense tes FCFA avec intelligence et fais monter la pression comme dans un grand jeu télévisé.</p>
         <div class="difficulty-panel">
           <div class="difficulty-copy">
             <p class="eyebrow">Niveau de jeu</p>
@@ -496,8 +496,8 @@
       </div>
       <div class="home-bottom">
         <div class="home-stats">
-          <div class="mini-card"><span>Jetons</span><strong id="homeTokensDisplay">0</strong></div>
-          <div class="mini-card"><span>Score max</span><strong id="homeBestScore">0 jetons</strong></div>
+          <div class="mini-card"><span>FCFA</span><strong id="homeTokensDisplay">0</strong></div>
+          <div class="mini-card"><span>Score max</span><strong id="homeBestScore">0 FCFA</strong></div>
         </div>
         <div class="cta-row">
           <button class="btn btn-primary pulse-soft" id="startButton" type="button">Commencer</button>
@@ -553,13 +553,13 @@
           <div class="brand-flag"></div>
         </div>
         <div class="header-stat token-card glass">
-          <span class="stat-label">Jetons</span>
-          <strong class="stat-value" id="tokensDisplay">0 jetons</strong>
+          <span class="stat-label">FCFA</span>
+          <strong class="stat-value" id="tokensDisplay">0 FCFA</strong>
           <span class="token-caption">Fais vite oh !</span>
         </div>
         <div class="header-stat score-card glass">
           <span class="stat-label">Score</span>
-          <strong class="stat-value" id="scoreDisplay">0 jetons</strong>
+          <strong class="stat-value" id="scoreDisplay">0 FCFA</strong>
           <span class="token-caption" id="scoreCaption">Monte calmement.</span>
         </div>
         <div class="header-timer glass" id="timerCard">
@@ -586,7 +586,7 @@
           </div>
         </div>
         <div class="user-compact glass">
-          <button class="user-chip" type="button">
+          <button class="user-chip" id="gameProfileButton" type="button">
             <span class="user-avatar" id="gameUserAvatar">J</span>
             <span class="user-name" id="gameUserName">joueur</span>
           </button>
@@ -611,7 +611,7 @@
           </div>
           <div class="side-card glass">
             <span class="side-icon side-icon-coral">◎</span>
-            <div><p class="stat-label">Gain actuel</p><strong class="side-value" id="nextGainDisplay" style="color:var(--coral)">1 000 jetons</strong></div>
+            <div><p class="stat-label">Gain actuel</p><strong class="side-value" id="nextGainDisplay" style="color:var(--coral)">1 000 FCFA</strong></div>
           </div>
         </aside>
 
@@ -650,19 +650,19 @@
         <div class="lifelines-inline">
           <button class="lifeline-btn lifeline-blue" id="lifeline5050Button" type="button">
             <span class="lifeline-icon">2</span>
-            <span class="lifeline-copy"><strong>50 / 50</strong><small>2 jetons</small></span>
+            <span class="lifeline-copy"><strong>50 / 50</strong><small>2 FCFA</small></span>
           </button>
           <button class="lifeline-btn lifeline-orange" id="lifelineHintButton" type="button">
             <span class="lifeline-icon">?</span>
-            <span class="lifeline-copy"><strong>Indice</strong><small>2 jetons</small></span>
+            <span class="lifeline-copy"><strong>Indice</strong><small>2 FCFA</small></span>
           </button>
           <button class="lifeline-btn lifeline-green" id="lifelineAudienceButton" type="button">
             <span class="lifeline-icon">%</span>
-            <span class="lifeline-copy"><strong>Public</strong><small>2 jetons</small></span>
+            <span class="lifeline-copy"><strong>Public</strong><small>2 FCFA</small></span>
           </button>
           <button class="lifeline-btn lifeline-violet" id="lifelineTimeButton" type="button">
             <span class="lifeline-icon">+15</span>
-            <span class="lifeline-copy"><strong>Temps</strong><small>1 jeton</small></span>
+            <span class="lifeline-copy"><strong>Temps</strong><small>1 FCFA</small></span>
           </button>
         </div>
       </div>
@@ -690,10 +690,10 @@
     <div class="end-panel glass">
       <div class="victory-orb"></div>
       <p class="eyebrow">Fin de partie</p>
-      <h2 class="final-score" id="finalScore">0 jetons</h2>
+      <h2 class="final-score" id="finalScore">0 FCFA</h2>
       <p class="result-message" id="resultMessage">Continue, tu peux aller plus loin.</p>
       <div class="end-summary">
-        <div class="mini-card"><span>Jetons totaux</span><strong id="endTokensDisplay">0</strong></div>
+        <div class="mini-card"><span>FCFA totaux</span><strong id="endTokensDisplay">0</strong></div>
         <div class="mini-card"><span>Mode joué</span><strong id="endModeDisplay">Classique</strong></div>
       </div>
       <div class="end-buttons">
@@ -834,8 +834,8 @@ const GAME_MODES = [
   {
     id:"pyramide-inverse", name:"Pyramide Inverse", icon:"🔺", tags:["DÉFI","STRESS"],
     categories:["stress","logique"],
-    desc:"Tu commences avec 1 000 000 jetons. Chaque erreur déduit. Combien gardes-tu ?",
-    hook:"Perdre devient douloureux émotionnellement — comme perdre des jetons.",
+    desc:"Tu commences avec 1 000 000 FCFA. Chaque erreur déduit. Combien gardes-tu ?",
+    hook:"Perdre devient douloureux émotionnellement — comme perdre des FCFA.",
     color:"linear-gradient(135deg,rgba(255,107,74,0.2),rgba(176,16,48,0.1))",
     border:"rgba(255,107,74,0.4)"
   },
@@ -866,8 +866,8 @@ const GAME_MODES = [
   {
     id:"prediction-temporelle", name:"Prédiction Temporelle", icon:"🔮", tags:["STRATÉGIE","PARI"],
     categories:["stratégie","stress"],
-    desc:"Parie des jetons sur la difficulté de la prochaine question avant de la voir.",
-    hook:"Tu risques tes jetons sur l'avenir — le pari précède la réponse.",
+    desc:"Parie des FCFA sur la difficulté de la prochaine question avant de la voir.",
+    hook:"Tu risques tes FCFA sur l'avenir — le pari précède la réponse.",
     color:"linear-gradient(135deg,rgba(124,77,255,0.2),rgba(255,77,141,0.1))",
     border:"rgba(124,77,255,0.4)"
   },
@@ -1019,7 +1019,7 @@ function goHome() {
   const u = getUser();
   document.getElementById('playerNameText').textContent = STATE.currentUser;
   document.getElementById('homeTokensDisplay').textContent = u.tokens;
-  document.getElementById('homeBestScore').textContent = u.bestScore.toLocaleString('fr-FR') + ' jetons';
+  document.getElementById('homeBestScore').textContent = u.bestScore.toLocaleString('fr-FR') + ' FCFA';
   showScreen('homeScreen');
 }
 
@@ -1216,7 +1216,7 @@ function loadQuestion() {
   STATE.answered = false;
 
   document.getElementById('questionIndexDisplay').textContent = `${STATE.qIndex+1} / ${Math.min(STATE.questions.length, GAINS.length)}`;
-  document.getElementById('nextGainDisplay').textContent = GAINS[STATE.qIndex].toLocaleString('fr-FR') + ' jetons';
+  document.getElementById('nextGainDisplay').textContent = GAINS[STATE.qIndex].toLocaleString('fr-FR') + ' FCFA';
   document.getElementById('questionText').textContent = q.q;
   document.getElementById('questionHint').textContent = `Thème : ${q.cat}`;
   document.getElementById('questionBadge').textContent = `— Question ${STATE.qIndex+1} —`;
@@ -1237,7 +1237,7 @@ function loadQuestion() {
 
   // Mode-specific setups
   if (STATE.mode === 'pyramide-inverse') {
-    document.getElementById('modeSpecialInfo').textContent = `Capital restant : ${STATE.pyramideAmount.toLocaleString('fr-FR')} jetons`;
+    document.getElementById('modeSpecialInfo').textContent = `Capital restant : ${STATE.pyramideAmount.toLocaleString('fr-FR')} FCFA`;
     updateScoreDisplay();
   }
 
@@ -1384,17 +1384,17 @@ function renderPredictionBet(q) {
   const maxBet = Math.min(u.tokens, 5);
   ui.innerHTML = `
     <div style="margin-top:1rem;padding:1rem;background:rgba(0,0,0,0.3);border-radius:12px;border:1px solid rgba(244,166,35,0.3)">
-      <p style="font-size:0.8rem;color:var(--txt3);margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.1em">Parie des jetons sur ta réponse</p>
-      <div class="bet-display" id="betDisplay">0 jeton</div>
+      <p style="font-size:0.8rem;color:var(--txt3);margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.1em">Parie des FCFA sur ta réponse</p>
+      <div class="bet-display" id="betDisplay">0 FCFA</div>
       <input type="range" class="bet-slider" id="betSlider" min="0" max="${maxBet}" value="0">
-      <p style="font-size:0.75rem;color:var(--txt3);text-align:center">Gagne 2× les jetons pariés si tu as raison</p>
+      <p style="font-size:0.75rem;color:var(--txt3);text-align:center">Gagne 2× les FCFA pariés si tu as raison</p>
     </div>
   `;
   const slider = document.getElementById('betSlider');
   const display = document.getElementById('betDisplay');
   slider.addEventListener('input', () => {
     STATE.predictionBet = parseInt(slider.value);
-    display.textContent = STATE.predictionBet + ' jeton' + (STATE.predictionBet > 1 ? 's' : '');
+    display.textContent = STATE.predictionBet + ' FCFA' + (STATE.predictionBet > 1 ? '' : '');
   });
 }
 
@@ -1405,14 +1405,14 @@ function scheduleJoker() {
     const ui = document.getElementById('modeSpecialUI');
     const joker = document.createElement('div');
     joker.style.cssText = 'margin-top:0.75rem;padding:0.75rem 1.25rem;background:rgba(0,200,150,0.2);border:1px solid rgba(0,200,150,0.5);border-radius:12px;display:flex;align-items:center;justify-content:space-between;animation:fadeIn 0.3s ease';
-    joker.innerHTML = `<span style="color:var(--emerald);font-weight:700">🃏 Joker Fantôme ! +1 jeton bonus</span><button class="btn btn-small" style="background:rgba(0,200,150,0.3);color:var(--emerald);border:1px solid rgba(0,200,150,0.5)" id="claimJokerBtn">Réclamer !</button>`;
+    joker.innerHTML = `<span style="color:var(--emerald);font-weight:700">🃏 Joker Fantôme ! +1 FCFA bonus</span><button class="btn btn-small" style="background:rgba(0,200,150,0.3);color:var(--emerald);border:1px solid rgba(0,200,150,0.5)" id="claimJokerBtn">Réclamer !</button>`;
     ui.appendChild(joker);
     STATE.jokerActive = true;
     document.getElementById('claimJokerBtn').addEventListener('click', () => {
       STATE.tokens++;
       updateTokensDisplay();
       updateUserStat('tokens', STATE.tokens);
-      toast('Jeton bonus récupéré ! 🃏', 'toast-emerald');
+      toast('FCFA bonus récupéré ! 🃏', 'toast-emerald');
       joker.remove();
       STATE.jokerActive = false;
     });
@@ -1484,7 +1484,7 @@ function handleCorrect() {
   if (STATE.mode === 'prediction-temporelle' && STATE.predictionBet > 0) {
     const bonus = STATE.predictionBet * 2;
     STATE.tokens += bonus;
-    toast(`Pari gagnant ! +${bonus} jetons 🔮`, 'toast-gold');
+    toast(`Pari gagnant ! +${bonus} FCFA 🔮`, 'toast-gold');
     STATE.predictionBet = 0;
   }
 
@@ -1505,7 +1505,7 @@ function handleWrong() {
   if (STATE.mode === 'prediction-temporelle' && STATE.predictionBet > 0) {
     STATE.tokens -= STATE.predictionBet;
     if (STATE.tokens < 0) STATE.tokens = 0;
-    toast(`Pari perdu ! -${STATE.predictionBet} jetons 😬`, 'toast-coral');
+    toast(`Pari perdu ! -${STATE.predictionBet} FCFA 😬`, 'toast-coral');
     updateUserStat('tokens', STATE.tokens);
     updateTokensDisplay();
     STATE.predictionBet = 0;
@@ -1516,7 +1516,7 @@ function handleWrong() {
     STATE.pyramideAmount = Math.max(0, STATE.pyramideAmount - deduction);
     STATE.score = STATE.pyramideAmount;
     updateScoreDisplay();
-    document.getElementById('modeSpecialInfo').textContent = `Capital restant : ${STATE.pyramideAmount.toLocaleString('fr-FR')} jetons`;
+    document.getElementById('modeSpecialInfo').textContent = `Capital restant : ${STATE.pyramideAmount.toLocaleString('fr-FR')} FCFA`;
     if (STATE.pyramideAmount <= 0) { endGame(false); return; }
     showResult(false, 0);
     return;
@@ -1551,10 +1551,10 @@ function showDoubleOrRien(gain) {
   ui.innerHTML = `
     <div class="double-ou-rien-choice" style="margin-top:1rem">
       <button class="btn btn-primary" id="doubleBtn">
-        Doubler (${(gain*2).toLocaleString('fr-FR')} jetons) 🎲
+        Doubler (${(gain*2).toLocaleString('fr-FR')} FCFA) 🎲
       </button>
       <button class="btn btn-secondary" id="encaisserBtn">
-        Encaisser (${gain.toLocaleString('fr-FR')} jetons) ✓
+        Encaisser (${gain.toLocaleString('fr-FR')} FCFA) ✓
       </button>
     </div>
   `;
@@ -1578,7 +1578,7 @@ function showDoubleOrRien(gain) {
 
 function showResult(correct, gain) {
   document.getElementById('resultText').textContent = correct ? '✅ Bonne réponse !' : '❌ Mauvaise réponse !';
-  document.getElementById('resultDescription').textContent = correct ? `+${gain.toLocaleString('fr-FR')} jetons 🎉` : 'Partie terminée.';
+  document.getElementById('resultDescription').textContent = correct ? `+${gain.toLocaleString('fr-FR')} FCFA 🎉` : 'Partie terminée.';
   showScreen('resultScreen');
   setTimeout(() => {
     if (correct) {
@@ -1633,11 +1633,11 @@ function updateTimerDisplay(sec, max) {
 function updateScoreDisplay() {
   let sc = STATE.score;
   if (STATE.mode === 'pyramide-inverse') sc = STATE.pyramideAmount;
-  document.getElementById('scoreDisplay').textContent = sc.toLocaleString('fr-FR') + ' jetons';
+  document.getElementById('scoreDisplay').textContent = sc.toLocaleString('fr-FR') + ' FCFA';
 }
 
 function updateTokensDisplay() {
-  document.getElementById('tokensDisplay').textContent = STATE.tokens + ' jetons';
+  document.getElementById('tokensDisplay').textContent = STATE.tokens + ' FCFA';
   document.getElementById('homeTokensDisplay').textContent = STATE.tokens;
 }
 
@@ -1648,7 +1648,7 @@ function buildGainsList() {
     const item = document.createElement('div');
     item.className = 'gain-item future';
     item.id = `gain-${i}`;
-    item.innerHTML = `<span><span class="gain-dot"></span> Q${i+1}</span><span>${GAINS[i].toLocaleString('fr-FR')} jetons</span>`;
+    item.innerHTML = `<span><span class="gain-dot"></span> Q${i+1}</span><span>${GAINS[i].toLocaleString('fr-FR')} FCFA</span>`;
     list.appendChild(item);
   }
 }
@@ -1739,7 +1739,7 @@ function endGame(completed, surrendered=false) {
   u.tokens = STATE.tokens;
   saveUsers();
 
-  document.getElementById('finalScore').textContent = finalSc.toLocaleString('fr-FR') + ' jetons';
+  document.getElementById('finalScore').textContent = finalSc.toLocaleString('fr-FR') + ' FCFA';
   document.getElementById('endTokensDisplay').textContent = STATE.tokens;
   document.getElementById('endModeDisplay').textContent = GAME_MODES.find(m=>m.id===STATE.mode)?.name || 'Classique';
 
@@ -1772,7 +1772,7 @@ function showLeaderboard() {
           <div class="leaderboard-name">${name}</div>
           <div class="leaderboard-meta">${u.region||'Zone inconnue'} · ${u.gamesPlayed||0} parties</div>
         </div>
-        <div class="leaderboard-score">${(u.bestScore||0).toLocaleString('fr-FR')} jetons</div>
+        <div class="leaderboard-score">${(u.bestScore||0).toLocaleString('fr-FR')} FCFA</div>
       `;
       list.appendChild(item);
     });
