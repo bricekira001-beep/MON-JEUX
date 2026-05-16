@@ -3,26 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
 <title>LAKOTA — Culture Générale</title>
-
-<!-- ICONES iPhone / Web -->
-<link rel="apple-touch-icon" href="LAKOTA.png">
-<link rel="icon" type="image/png" href="LAKOTA.png">
-
-<!-- MODE APP iPhone -->
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="LAKOTA">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
-<!-- THEME (important pour PWA iPhone moderne) -->
-<meta name="theme-color" content="#000000">
-
-<!-- FONTS -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-</head>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 :root{
@@ -31,20 +17,15 @@
   --violet:#7C4DFF;--violet-l:#B39DFF;--violet-d:#4A2DB8;
   --emerald:#00C896;--emerald-l:#6EFFD5;--emerald-d:#007A5E;
   --rose:#FF4D8D;--rose-l:#FF9DC1;
-  --bg:#080618;--bg2:#110828;--bg3:#180E35;
-  --glass:rgba(255,255,255,0.06);
-  --glass-h:rgba(255,255,255,0.1);
-  --gb:rgba(255,255,255,0.1);
-  --gb-h:rgba(255,255,255,0.22);
+  --bg:#080618;--bg2:#110828;
+  --glass:rgba(255,255,255,0.06);--glass-h:rgba(255,255,255,0.1);
+  --gb:rgba(255,255,255,0.1);--gb-h:rgba(255,255,255,0.22);
   --txt:#F8F4FF;--txt2:rgba(248,244,255,0.65);--txt3:rgba(248,244,255,0.35);
-  --sg:rgba(244,166,35,0.35);--sc:rgba(255,107,74,0.35);
-  --sv:rgba(124,77,255,0.35);--se:rgba(0,200,150,0.35);
+  --sg:rgba(244,166,35,0.35);--sc:rgba(255,107,74,0.35);--sv:rgba(124,77,255,0.35);
   --r-sm:10px;--r-md:14px;--r-lg:20px;--r-xl:28px;--r-full:999px;
-  --font-d:'Playfair Display',serif;
-  --font-b:'Syne',sans-serif;
+  --font-d:'Playfair Display',serif;--font-b:'Syne',sans-serif;
   --tr:0.22s cubic-bezier(0.4,0,0.2,1);
-  --safe-top:env(safe-area-inset-top,0px);
-  --safe-bot:env(safe-area-inset-bottom,0px);
+  --safe-top:env(safe-area-inset-top,0px);--safe-bot:env(safe-area-inset-bottom,0px);
 }
 html{font-size:16px;scroll-behavior:smooth}
 body{font-family:var(--font-b);background:var(--bg);color:var(--txt);min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased;overscroll-behavior:none}
@@ -77,11 +58,9 @@ img{max-width:100%;display:block}
 @keyframes orbFloat2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-4%,-3%) scale(0.95)}}
 @keyframes orbFloat3{0%,100%{transform:translate(0,0)}50%{transform:translate(-5%,4%)}}
 
-/* ANIMATIONS */
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 @keyframes scaleIn{from{opacity:0;transform:scale(0.9)}to{opacity:1;transform:scale(1)}}
-@keyframes slideDown{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:translateY(0)}}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(244,166,35,0.5)}70%{box-shadow:0 0 0 10px rgba(244,166,35,0)}}
 @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 @keyframes shimmer{from{background-position:-200% center}to{background-position:200% center}}
@@ -95,21 +74,17 @@ img{max-width:100%;display:block}
 @keyframes winRays{0%{opacity:0;transform:scale(0.5) rotate(0deg)}50%{opacity:1}100%{opacity:0;transform:scale(2) rotate(180deg)}}
 @keyframes scoreCount{from{transform:scale(1.4);color:var(--gold)}to{transform:scale(1);color:inherit}}
 @keyframes badgeUnlock{0%{transform:scale(0) rotate(-20deg)}60%{transform:scale(1.2) rotate(5deg)}100%{transform:scale(1) rotate(0deg)}}
-@keyframes progressFill{from{width:0}to{width:var(--prog)}}
 
-/* GLASS */
 .glass{background:var(--glass);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid var(--gb);border-radius:var(--r-lg)}
-
-/* SCREENS */
 .screen{display:none;position:relative;z-index:1;min-height:100dvh;padding:0}
 .screen.active{display:flex;flex-direction:column}
 #gameScreen.active{display:block}
+.eyebrow{font-size:0.65rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--txt3);font-weight:600;margin-bottom:0.3rem}
 
-/* ===== AUTH ===== */
+/* AUTH */
 #authScreen{padding:calc(var(--safe-top) + 1.5rem) 1rem 1.5rem;align-items:center;justify-content:center}
 .auth-wrap{width:100%;max-width:420px;animation:fadeUp 0.6s ease both}
 .auth-hero{text-align:center;padding:1.5rem 1rem 1.25rem;margin-bottom:0.5rem}
-.auth-hero .eyebrow{font-size:0.65rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--txt3);margin-bottom:0.4rem}
 .brand-title{font-family:var(--font-d);font-weight:900;letter-spacing:0.06em;background:linear-gradient(135deg,var(--gold-l) 0%,var(--gold) 35%,var(--coral) 70%,var(--violet-l) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background-size:200% auto;animation:shimmer 4s linear infinite;line-height:1}
 .auth-hero .brand-title{font-size:clamp(2.5rem,12vw,4rem)}
 .hero-sub{font-size:0.85rem;color:var(--txt2);margin:0.4rem 0 0.6rem;font-style:italic}
@@ -121,38 +96,32 @@ img{max-width:100%;display:block}
 .auth-tab.active{background:linear-gradient(135deg,var(--gold-d),var(--gold));color:#080618;font-weight:800}
 .auth-form{display:flex;flex-direction:column;gap:0.9rem}
 .auth-form.hidden-panel{display:none}
-.auth-form .panel-title{font-family:var(--font-d);font-size:1.3rem;font-weight:800;margin-bottom:0.1rem}
 .field{display:flex;flex-direction:column;gap:0.35rem}
 .field span{font-size:0.72rem;font-weight:700;color:var(--txt3);text-transform:uppercase;letter-spacing:0.1em}
 .field input{padding:0.85rem 1rem;border-radius:var(--r-md);background:rgba(255,255,255,0.06);border:1px solid var(--gb);color:var(--txt);font-size:1rem;transition:all var(--tr);min-height:44px}
 .field input:focus{border-color:rgba(244,166,35,0.6);background:rgba(255,255,255,0.09);box-shadow:0 0 0 3px rgba(244,166,35,0.15)}
-.status-message{font-size:0.82rem;min-height:1.1rem;text-align:center;margin-top:0.5rem;transition:all var(--tr)}
-.status-message.error{color:var(--coral)}
-.status-message.success{color:var(--emerald)}
+.status-message{font-size:0.82rem;min-height:1.1rem;text-align:center;margin-top:0.5rem}
+.status-message.error{color:var(--coral)}.status-message.success{color:var(--emerald)}
 
 /* BUTTONS */
 .btn{display:inline-flex;align-items:center;justify-content:center;padding:0.85rem 1.5rem;border-radius:var(--r-md);font-weight:700;font-size:0.9rem;transition:all var(--tr);letter-spacing:0.03em;position:relative;overflow:hidden;min-height:44px;min-width:44px}
 .btn::after{content:'';position:absolute;inset:0;opacity:0;transition:opacity var(--tr);background:rgba(255,255,255,0.12)}
-.btn:hover::after{opacity:1}
-.btn:active{transform:scale(0.96)}
-.btn-primary{background:linear-gradient(135deg,var(--gold-d),var(--gold),var(--coral));color:#080618;font-weight:800;box-shadow:0 4px 20px var(--sg),0 2px 8px rgba(0,0,0,0.3)}
+.btn:hover::after{opacity:1}.btn:active{transform:scale(0.96)}
+.btn-primary{background:linear-gradient(135deg,var(--gold-d),var(--gold),var(--coral));color:#080618;font-weight:800;box-shadow:0 4px 20px var(--sg)}
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px var(--sg)}
 .btn-secondary{background:var(--glass);border:1px solid var(--gb);color:var(--txt2)}
 .btn-secondary:hover{background:var(--glass-h);border-color:var(--gb-h);color:var(--txt)}
 .btn-small{padding:0.5rem 1rem;font-size:0.78rem;border-radius:var(--r-sm);min-height:36px}
 .btn-danger{background:linear-gradient(135deg,#5a0000,#A01028);color:#fff;border:1px solid rgba(160,16,40,0.5);box-shadow:0 4px 20px rgba(160,16,40,0.35)}
-.btn-danger:hover{transform:translateY(-1px);box-shadow:0 6px 28px rgba(160,16,40,0.5)}
 .pulse-soft{animation:pulse 2.5s ease-in-out infinite}
-.eyebrow{font-size:0.65rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--txt3);font-weight:600;margin-bottom:0.3rem}
 
-/* ===== HOME ===== */
+/* HOME */
 #homeScreen{padding:calc(var(--safe-top) + 1rem) 1rem calc(var(--safe-bot) + 1rem);align-items:center;justify-content:center}
 .home-wrap{width:100%;max-width:480px;display:flex;flex-direction:column;gap:1rem;animation:fadeUp 0.5s ease both}
 .home-topbar{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 1rem}
-.player-btn{display:flex;align-items:center;gap:0.6rem;background:none;border:none;cursor:pointer;min-height:44px}
-.player-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--violet),var(--coral));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;color:#fff;flex-shrink:0;overflow:hidden;position:relative}
+.player-btn{display:flex;align-items:center;gap:0.6rem;cursor:pointer;min-height:44px}
+.player-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--violet),var(--coral));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;color:#fff;flex-shrink:0;overflow:hidden}
 .player-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%}
-.player-name-wrap{text-align:left}
 .player-name-wrap strong{display:block;font-size:0.88rem;font-weight:700}
 .player-name-wrap small{font-size:0.68rem;color:var(--txt3)}
 .home-hero{text-align:center;padding:1rem 0.5rem 0.5rem}
@@ -164,15 +133,24 @@ img{max-width:100%;display:block}
 .stat-card .value{font-size:1.15rem;font-weight:700;background:linear-gradient(90deg,var(--gold),var(--coral));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .difficulty-block{padding:1rem}
 .diff-label{font-size:0.65rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--txt3);font-weight:600;margin-bottom:0.6rem}
-.diff-note{font-size:0.72rem;color:var(--txt3);line-height:1.5;margin-top:0.5rem}
 .difficulty-selector{display:flex;gap:0.35rem;background:rgba(0,0,0,0.3);padding:0.25rem;border-radius:var(--r-md);margin-bottom:0.4rem}
 .difficulty-btn{flex:1;padding:0.55rem 0.5rem;border-radius:calc(var(--r-md) - 2px);font-weight:700;font-size:0.8rem;color:var(--txt3);transition:all var(--tr);background:none;min-height:40px}
 .difficulty-btn.active{background:linear-gradient(135deg,var(--violet-d),var(--violet));color:#fff;box-shadow:0 4px 14px var(--sv)}
+.diff-note{font-size:0.72rem;color:var(--txt3);line-height:1.5;margin-top:0.5rem}
 .cta-block{display:flex;flex-direction:column;gap:0.6rem;padding:0 0.25rem}
 .cta-block .btn{width:100%;padding:1rem}
 .cta-row{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem}
 
-/* ===== MODE SELECTOR ===== */
+/* CATEGORY SELECTOR */
+.cat-selector-wrap{padding:0.75rem;display:flex;flex-direction:column;gap:0.5rem}
+.cat-selector-title{font-size:0.65rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--txt3);font-weight:600}
+.cat-pills{display:flex;gap:0.35rem;flex-wrap:wrap}
+.cat-pill{padding:0.3rem 0.7rem;border-radius:var(--r-full);font-size:0.68rem;font-weight:700;border:1px solid var(--gb);color:var(--txt3);background:rgba(255,255,255,0.04);cursor:pointer;transition:all var(--tr)}
+.cat-pill.active{background:rgba(244,166,35,0.2);border-color:rgba(244,166,35,0.5);color:var(--gold)}
+.cat-pill.ci{background:rgba(255,107,74,0.12);border-color:rgba(255,107,74,0.35);color:var(--coral-l)}
+.cat-pill.ci.active{background:rgba(255,107,74,0.25);border-color:var(--coral)}
+
+/* MODE SELECTOR */
 #modeSelectorScreen{padding:calc(var(--safe-top) + 0.75rem) 0.75rem calc(var(--safe-bot) + 1rem);overflow-y:auto}
 .mode-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem;padding:0 0.25rem}
 .mode-header h2{font-family:var(--font-d);font-size:clamp(1.5rem,6vw,2.2rem);font-weight:800}
@@ -185,16 +163,14 @@ img{max-width:100%;display:block}
 .mode-card:active{transform:scale(0.98)}
 .mode-card-row{display:flex;align-items:flex-start;gap:0.75rem;margin-bottom:0.6rem}
 .mode-icon{width:44px;height:44px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
-.mode-info{flex:1;min-width:0}
 .mode-info h3{font-family:var(--font-d);font-size:1rem;font-weight:800;margin-bottom:0.15rem}
 .mode-tags{display:flex;gap:0.3rem;flex-wrap:wrap}
 .mode-tag{padding:0.15rem 0.5rem;border-radius:4px;font-size:0.6rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em}
 .mode-desc{font-size:0.78rem;color:var(--txt2);line-height:1.45;margin-bottom:0.4rem}
 .mode-hook{font-size:0.74rem;font-weight:700;color:var(--gold);margin-bottom:0.5rem}
 .mode-play-btn{display:flex;align-items:center;justify-content:center;gap:0.4rem;padding:0.6rem 1.2rem;border-radius:var(--r-md);font-size:0.78rem;font-weight:800;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:var(--txt);transition:all var(--tr);min-height:40px}
-.mode-play-btn:active{transform:scale(0.97)}
 
-/* ===== TRANSITION ===== */
+/* TRANSITION */
 #transitionScreen{align-items:center;justify-content:center}
 .transition-box{padding:3rem 2rem;text-align:center;max-width:300px;width:90%;animation:scaleIn 0.4s ease both}
 .transition-ring{width:90px;height:90px;border-radius:50%;border:3px solid var(--gb);border-top-color:var(--gold);border-right-color:var(--coral);animation:spin 1s linear infinite;margin:0 auto 1.5rem;display:flex;align-items:center;justify-content:center}
@@ -202,7 +178,7 @@ img{max-width:100%;display:block}
 .transition-text{font-family:var(--font-d);font-size:1.5rem;font-weight:700;margin-bottom:0.3rem}
 .transition-sub{color:var(--txt3);font-size:0.82rem}
 
-/* ===== GAME SCREEN ===== */
+/* GAME */
 .game-shell{max-width:500px;margin:0 auto;padding:calc(var(--safe-top) + 0.5rem) 0.65rem calc(var(--safe-bot) + 0.65rem);display:flex;flex-direction:column;gap:0.6rem;min-height:100dvh}
 .game-header{display:grid;grid-template-columns:1fr 1fr;gap:0.5rem}
 .brand-card{padding:0.65rem 0.85rem;display:flex;align-items:center;gap:0.55rem;grid-column:1/-1}
@@ -214,17 +190,16 @@ img{max-width:100%;display:block}
 .stat-label{font-size:0.58rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--txt3);font-weight:600}
 .stat-value{font-size:0.95rem;font-weight:700;line-height:1.1}
 .token-card .stat-value{background:linear-gradient(90deg,var(--gold),var(--gold-l));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.score-card .stat-value{background:linear-gradient(90deg,var(--emerald),var(--emerald-l));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;transition:transform 0.3s ease}
+.score-card .stat-value{background:linear-gradient(90deg,var(--emerald),var(--emerald-l));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .score-card .stat-value.bump{animation:scoreCount 0.4s ease}
 
-/* TIMER */
 .timer-card{padding:0.6rem 0.85rem;display:flex;align-items:center;gap:0.75rem;grid-column:1/-1}
 .timer-left{flex:1}
 .timer-row{display:flex;align-items:center;gap:0.4rem;margin-bottom:0.25rem}
 .timer-digital{font-family:var(--font-d);font-size:1.4rem;font-weight:700;transition:color 0.5s ease}
 .timer-digital.danger{color:var(--coral);animation:blink 0.5s ease-in-out infinite}
 .timer-track{height:3px;background:rgba(255,255,255,0.1);border-radius:999px;overflow:hidden}
-.timer-bar{height:100%;width:100%;border-radius:999px;background:linear-gradient(90deg,var(--emerald),var(--gold),var(--coral));transition:width 1s linear,background 0.5s ease}
+.timer-bar{height:100%;width:100%;border-radius:999px;background:linear-gradient(90deg,var(--emerald),var(--gold),var(--coral));transition:width 1s linear}
 .timer-bar.danger{background:var(--coral)}
 .timer-ring{position:relative;width:46px;height:46px;flex-shrink:0}
 .timer-ring-svg{width:46px;height:46px;transform:rotate(-90deg)}
@@ -232,25 +207,24 @@ img{max-width:100%;display:block}
 .ring-prog{fill:none;stroke:url(#rg);stroke-width:4;stroke-dasharray:119;stroke-linecap:round;transition:stroke-dashoffset 1s linear}
 .timer-num{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:0.78rem;font-weight:700}
 
-/* MODE BADGE */
 .mode-badge-bar{padding:0.5rem 0.85rem;display:flex;align-items:center;gap:0.75rem}
 .mode-badge-pill{padding:0.2rem 0.75rem;border-radius:var(--r-full);font-size:0.65rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em}
 
-/* META ROW */
+.cat-badge{padding:0.2rem 0.6rem;border-radius:var(--r-full);font-size:0.6rem;font-weight:800;background:rgba(255,107,74,0.2);border:1px solid rgba(255,107,74,0.4);color:var(--coral-l)}
+
 .meta-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0.5rem}
 .meta-card{padding:0.55rem 0.65rem;text-align:center}
 .meta-label{font-size:0.55rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--txt3);font-weight:600}
 .meta-value{font-size:0.82rem;font-weight:700;margin-top:0.1rem}
 
-/* QUESTION CARD */
 .question-card{padding:1.25rem 1.1rem;text-align:center;position:relative;overflow:hidden;min-height:100px}
 .question-card::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:60%;height:1px;background:linear-gradient(90deg,transparent,rgba(244,166,35,0.5),transparent)}
 .question-badge{font-size:0.6rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--gold);font-weight:700;margin-bottom:0.6rem}
-.question-text{font-family:var(--font-d);font-size:clamp(1rem,4.5vw,1.35rem);font-weight:700;line-height:1.35;color:var(--txt)}
-.question-hint{font-size:0.75rem;color:var(--txt3);margin-top:0.6rem;font-style:italic}
+.question-text{font-family:var(--font-d);font-size:clamp(0.95rem,4.5vw,1.3rem);font-weight:700;line-height:1.35;color:var(--txt)}
+.question-meta{display:flex;gap:0.4rem;justify-content:center;align-items:center;margin-top:0.5rem;flex-wrap:wrap}
+.question-cat-tag{font-size:0.6rem;padding:0.15rem 0.5rem;border-radius:var(--r-full);font-weight:700;text-transform:uppercase;letter-spacing:0.08em}
 #modeSpecialUI{margin-top:0.5rem}
 
-/* ANSWERS */
 .answers-grid{display:flex;flex-direction:column;gap:0.55rem}
 .answer-btn{padding:0.85rem 1rem;text-align:left;display:flex;align-items:center;gap:0.75rem;transition:all var(--tr);position:relative;overflow:hidden;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.09);border-radius:var(--r-md);color:var(--txt);min-height:54px;width:100%}
 .answer-btn::before{content:'';position:absolute;inset:0;opacity:0;transition:opacity var(--tr);border-radius:inherit}
@@ -258,7 +232,6 @@ img{max-width:100%;display:block}
 .answer-btn.correct{border-color:var(--emerald)!important;background:rgba(0,200,150,0.15)!important;animation:correctGlow 0.6s ease}
 .answer-btn.wrong{border-color:var(--coral)!important;background:rgba(255,107,74,0.15)!important;animation:shake 0.4s ease,wrongGlow 0.6s ease}
 .answer-btn.eliminated{opacity:0.25;pointer-events:none}
-.answer-btn.ghost-mode{animation:ghost-fade 1.5s ease forwards}
 .answer-blue::before{background:linear-gradient(135deg,rgba(124,77,255,0.2),rgba(124,77,255,0.04))}
 .answer-orange::before{background:linear-gradient(135deg,rgba(255,107,74,0.2),rgba(255,107,74,0.04))}
 .answer-green::before{background:linear-gradient(135deg,rgba(0,200,150,0.2),rgba(0,200,150,0.04))}
@@ -268,23 +241,20 @@ img{max-width:100%;display:block}
 .answer-green:hover{border-color:rgba(0,200,150,0.5)!important}
 .answer-violet:hover{border-color:rgba(244,166,35,0.5)!important}
 .answer-btn:hover::before{opacity:1}
-.answer-letter{width:34px;height:34px;border-radius:10px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.82rem;transition:all var(--tr)}
+.answer-letter{width:34px;height:34px;border-radius:10px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.82rem}
 .answer-blue .answer-letter{background:linear-gradient(135deg,#7C4DFF,#B39DFF);color:#fff;box-shadow:0 4px 12px rgba(124,77,255,0.4)}
 .answer-orange .answer-letter{background:linear-gradient(135deg,#FF6B4A,#FF9580);color:#fff;box-shadow:0 4px 12px rgba(255,107,74,0.4)}
 .answer-green .answer-letter{background:linear-gradient(135deg,#00C896,#6EFFD5);color:#080618;box-shadow:0 4px 12px rgba(0,200,150,0.4)}
 .answer-violet .answer-letter{background:linear-gradient(135deg,#F4A623,#FFD580);color:#080618;box-shadow:0 4px 12px rgba(244,166,35,0.4)}
 .answer-label{font-size:0.88rem;font-weight:500;line-height:1.2;flex:1}
-
-/* RIPPLE */
 .ripple-el{position:absolute;border-radius:50%;background:rgba(255,255,255,0.25);pointer-events:none;animation:ripple 0.6s ease forwards}
 
-/* LIFELINES */
 .lifelines-bar{padding:0.7rem 0.65rem;display:flex;flex-direction:column;gap:0.4rem}
 .lifelines-head{font-size:0.6rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--txt3);font-weight:600}
 .lifelines-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.5rem}
 .lifeline-btn{padding:0.6rem 0.75rem;border-radius:var(--r-md);display:flex;align-items:center;gap:0.5rem;transition:all var(--tr);border:1px solid;min-height:46px;position:relative;overflow:hidden}
 .lifeline-btn:active{transform:scale(0.96)}
-.lifeline-btn:disabled,.lifeline-btn.used{opacity:0.35;pointer-events:none;filter:grayscale(0.8)}
+.lifeline-btn.used{opacity:0.35;pointer-events:none;filter:grayscale(0.8)}
 .lifeline-btn.used::after{content:'UTILISÉ';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:0.55rem;font-weight:800;letter-spacing:0.15em;background:rgba(8,6,24,0.6);color:var(--txt3)}
 .lifeline-icon{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.78rem;flex-shrink:0}
 .lifeline-copy strong{display:block;font-size:0.75rem;font-weight:700;line-height:1}
@@ -298,7 +268,6 @@ img{max-width:100%;display:block}
 .lifeline-gold{background:rgba(244,166,35,0.1);border-color:rgba(244,166,35,0.25);color:var(--gold-l)}
 .lifeline-gold .lifeline-icon{background:linear-gradient(135deg,#F4A623,#FFD580);color:#080618}
 
-/* GAINS PANEL */
 .gains-panel{padding:0.75rem;display:flex;flex-direction:column;gap:0.3rem}
 .gains-title{font-size:0.6rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--txt3);font-weight:600;margin-bottom:0.2rem;padding:0 0.1rem}
 .gains-scroll{display:flex;flex-direction:column;gap:0.25rem;max-height:200px;overflow-y:auto;-ms-overflow-style:none;scrollbar-width:none}
@@ -312,22 +281,19 @@ img{max-width:100%;display:block}
 .gain-item.passed .gain-dot{background:var(--emerald)}
 .gain-item.future .gain-dot{background:rgba(255,255,255,0.15)}
 
-/* BOTTOM BAR */
 .bottom-bar{padding:0.6rem;display:grid;grid-template-columns:1fr 1.2fr 1fr;gap:0.4rem}
 .bottom-action{padding:0.65rem 0.5rem;border-radius:var(--r-md);font-weight:700;font-size:0.72rem;letter-spacing:0.04em;text-transform:uppercase;transition:all var(--tr);border:1px solid;min-height:44px;text-align:center}
 .bottom-home{background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.1);color:var(--txt2)}
 .bottom-abandon{background:linear-gradient(135deg,#5a0000,#A01028);border-color:rgba(160,16,40,0.5);color:#fff;box-shadow:0 4px 16px rgba(160,16,40,0.3)}
 .bottom-logout{background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.1);color:var(--txt2)}
 
-/* RESULT SCREEN */
+/* RESULT / END */
 #resultScreen{align-items:center;justify-content:center}
-.result-panel{padding:2.5rem 2rem;text-align:center;max-width:340px;width:90%;animation:scaleIn 0.4s ease both;position:relative;overflow:hidden}
+.result-panel{padding:2.5rem 2rem;text-align:center;max-width:340px;width:90%;animation:scaleIn 0.4s ease both}
 .result-tag{font-size:0.62rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--txt3);margin-bottom:0.75rem}
 .result-panel h2{font-family:var(--font-d);font-size:1.9rem;font-weight:800;margin-bottom:0.5rem}
 .result-panel p{color:var(--txt2);font-size:0.88rem}
 .result-icon{font-size:3rem;margin-bottom:0.5rem;display:block;animation:float 2s ease-in-out infinite}
-
-/* END SCREEN */
 #endScreen{align-items:center;justify-content:center;padding:1rem}
 .end-panel{padding:2.5rem 1.5rem;text-align:center;max-width:380px;width:100%;animation:scaleIn 0.4s ease both}
 .victory-orb{width:80px;height:80px;border-radius:50%;margin:0 auto 1.5rem;background:linear-gradient(135deg,var(--gold-d),var(--gold),var(--coral));box-shadow:0 0 50px var(--sg),0 0 100px rgba(255,107,74,0.15);animation:float 3s ease-in-out infinite}
@@ -348,32 +314,28 @@ img{max-width:100%;display:block}
 .lb-header h2{font-family:var(--font-d);font-size:1.8rem;font-weight:800}
 .lb-sub{font-size:0.75rem;color:var(--txt3);margin-top:0.2rem}
 .lb-list{display:flex;flex-direction:column;gap:0.55rem}
-.lb-item{display:grid;grid-template-columns:44px 1fr auto;gap:0.75rem;align-items:center;padding:0.85rem 1rem;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:var(--r-md);transition:transform var(--tr),background var(--tr);animation:fadeUp 0.4s ease both}
+.lb-item{display:grid;grid-template-columns:44px 1fr auto;gap:0.75rem;align-items:center;padding:0.85rem 1rem;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:var(--r-md);animation:fadeUp 0.4s ease both}
 .lb-item.top-1{border-color:rgba(244,166,35,0.45);background:rgba(244,166,35,0.08)}
 .lb-rank{font-family:var(--font-d);font-size:1rem;font-weight:800;text-align:center}
 .lb-name{font-weight:700;font-size:0.88rem}
 .lb-meta{color:var(--txt3);font-size:0.72rem;margin-top:0.1rem}
 .lb-score{font-weight:800;color:var(--gold);font-size:0.88rem;text-align:right}
 
-/* ===== PROFILE SCREEN ===== */
+/* PROFILE */
 #profileScreen{padding:calc(var(--safe-top)+0.75rem) 0.75rem calc(var(--safe-bot)+1rem);overflow-y:auto}
 .profile-wrap{max-width:480px;margin:0 auto;animation:fadeUp 0.4s ease both;display:flex;flex-direction:column;gap:1rem}
-.profile-header{display:flex;align-items:center;justify-content:space-between;padding:0 0.25rem;margin-bottom:0.25rem}
+.profile-header{display:flex;align-items:center;justify-content:space-between;padding:0 0.25rem;margin-bottom:0.25rem;flex-wrap:wrap;gap:0.5rem}
 .profile-header h2{font-family:var(--font-d);font-size:1.8rem;font-weight:800}
-
-/* Avatar section */
 .profile-avatar-section{padding:1.5rem 1rem;display:flex;flex-direction:column;align-items:center;gap:0.75rem}
-.profile-avatar-big{width:88px;height:88px;border-radius:50%;background:linear-gradient(135deg,var(--violet),var(--coral));display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-weight:900;font-size:2rem;color:#fff;position:relative;cursor:pointer;overflow:hidden;box-shadow:0 0 0 3px rgba(244,166,35,0.4),0 8px 32px rgba(0,0,0,0.4);flex-shrink:0}
+.profile-avatar-big{width:88px;height:88px;border-radius:50%;background:linear-gradient(135deg,var(--violet),var(--coral));display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-weight:900;font-size:2rem;color:#fff;position:relative;cursor:pointer;overflow:hidden;box-shadow:0 0 0 3px rgba(244,166,35,0.4),0 8px 32px rgba(0,0,0,0.4)}
 .profile-avatar-big img{width:100%;height:100%;object-fit:cover;border-radius:50%}
 .avatar-edit-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.55);display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;transition:opacity var(--tr);border-radius:50%;font-size:1.2rem;gap:0.1rem}
-.profile-avatar-big:hover .avatar-edit-overlay,.profile-avatar-big:focus .avatar-edit-overlay{opacity:1}
-.avatar-edit-overlay span{font-size:0.55rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#fff}
+.profile-avatar-big:hover .avatar-edit-overlay{opacity:1}
+.avatar-edit-overlay small{font-size:0.55rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#fff}
 .profile-name-edit{display:flex;gap:0.5rem;align-items:center;width:100%}
 .profile-name-input{flex:1;padding:0.65rem 1rem;border-radius:var(--r-md);background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);color:var(--txt);font-size:1rem;font-weight:700;text-align:center}
 .profile-name-input:focus{border-color:rgba(244,166,35,0.5);outline:none}
-.profile-save-btn{padding:0.65rem 1.2rem;border-radius:var(--r-md);background:linear-gradient(135deg,var(--gold-d),var(--gold));color:#080618;font-weight:800;font-size:0.82rem;flex-shrink:0}
-
-/* Profile stats */
+.profile-save-btn{padding:0.65rem 1.2rem;border-radius:var(--r-md);background:linear-gradient(135deg,var(--gold-d),var(--gold));color:#080618;font-weight:800;font-size:0.82rem}
 .profile-stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;padding:0 0.1rem}
 .pstat-card{padding:0.85rem 1rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r-md);display:flex;flex-direction:column;gap:0.25rem}
 .pstat-label{font-size:0.6rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--txt3);font-weight:600}
@@ -382,16 +344,12 @@ img{max-width:100%;display:block}
 .pstat-value.emerald{background:linear-gradient(90deg,var(--emerald),var(--emerald-l));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .pstat-value.violet{background:linear-gradient(90deg,var(--violet-l),var(--violet));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .pstat-value.coral{background:linear-gradient(90deg,var(--coral),var(--coral-l));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-
-/* Level bar */
 .level-bar-wrap{padding:1rem;display:flex;flex-direction:column;gap:0.5rem}
 .level-bar-top{display:flex;justify-content:space-between;align-items:flex-end}
 .level-name{font-weight:800;font-size:0.95rem}
 .level-next{font-size:0.7rem;color:var(--txt3)}
 .level-track{height:6px;background:rgba(255,255,255,0.1);border-radius:999px;overflow:hidden}
 .level-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--violet),var(--gold),var(--coral));transition:width 1s ease}
-
-/* BADGES SECTION */
 .badges-section{padding:0.25rem 0.1rem}
 .badges-section-title{font-family:var(--font-d);font-size:1.1rem;font-weight:800;margin-bottom:0.75rem;padding:0 0.25rem;display:flex;align-items:center;justify-content:space-between}
 .badges-unlocked-count{font-size:0.72rem;font-weight:600;color:var(--txt3);font-family:var(--font-b)}
@@ -407,15 +365,15 @@ img{max-width:100%;display:block}
 .badge-prog-fill{height:100%;border-radius:999px;transition:width 1s ease}
 .badge-prog-label{font-size:0.58rem;color:var(--txt3)}
 
-/* Avatar options popup */
+/* AVATAR PICKER */
 .avatar-options{display:flex;flex-wrap:wrap;gap:0.5rem;justify-content:center;padding:0.5rem 0}
 .avatar-option{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;border:2px solid var(--gb);cursor:pointer;transition:all var(--tr)}
 .avatar-option:hover,.avatar-option.selected{border-color:var(--gold);transform:scale(1.1);box-shadow:0 0 12px var(--sg)}
 
 /* TOASTS */
-.toast-stack{position:fixed;bottom:calc(var(--safe-bot) + 1rem);right:0.75rem;left:0.75rem;z-index:9999;display:flex;flex-direction:column-reverse;gap:0.5rem;pointer-events:none;max-width:420px;margin:0 auto}
+.toast-stack{position:fixed;bottom:calc(var(--safe-bot)+1rem);right:0.75rem;left:0.75rem;z-index:9999;display:flex;flex-direction:column-reverse;gap:0.5rem;pointer-events:none;max-width:420px;margin:0 auto}
 .toast{background:rgba(12,6,32,0.95);backdrop-filter:blur(16px);border:1px solid var(--gb);border-radius:var(--r-md);padding:0.75rem 1.1rem;font-size:0.82rem;font-weight:500;color:var(--txt);animation:fadeUp 0.3s ease both;box-shadow:0 8px 24px rgba(0,0,0,0.4);pointer-events:auto}
-.toast.toast-gold{border-color:rgba(244,166,35,0.5);box-shadow:0 4px 16px var(--sg)}
+.toast.toast-gold{border-color:rgba(244,166,35,0.5)}
 .toast.toast-emerald{border-color:rgba(0,200,150,0.5)}
 .toast.toast-coral{border-color:rgba(255,107,74,0.5)}
 .toast.toast-violet{border-color:rgba(124,77,255,0.5)}
@@ -429,18 +387,14 @@ img{max-width:100%;display:block}
 .modal-copy{font-size:0.82rem;color:var(--txt2);margin-bottom:1.25rem;line-height:1.55}
 .modal-actions{display:flex;gap:0.6rem}
 .modal-actions .btn{flex:1}
-/* Confirm leave modal specific */
-#confirmLeaveModal .modal-card{border:1px solid rgba(160,16,40,0.4)}
-#confirmLeaveModal .leave-icon{font-size:2.5rem;margin-bottom:0.75rem;display:block;text-align:center}
 
-/* SPECIAL MODE UIs */
+/* SPECIAL */
 .double-ou-rien-choice{display:flex;flex-direction:column;gap:0.6rem;margin-top:0.75rem}
 .double-ou-rien-choice .btn{width:100%;padding:0.85rem}
 .chain-indicator{display:flex;gap:0.3rem;justify-content:center;flex-wrap:wrap;margin:0.4rem 0}
 .chain-link{width:26px;height:26px;border-radius:7px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:800;transition:all var(--tr)}
 .chain-link.ok{background:rgba(0,200,150,0.3);border-color:var(--emerald);color:var(--emerald)}
 .chain-link.current{background:rgba(244,166,35,0.3);border-color:var(--gold);color:var(--gold);animation:blink 1s infinite}
-.chain-link.broken{background:rgba(255,107,74,0.3);border-color:var(--coral);color:var(--coral)}
 .bet-wrap{margin-top:0.6rem;padding:0.85rem;background:rgba(0,0,0,0.3);border-radius:var(--r-md);border:1px solid rgba(244,166,35,0.3)}
 .bet-label{font-size:0.65rem;color:var(--txt3);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.35rem}
 .bet-display{font-family:var(--font-d);font-size:1.3rem;font-weight:800;color:var(--gold);text-align:center;margin-bottom:0.35rem}
@@ -451,35 +405,43 @@ img{max-width:100%;display:block}
 .sniper-btn:active{transform:scale(0.97)}
 .sniper-num{width:28px;height:28px;border-radius:8px;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.78rem;flex-shrink:0}
 
-/* WIN FLASH */
 .win-flash{position:fixed;inset:0;pointer-events:none;z-index:7000}
 .win-ray{position:absolute;top:50%;left:50%;width:200%;height:4px;background:linear-gradient(90deg,transparent,rgba(244,166,35,0.6),transparent);transform-origin:left center;opacity:0}
-.score-pop{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:7500;font-family:var(--font-d);font-size:2rem;font-weight:900;color:var(--gold);text-shadow:0 0 20px var(--sg);animation:fadeUp 0.3s ease both,fadeIn 0.1s ease}
-
-/* FILE INPUT hidden */
+.score-pop{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:7500;font-family:var(--font-d);font-size:2rem;font-weight:900;color:var(--gold);text-shadow:0 0 20px var(--sg);animation:fadeUp 0.3s ease both}
 #avatarFileInput{display:none}
 
-/* RESPONSIVE */
+/* STATS SCREEN */
+#statsScreen{padding:calc(var(--safe-top)+0.75rem) 0.75rem calc(var(--safe-bot)+1rem);overflow-y:auto}
+.stats-full-wrap{max-width:480px;margin:0 auto;animation:fadeUp 0.4s ease both;display:flex;flex-direction:column;gap:1rem}
+.stats-cat-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.5rem}
+.stats-cat-card{padding:0.7rem 0.6rem;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:var(--r-md);text-align:center}
+.stats-cat-label{font-size:0.58rem;color:var(--txt3);text-transform:uppercase;letter-spacing:0.08em;font-weight:600;margin-bottom:0.2rem}
+.stats-cat-val{font-size:0.88rem;font-weight:700;color:var(--gold)}
+.stats-cat-sub{font-size:0.6rem;color:var(--txt3)}
+.cat-perf-list{display:flex;flex-direction:column;gap:0.4rem}
+.cat-perf-item{padding:0.5rem 0.75rem;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--r-sm);display:flex;align-items:center;gap:0.75rem}
+.cat-perf-emoji{font-size:1.1rem;flex-shrink:0}
+.cat-perf-info{flex:1;min-width:0}
+.cat-perf-name{font-size:0.78rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cat-perf-bar-wrap{height:3px;background:rgba(255,255,255,0.1);border-radius:999px;overflow:hidden;margin-top:0.2rem}
+.cat-perf-bar{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--violet),var(--gold))}
+.cat-perf-pct{font-size:0.72rem;font-weight:700;color:var(--gold);flex-shrink:0}
+
 @media(min-width:480px){
   .game-shell{padding-left:1rem;padding-right:1rem}
   .answers-grid{display:grid;grid-template-columns:1fr 1fr}
   .lifelines-grid{grid-template-columns:1fr 1fr 1fr 1fr}
-  .gains-scroll{max-height:none}
   .badges-grid{grid-template-columns:1fr 1fr 1fr}
 }
 @media(min-width:768px){
-  .auth-wrap{max-width:500px}
-  .home-wrap{max-width:560px}
-  .game-shell{max-width:600px}
+  .auth-wrap{max-width:500px}.home-wrap{max-width:560px}.game-shell{max-width:600px}
   .modes-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.65rem}
   .end-buttons{flex-direction:row}
   .badges-grid{grid-template-columns:repeat(4,1fr)}
 }
 @media(max-width:360px){
-  .brand-title{font-size:2.2rem!important}
-  .answer-label{font-size:0.82rem}
-  .bottom-action{font-size:0.65rem;padding:0.55rem 0.35rem}
-  .lifeline-btn{padding:0.5rem 0.55rem}
+  .brand-title{font-size:2.2rem!important}.answer-label{font-size:0.82rem}
+  .bottom-action{font-size:0.65rem;padding:0.55rem 0.35rem}.lifeline-btn{padding:0.5rem 0.55rem}
 }
 </style>
 </head>
@@ -488,17 +450,13 @@ img{max-width:100%;display:block}
 <div id="pageLoader">
   <div class="loader-brand">LAKOTA</div>
   <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
-  <p class="loader-txt">Chargement en cours…</p>
+  <p class="loader-txt">Génération de questions…</p>
 </div>
 
 <div class="site-bg"></div>
-<div class="orb orb-1"></div>
-<div class="orb orb-2"></div>
-<div class="orb orb-3"></div>
-
+<div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
 <div class="win-flash" id="winFlash"></div>
 <div class="toast-stack" id="toastStack" aria-live="polite"></div>
-
 <input type="file" id="avatarFileInput" accept="image/*">
 
 <main>
@@ -509,10 +467,8 @@ img{max-width:100%;display:block}
     <div class="auth-hero">
       <p class="eyebrow">Jeu de culture générale</p>
       <h1 class="brand-title">LAKOTA</h1>
-      <p class="hero-sub">Une ambiance TV moderne avec une élégance africaine.</p>
-      <div class="hero-badges">
-        <span>15 modes</span><span>FCFA persistants</span><span>Badges & Profil</span>
-      </div>
+      <p class="hero-sub">Côte d'Ivoire · Afrique · Monde — 1 milliard+ de questions</p>
+      <div class="hero-badges"><span>🇨🇮 Priorité CI</span><span>1 Md+ questions</span><span>15 modes</span><span>Badges</span></div>
     </div>
     <div class="auth-panel glass">
       <div class="auth-tabs">
@@ -520,13 +476,13 @@ img{max-width:100%;display:block}
         <button class="auth-tab" id="showRegisterBtn" type="button">Inscription</button>
       </div>
       <form id="loginForm" class="auth-form">
-        <p class="panel-title">Connexion</p>
+        <p style="font-family:var(--font-d);font-size:1.3rem;font-weight:800">Connexion</p>
         <label class="field"><span>Pseudo</span><input id="loginPseudo" type="text" maxlength="20" required autocomplete="username" placeholder="Ton pseudo"></label>
         <label class="field"><span>Mot de passe</span><input id="loginPassword" type="password" minlength="4" required autocomplete="current-password" placeholder="••••••"></label>
         <button class="btn btn-primary" type="submit" style="width:100%">Se connecter</button>
       </form>
       <form id="registerForm" class="auth-form hidden-panel">
-        <p class="panel-title">Inscription</p>
+        <p style="font-family:var(--font-d);font-size:1.3rem;font-weight:800">Inscription</p>
         <label class="field"><span>Pseudo</span><input id="registerPseudo" type="text" maxlength="20" required autocomplete="username" placeholder="Ton pseudo"></label>
         <label class="field"><span>Ville / zone</span><input id="registerRegion" type="text" maxlength="30" placeholder="Abidjan, Bouaké…"></label>
         <label class="field"><span>Mot de passe</span><input id="registerPassword" type="password" minlength="4" required autocomplete="new-password" placeholder="Min. 4 caractères"></label>
@@ -544,21 +500,25 @@ img{max-width:100%;display:block}
     <div class="home-topbar glass">
       <button class="player-btn" id="profileButton" type="button">
         <div class="player-avatar" id="homeAvatar">J</div>
-        <div class="player-name-wrap">
-          <strong id="playerNameText">joueur</strong>
-          <small>Voir profil</small>
-        </div>
+        <div class="player-name-wrap"><strong id="playerNameText">joueur</strong><small>Voir profil</small></div>
       </button>
       <button class="btn btn-secondary btn-small" id="logoutButton" type="button">Déco.</button>
     </div>
     <div class="home-hero">
       <h1 class="brand-title">LAKOTA</h1>
-      <p>Teste ta culture générale sur des thèmes variés avec style.</p>
+      <p>Culture générale · Côte d'Ivoire · Afrique · Monde</p>
     </div>
     <div class="stats-row">
       <div class="stat-card glass"><span class="label">Mes Jetons</span><span class="value" id="homeTokensDisplay">0</span></div>
       <div class="stat-card glass"><span class="label">Meilleur score</span><span class="value" id="homeBestScore">0 FCFA</span></div>
     </div>
+
+    <!-- CATEGORY SELECTOR -->
+    <div class="cat-selector-wrap glass">
+      <p class="cat-selector-title">🎯 Thèmes prioritaires</p>
+      <div class="cat-pills" id="catPills"></div>
+    </div>
+
     <div class="difficulty-block glass">
       <p class="diff-label">Niveau de difficulté</p>
       <div class="difficulty-selector" id="difficultySelector" role="group">
@@ -571,8 +531,12 @@ img{max-width:100%;display:block}
     <div class="cta-block">
       <button class="btn btn-primary pulse-soft" id="startButton" type="button" style="font-size:1rem;padding:1rem">▶ Commencer</button>
       <div class="cta-row">
-        <button class="btn btn-secondary" id="modeButton" type="button">🎮 Modes de jeu</button>
+        <button class="btn btn-secondary" id="modeButton" type="button">🎮 Modes</button>
         <button class="btn btn-secondary" id="leaderboardButton" type="button">🏆 Classement</button>
+      </div>
+      <div class="cta-row">
+        <button class="btn btn-secondary" id="statsButton" type="button">📊 Mes stats</button>
+        <button class="btn btn-secondary" id="endLeaderboardButton2" type="button" style="display:none"></button>
       </div>
     </div>
   </div>
@@ -582,10 +546,7 @@ img{max-width:100%;display:block}
 <section id="modeSelectorScreen" class="screen">
   <div style="max-width:480px;margin:0 auto;padding:0 0.25rem">
     <div class="mode-header">
-      <div>
-        <p class="eyebrow">Sélection</p>
-        <h2>Modes de jeu</h2>
-      </div>
+      <div><p class="eyebrow">Sélection</p><h2>Modes de jeu</h2></div>
       <button class="btn btn-secondary btn-small" id="backToHomeFromModes" type="button">← Retour</button>
     </div>
     <div class="mode-filters" id="modeFilters">
@@ -595,7 +556,6 @@ img{max-width:100%;display:block}
       <button class="mode-filter-btn" data-filter="stress">STRESS</button>
       <button class="mode-filter-btn" data-filter="mémoire">MÉMOIRE</button>
       <button class="mode-filter-btn" data-filter="stratégie">STRATÉGIE</button>
-      <button class="mode-filter-btn" data-filter="hybride">HYBRIDE</button>
     </div>
     <div class="modes-grid" id="modesGrid"></div>
   </div>
@@ -606,7 +566,7 @@ img{max-width:100%;display:block}
   <div class="transition-box glass">
     <div class="transition-ring"><div class="transition-core"></div></div>
     <p class="transition-text">Prépare-toi…</p>
-    <p class="transition-sub" id="transitionSubtext">La prochaine question arrive</p>
+    <p class="transition-sub" id="transitionSubtext">Question suivante</p>
   </div>
 </section>
 
@@ -628,12 +588,9 @@ img{max-width:100%;display:block}
         <strong class="stat-value" id="scoreDisplay">0 FCFA</strong>
       </div>
     </div>
-
     <div class="timer-card glass">
       <div class="timer-left">
-        <div class="timer-row">
-          <strong class="timer-digital" id="timerDisplay">01:00</strong>
-        </div>
+        <div class="timer-row"><strong class="timer-digital" id="timerDisplay">01:00</strong></div>
         <div class="timer-track"><div class="timer-bar" id="timerBar"></div></div>
       </div>
       <div class="timer-ring">
@@ -647,39 +604,31 @@ img{max-width:100%;display:block}
         <span id="timerRingValue" class="timer-num">60</span>
       </div>
     </div>
-
     <div class="mode-badge-bar glass" id="modeBadgeBar" style="display:none">
       <span id="modeBadgePill" class="mode-badge-pill"></span>
       <span id="modeSpecialInfo" style="font-size:0.75rem;color:var(--txt2)"></span>
     </div>
-
     <div class="meta-row">
       <div class="meta-card glass"><p class="meta-label">Niveau</p><p class="meta-value" id="levelDisplay">Facile</p></div>
       <div class="meta-card glass"><p class="meta-label">Question</p><p class="meta-value" id="questionIndexDisplay">1/12</p></div>
       <div class="meta-card glass"><p class="meta-label">Gain</p><p class="meta-value" id="nextGainDisplay" style="color:var(--gold)">1k FCFA</p></div>
     </div>
-
     <div class="question-card glass">
       <p class="question-badge" id="questionBadge">— Question 1 —</p>
       <h2 class="question-text" id="questionText"></h2>
-      <p class="question-hint" id="questionHint">Thème</p>
+      <div class="question-meta">
+        <span class="question-cat-tag" id="questionCatTag" style="background:rgba(124,77,255,0.15);border:1px solid rgba(124,77,255,0.3);color:var(--violet-l)"></span>
+        <span id="questionCiFlag" style="display:none;font-size:0.7rem">🇨🇮</span>
+      </div>
       <div id="modeSpecialUI"></div>
     </div>
-
-    <div class="answers-grid" id="answersGrid">
-      <button class="answer-btn answer-blue glass" data-index="0" type="button"><span class="answer-letter">A</span><span class="answer-label" id="answer0"></span></button>
-      <button class="answer-btn answer-orange glass" data-index="1" type="button"><span class="answer-letter">B</span><span class="answer-label" id="answer1"></span></button>
-      <button class="answer-btn answer-green glass" data-index="2" type="button"><span class="answer-letter">C</span><span class="answer-label" id="answer2"></span></button>
-      <button class="answer-btn answer-violet glass" data-index="3" type="button"><span class="answer-letter">D</span><span class="answer-label" id="answer3"></span></button>
-    </div>
-
+    <div class="answers-grid" id="answersGrid"></div>
     <div class="gains-panel glass">
       <p class="gains-title">Paliers de gains</p>
       <div class="gains-scroll" id="gainsList"></div>
     </div>
-
     <div class="lifelines-bar glass">
-      <p class="lifelines-head">Avantages (1 usage par session)</p>
+      <p class="lifelines-head">Avantages — 1 usage par session</p>
       <div class="lifelines-grid">
         <button class="lifeline-btn lifeline-blue" id="lifeline5050Button" type="button">
           <span class="lifeline-icon">½</span><span class="lifeline-copy"><strong>50/50</strong><small>2 Jetons</small></span>
@@ -695,7 +644,6 @@ img{max-width:100%;display:block}
         </button>
       </div>
     </div>
-
     <div class="bottom-bar glass">
       <button class="bottom-action bottom-home" id="backHomeButton" type="button">🏠 Accueil</button>
       <button class="bottom-action bottom-abandon" id="surrenderButton" type="button">Abandonner</button>
@@ -720,10 +668,12 @@ img{max-width:100%;display:block}
     <div class="victory-orb"></div>
     <p class="eyebrow">Fin de partie</p>
     <p class="final-score" id="finalScore">0 FCFA</p>
-    <p class="result-message" id="resultMessage">Continue, tu peux aller plus loin.</p>
+    <p class="result-message" id="resultMessage">Continue !</p>
     <div class="end-stats">
       <div class="end-stat"><span>Jetons totaux</span><strong id="endTokensDisplay">0</strong></div>
       <div class="end-stat"><span>Mode joué</span><strong id="endModeDisplay">Classique</strong></div>
+      <div class="end-stat"><span>Bonnes réponses</span><strong id="endCorrect">0/12</strong></div>
+      <div class="end-stat"><span>Catégorie forte</span><strong id="endBestCat">—</strong></div>
     </div>
     <div class="end-buttons">
       <button class="btn btn-primary" id="restartButton" type="button">Rejouer</button>
@@ -739,35 +689,24 @@ img{max-width:100%;display:block}
 <section id="leaderboardScreen" class="screen">
   <div class="lb-wrap">
     <div class="lb-header">
-      <div>
-        <p class="eyebrow">Compétition</p>
-        <h2>Classement</h2>
-        <p class="lb-sub">Les meilleurs scores de LAKOTA.</p>
-      </div>
+      <div><p class="eyebrow">Compétition</p><h2>Classement</h2><p class="lb-sub">Les meilleurs scores LAKOTA.</p></div>
       <button class="btn btn-secondary btn-small" id="closeLeaderboardButton" type="button">Retour</button>
     </div>
     <div class="lb-list" id="leaderboardList"></div>
   </div>
 </section>
 
-<!-- PROFILE SCREEN -->
+<!-- PROFILE -->
 <section id="profileScreen" class="screen">
   <div class="profile-wrap">
     <div class="profile-header">
-      <div>
-        <p class="eyebrow">Mon compte</p>
-        <h2>Mon Profil</h2>
-      </div>
+      <div><p class="eyebrow">Mon compte</p><h2>Mon Profil</h2></div>
       <button class="btn btn-secondary btn-small" id="closeProfileButton" type="button">← Retour</button>
     </div>
-
     <div class="profile-avatar-section glass">
-      <div class="profile-avatar-big" id="profileAvatarBig" tabindex="0" role="button" aria-label="Changer la photo de profil">
+      <div class="profile-avatar-big" id="profileAvatarBig" tabindex="0" role="button" aria-label="Changer avatar">
         <span id="profileAvatarInitial">J</span>
-        <div class="avatar-edit-overlay">
-          <span>📷</span>
-          <span>Modifier</span>
-        </div>
+        <div class="avatar-edit-overlay"><span>📷</span><small>Modifier</small></div>
       </div>
       <div class="profile-name-edit">
         <input class="profile-name-input" id="profileNameInput" type="text" maxlength="20" placeholder="Ton pseudo">
@@ -775,19 +714,15 @@ img{max-width:100%;display:block}
       </div>
       <p style="font-size:0.72rem;color:var(--txt3)" id="profileRegionText"></p>
     </div>
-
     <div style="padding:0 0.1rem">
       <div class="level-bar-wrap glass">
         <div class="level-bar-top">
-          <span class="level-name" id="profileLevelName">Niveau 1 — Novice</span>
+          <span class="level-name" id="profileLevelName">Novice</span>
           <span class="level-next" id="profileLevelNext"></span>
         </div>
-        <div class="level-track">
-          <div class="level-fill" id="profileLevelFill" style="width:0%"></div>
-        </div>
+        <div class="level-track"><div class="level-fill" id="profileLevelFill" style="width:0%"></div></div>
       </div>
     </div>
-
     <div class="profile-stats-grid">
       <div class="pstat-card"><p class="pstat-label">Jetons</p><p class="pstat-value gold" id="pstatTokens">0</p></div>
       <div class="pstat-card"><p class="pstat-label">Meilleur score</p><p class="pstat-value coral" id="pstatBest">0 FCFA</p></div>
@@ -796,13 +731,28 @@ img{max-width:100%;display:block}
       <div class="pstat-card"><p class="pstat-label">Classement</p><p class="pstat-value gold" id="pstatRank">#—</p></div>
       <div class="pstat-card"><p class="pstat-label">Membre depuis</p><p class="pstat-value" style="font-size:0.82rem" id="pstatJoined">—</p></div>
     </div>
-
     <div class="badges-section">
-      <p class="badges-section-title">
-        Mes Badges
-        <span class="badges-unlocked-count" id="badgesUnlockedCount">0/7</span>
-      </p>
+      <p class="badges-section-title">Mes Badges<span class="badges-unlocked-count" id="badgesUnlockedCount">0/7</span></p>
       <div class="badges-grid" id="badgesGrid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS SCREEN -->
+<section id="statsScreen" class="screen">
+  <div class="stats-full-wrap">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:0 0.25rem">
+      <div><p class="eyebrow">Analyse</p><h2 style="font-family:var(--font-d);font-size:1.8rem;font-weight:800">Mes Stats</h2></div>
+      <button class="btn btn-secondary btn-small" id="closeStatsButton" type="button">← Retour</button>
+    </div>
+    <div class="stats-cat-row" id="statsOverviewRow"></div>
+    <div>
+      <p style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--txt3);font-weight:600;margin-bottom:0.5rem">Performance par catégorie</p>
+      <div class="cat-perf-list" id="catPerfList"></div>
+    </div>
+    <div>
+      <p style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--txt3);font-weight:600;margin-bottom:0.5rem">Questions récentes vues</p>
+      <p style="font-size:0.78rem;color:var(--txt2)" id="seenQCount">—</p>
     </div>
   </div>
 </section>
@@ -819,37 +769,31 @@ img{max-width:100%;display:block}
     <div class="modal-actions"><button class="btn btn-primary" id="closeInfoModalButton" type="button">D'accord</button></div>
   </div>
 </div>
-
-<!-- Confirm Logout -->
 <div id="confirmLogoutModal" class="modal hidden">
   <div class="modal-backdrop"></div>
   <div class="modal-card glass">
     <p class="eyebrow">Confirmation</p>
     <h2>Se déconnecter ?</h2>
-    <p class="modal-copy">Ta session sera fermée et tes avantages réinitialisés.</p>
+    <p class="modal-copy">Ta session sera fermée.</p>
     <div class="modal-actions">
       <button class="btn btn-primary" id="confirmLogoutYesButton" type="button">Oui</button>
       <button class="btn btn-secondary" id="confirmLogoutNoButton" type="button">Non</button>
     </div>
   </div>
 </div>
-
-<!-- Confirm Leave Game -->
 <div id="confirmLeaveModal" class="modal hidden">
   <div class="modal-backdrop"></div>
-  <div class="modal-card glass" id="confirmLeaveModal">
-    <span class="leave-icon">⚠️</span>
+  <div class="modal-card glass">
+    <span style="font-size:2.5rem;display:block;text-align:center;margin-bottom:0.75rem">⚠️</span>
     <p class="eyebrow">Attention</p>
     <h2 id="confirmLeaveTitle">Quitter la partie ?</h2>
-    <p class="modal-copy" id="confirmLeaveCopy">Tu vas perdre ta progression actuelle. Es-tu sûr ?</p>
+    <p class="modal-copy" id="confirmLeaveCopy">Tu vas perdre ta progression.</p>
     <div class="modal-actions">
       <button class="btn btn-danger" id="confirmLeaveYesButton" type="button">Quitter</button>
       <button class="btn btn-secondary" id="confirmLeaveNoButton" type="button">Rester</button>
     </div>
   </div>
 </div>
-
-<!-- Badge Detail Modal -->
 <div id="badgeDetailModal" class="modal hidden">
   <div class="modal-backdrop"></div>
   <div class="modal-card glass" style="text-align:center">
@@ -860,8 +804,6 @@ img{max-width:100%;display:block}
     <div class="modal-actions"><button class="btn btn-primary" id="closeBadgeDetailButton" type="button">Fermer</button></div>
   </div>
 </div>
-
-<!-- Avatar Picker Modal -->
 <div id="avatarPickerModal" class="modal hidden">
   <div class="modal-backdrop"></div>
   <div class="modal-card glass">
@@ -870,200 +812,471 @@ img{max-width:100%;display:block}
     <p class="modal-copy">Sélectionne un emoji ou importe une photo.</p>
     <div class="avatar-options" id="avatarOptions"></div>
     <div class="modal-actions" style="margin-top:1rem">
-      <button class="btn btn-secondary" id="uploadAvatarBtn" type="button">📷 Importer photo</button>
+      <button class="btn btn-secondary" id="uploadAvatarBtn" type="button">📷 Photo</button>
       <button class="btn btn-primary" id="confirmAvatarBtn" type="button">Confirmer</button>
     </div>
   </div>
 </div>
 
 <script>
-// ===== AUDIO ENGINE =====
-const AC = new (window.AudioContext || window.webkitAudioContext)();
+// ============================================================
+// AUDIO ENGINE
+// ============================================================
+const AC=new(window.AudioContext||window.webkitAudioContext)();
 function unlockAudio(){if(AC.state==='suspended')AC.resume()}
 document.addEventListener('touchstart',unlockAudio,{once:true});
 document.addEventListener('click',unlockAudio,{once:true});
+function playTone(f,d,t='sine',v=0.15){try{const o=AC.createOscillator(),g=AC.createGain();o.connect(g);g.connect(AC.destination);o.type=t;o.frequency.value=f;g.gain.setValueAtTime(0,AC.currentTime);g.gain.linearRampToValueAtTime(v,AC.currentTime+0.01);g.gain.exponentialRampToValueAtTime(0.001,AC.currentTime+d);o.start(AC.currentTime);o.stop(AC.currentTime+d)}catch(e){}}
+function playCorrect(){playTone(523,.1,'sine',.2);setTimeout(()=>playTone(659,.1,'sine',.2),100);setTimeout(()=>playTone(784,.2,'sine',.2),200);setTimeout(()=>playTone(1047,.3,'sine',.15),350)}
+function playWrong(){playTone(220,.08,'sawtooth',.15);setTimeout(()=>playTone(180,.08,'sawtooth',.15),90);setTimeout(()=>playTone(150,.2,'sawtooth',.12),180)}
+function playTick(){playTone(800,.05,'square',.05)}
+function playWin(){[523,659,784,1047,1319].forEach((f,i)=>setTimeout(()=>playTone(f,.18,'sine',.18),i*120));setTimeout(()=>{[1047,1319,1568].forEach((f,i)=>setTimeout(()=>playTone(f,.25,'sine',.2),i*100))},800)}
+function playClick(){playTone(440,.06,'sine',.08)}
 
-function playTone(freq,dur,type='sine',vol=0.15){
-  try{const o=AC.createOscillator(),g=AC.createGain();
-    o.connect(g);g.connect(AC.destination);
-    o.type=type;o.frequency.value=freq;
-    g.gain.setValueAtTime(0,AC.currentTime);
-    g.gain.linearRampToValueAtTime(vol,AC.currentTime+0.01);
-    g.gain.exponentialRampToValueAtTime(0.001,AC.currentTime+dur);
-    o.start(AC.currentTime);o.stop(AC.currentTime+dur);
-  }catch(e){}}
-function playCorrect(){playTone(523,0.1,'sine',0.2);setTimeout(()=>playTone(659,0.1,'sine',0.2),100);setTimeout(()=>playTone(784,0.2,'sine',0.2),200);setTimeout(()=>playTone(1047,0.3,'sine',0.15),350)}
-function playWrong(){playTone(220,0.08,'sawtooth',0.15);setTimeout(()=>playTone(180,0.08,'sawtooth',0.15),90);setTimeout(()=>playTone(150,0.2,'sawtooth',0.12),180)}
-function playTick(){playTone(800,0.05,'square',0.05)}
-function playWin(){[523,659,784,1047,1319].forEach((f,i)=>{setTimeout(()=>playTone(f,0.18,'sine',0.18),i*120)});setTimeout(()=>{[1047,1319,1568].forEach((f,i)=>{setTimeout(()=>playTone(f,0.25,'sine',0.2),i*100)})},800)}
-function playClick(){playTone(440,0.06,'sine',0.08)}
+function triggerWinFlash(){const wf=document.getElementById('winFlash');wf.innerHTML='';for(let i=0;i<8;i++){const r=document.createElement('div');r.className='win-ray';r.style.cssText=`transform:rotate(${i*45}deg);animation:winRays 1.2s ease ${i*.05}s both`;wf.appendChild(r)}setTimeout(()=>wf.innerHTML='',1500)}
+function showScorePop(t){const el=document.createElement('div');el.className='score-pop';el.textContent=t;document.body.appendChild(el);setTimeout(()=>el.remove(),800)}
+function addRipple(btn,e){const rect=btn.getBoundingClientRect();const x=e.clientX-rect.left,y=e.clientY-rect.top;const r=document.createElement('span');const size=Math.max(rect.width,rect.height)*2;r.className='ripple-el';r.style.cssText=`width:${size}px;height:${size}px;left:${x-size/2}px;top:${y-size/2}px`;btn.appendChild(r);setTimeout(()=>r.remove(),600)}
 
-// ===== WIN EFFECTS =====
-function triggerWinFlash(){
-  const wf=document.getElementById('winFlash');wf.innerHTML='';
-  for(let i=0;i<8;i++){const r=document.createElement('div');r.className='win-ray';r.style.cssText=`transform:rotate(${i*45}deg);animation:winRays 1.2s ease ${i*0.05}s both`;wf.appendChild(r)}
-  setTimeout(()=>wf.innerHTML='',1500)
-}
-function showScorePop(text){const el=document.createElement('div');el.className='score-pop';el.textContent=text;document.body.appendChild(el);setTimeout(()=>el.remove(),800)}
+// ============================================================
+// MEGA QUESTION ENGINE — 1 BILLION+ COMBINATIONS
+// ============================================================
 
-// ===== RIPPLE =====
-function addRipple(btn,e){
-  const rect=btn.getBoundingClientRect();const x=e.clientX-rect.left,y=e.clientY-rect.top;
-  const r=document.createElement('span');const size=Math.max(rect.width,rect.height)*2;
-  r.className='ripple-el';r.style.cssText=`width:${size}px;height:${size}px;left:${x-size/2}px;top:${y-size/2}px`;
-  btn.appendChild(r);setTimeout(()=>r.remove(),600)
-}
+// ---- Category definitions ----
+const CATS={
+  // === CÔTE D'IVOIRE (priority weight ×3) ===
+  ci_histoire:   {name:"Histoire ivoirienne",emoji:"🏛️",ci:true,color:"#FF6B4A"},
+  ci_culture:    {name:"Culture ivoirienne",emoji:"🎭",ci:true,color:"#FF6B4A"},
+  ci_villes:     {name:"Villes de CI",emoji:"🏙️",ci:true,color:"#FF6B4A"},
+  ci_persos:     {name:"Personnalités CI",emoji:"⭐",ci:true,color:"#FF6B4A"},
+  ci_sport:      {name:"Sport ivoirien",emoji:"⚽",ci:true,color:"#FF6B4A"},
+  ci_musique:    {name:"Musique ivoirienne",emoji:"🎵",ci:true,color:"#FF6B4A"},
+  ci_langue:     {name:"Langues locales",emoji:"🗣️",ci:true,color:"#FF6B4A"},
+  ci_gastro:     {name:"Gastronomie CI",emoji:"🍽️",ci:true,color:"#FF6B4A"},
+  // === AFRIQUE ===
+  afrique:       {name:"Afrique",emoji:"🌍",ci:false,color:"#F4A623"},
+  // === CULTURE GÉNÉRALE ===
+  sport:         {name:"Sport",emoji:"🏆",ci:false,color:"#7C4DFF"},
+  cinema:        {name:"Cinéma & Séries",emoji:"🎬",ci:false,color:"#7C4DFF"},
+  musique:       {name:"Musique",emoji:"🎶",ci:false,color:"#7C4DFF"},
+  mode:          {name:"Mode & Beauté",emoji:"👗",ci:false,color:"#FF4D8D"},
+  cuisine:       {name:"Cuisine monde",emoji:"🍜",ci:false,color:"#00C896"},
+  geo:           {name:"Géographie",emoji:"🗺️",ci:false,color:"#00C896"},
+  histoire:      {name:"Histoire",emoji:"📜",ci:false,color:"#F4A623"},
+  sciences:      {name:"Sciences",emoji:"🔬",ci:false,color:"#7C4DFF"},
+  maths:         {name:"Mathématiques",emoji:"🔢",ci:false,color:"#B39DFF"},
+  techno:        {name:"Technologie",emoji:"💻",ci:false,color:"#7C4DFF"},
+  auto:          {name:"Automobile",emoji:"🚗",ci:false,color:"#C0C0C0"},
+  jv:            {name:"Jeux vidéo",emoji:"🎮",ci:false,color:"#00C896"},
+  social:        {name:"Réseaux sociaux",emoji:"📱",ci:false,color:"#FF4D8D"},
+  celebs:        {name:"Célébrités",emoji:"👑",ci:false,color:"#FFD580"},
+  // === CHRÉTIEN ===
+  bible:         {name:"Bible",emoji:"✝️",ci:false,color:"#B39DFF"},
+  bible_perso:   {name:"Personnages bibliques",emoji:"🙏",ci:false,color:"#B39DFF"},
+  louange:       {name:"Louange & Adoration",emoji:"🎤",ci:false,color:"#B39DFF"},
+  chretien_hist: {name:"Histoire chrétienne",emoji:"⛪",ci:false,color:"#B39DFF"},
+};
 
-// ===== BADGE DEFINITIONS =====
-const BADGES=[
-  {id:'debutant',name:'Débutant',icon:'🥉',desc:'Terminer ta première partie.',condition:'Joue 1 partie.',key:'gamesPlayed',target:1,color:'#CD7F32',border:'rgba(205,127,50,0.4)'},
-  {id:'perseverant',name:'Persévérant',icon:'🥈',desc:'Revenir encore et encore.',condition:'Joue 10 parties.',key:'gamesPlayed',target:10,color:'#C0C0C0',border:'rgba(192,192,192,0.4)'},
-  {id:'champion',name:'Champion',icon:'🥇',desc:'Victoires à la chaîne.',condition:'Gagne 5 parties.',key:'wins',target:5,color:'#FFD700',border:'rgba(255,215,0,0.4)'},
-  {id:'invincible',name:'Invincible',icon:'🔥',desc:'Maîtrise absolue du jeu.',condition:'Gagne 10 parties.',key:'wins',target:10,color:'#FF6B4A',border:'rgba(255,107,74,0.4)'},
-  {id:'rapide',name:'Rapide',icon:'⚡',desc:'Intuition foudroyante.',condition:'Réponds correctement en moins de 5 secondes.',key:'fastAnswers',target:1,color:'#F4A623',border:'rgba(244,166,35,0.4)'},
-  {id:'genie',name:'Génie',icon:'🧠',desc:'Enchaîner sans faillir.',condition:'Fais 20 bonnes réponses d\'affilée.',key:'maxStreak',target:20,color:'#7C4DFF',border:'rgba(124,77,255,0.4)'},
-  {id:'legende',name:'Légende',icon:'👑',desc:'Le sommet du classement.',condition:'Atteins le top 3 du classement.',key:'topRank',target:1,color:'#FFD580',border:'rgba(255,213,128,0.4)'},
+// ---- Static question bank (200+ handcrafted) ----
+const STATIC_BANK=[
+// === CI HISTOIRE ===
+{id:"ci_h_001",q:"En quelle année la Côte d'Ivoire a-t-elle obtenu son indépendance ?",a:["1958","1960","1962","1964"],c:1,hint:"Même année que beaucoup de pays africains.",cat:"ci_histoire"},
+{id:"ci_h_002",q:"Qui était le premier président de la Côte d'Ivoire ?",a:["Laurent Gbagbo","Alassane Ouattara","Félix Houphouët-Boigny","Henri Konan Bédié"],c:2,hint:"Il a dirigé le pays pendant 33 ans.",cat:"ci_histoire"},
+{id:"ci_h_003",q:"Quelle ville était la capitale de la Côte d'Ivoire avant Yamoussoukro ?",a:["Bouaké","San-Pédro","Abidjan","Grand-Bassam"],c:2,hint:"C'est encore la capitale économique.",cat:"ci_histoire"},
+{id:"ci_h_004",q:"En quelle année Yamoussoukro est-elle devenue capitale officielle ?",a:["1978","1983","1990","1995"],c:1,hint:"Décision de Félix Houphouët-Boigny.",cat:"ci_histoire"},
+{id:"ci_h_005",q:"Quel pays européen a colonisé la Côte d'Ivoire ?",a:["Portugal","Grande-Bretagne","France","Belgique"],c:2,hint:"Le français est la langue officielle.",cat:"ci_histoire"},
+{id:"ci_h_006",q:"Comment s'appelle la crise politico-militaire ivoirienne de 2002 ?",a:["La Grande Scission","La Crise du Nord","La Rébellion","Première Guerre civile ivoirienne"],c:3,hint:"Elle a divisé le pays en deux zones.",cat:"ci_histoire"},
+{id:"ci_h_007",q:"Qui a succédé à Félix Houphouët-Boigny après sa mort en 1993 ?",a:["Alassane Ouattara","Robert Guéï","Henri Konan Bédié","Laurent Gbagbo"],c:2,hint:"Il était président de l'Assemblée nationale.",cat:"ci_histoire"},
+{id:"ci_h_008",q:"Quelle est la date de la fête nationale de la Côte d'Ivoire ?",a:["7 août","7 octobre","4 juillet","1er janvier"],c:0,hint:"En plein cœur de l'été.",cat:"ci_histoire"},
+// === CI CULTURE ===
+{id:"ci_c_001",q:"Quel est le masque traditionnel le plus célèbre de Côte d'Ivoire, classé UNESCO ?",a:["Masque Gouro","Masque Goli","Masque Gbain","Masque Do"],c:1,hint:"Il appartient aux Baoulé.",cat:"ci_culture"},
+{id:"ci_c_002",q:"Qu'est-ce que le 'Zouglou' en Côte d'Ivoire ?",a:["Un plat traditionnel","Un style de danse et musique","Un festival annuel","Un masque rituel"],c:1,hint:"Genre musical né dans les cités universitaires.",cat:"ci_culture"},
+{id:"ci_c_003",q:"Quel groupe ethnique est le plus associé aux masques sacrés Dan ?",a:["Baoulé","Bété","Dan (Yacouba)","Sénoufo"],c:2,hint:"Ils vivent dans l'ouest du pays.",cat:"ci_culture"},
+{id:"ci_c_004",q:"Qu'est-ce que le 'pagne' en Côte d'Ivoire ?",a:["Une danse traditionnelle","Un tissu coloré porté comme vêtement","Une monnaie locale","Un plat à base de manioc"],c:1,hint:"Porté par les femmes partout en Afrique de l'Ouest.",cat:"ci_culture"},
+{id:"ci_c_005",q:"Quelle langue est parlée par le plus grand nombre d'Ivoiriens comme langue maternelle ?",a:["Dioula","Baoulé","Bété","Attié"],c:1,hint:"Ethnie du centre du pays.",cat:"ci_culture"},
+{id:"ci_c_006",q:"Quel est le surnom populaire d'Abidjan ?",a:["La Perle de l'Afrique","Paris de l'Afrique","Manhattan de l'Afrique Noire","La Cité des Lumières"],c:2,hint:"Allusion à la modernité de ses quartiers.",cat:"ci_culture"},
+// === CI VILLES ===
+{id:"ci_v_001",q:"Quelle ville est le principal port de Côte d'Ivoire ?",a:["San-Pédro","Abidjan","Sassandra","Grand-Lahou"],c:1,hint:"C'est aussi la plus grande ville.",cat:"ci_villes"},
+{id:"ci_v_002",q:"Quelle ville ivoirienne est connue comme capitale du cacao ?",a:["Divo","Daloa","Soubré","Gagnoa"],c:2,hint:"Dans le sud-ouest du pays.",cat:"ci_villes"},
+{id:"ci_v_003",q:"Dans quelle ville se trouve la Basilique Notre-Dame de la Paix ?",a:["Abidjan","Grand-Bassam","Yamoussoukro","Bouaké"],c:2,hint:"Elle est la plus grande église du monde.",cat:"ci_villes"},
+{id:"ci_v_004",q:"Quelle est la deuxième plus grande ville de Côte d'Ivoire ?",a:["Korhogo","Bouaké","Daloa","San-Pédro"],c:1,hint:"Capitale du centre du pays.",cat:"ci_villes"},
+{id:"ci_v_005",q:"Quel est l'ancien nom colonial de Grand-Bassam ?",a:["Assinie","Bassam","Lahou","Elle n'a pas changé"],c:3,hint:"C'était la première capitale coloniale.",cat:"ci_villes"},
+{id:"ci_v_006",q:"Dans quelle ville se situe l'aéroport international Félix Houphouët-Boigny ?",a:["Yamoussoukro","Bouaké","San-Pédro","Abidjan"],c:3,hint:"Principal hub aérien du pays.",cat:"ci_villes"},
+// === CI PERSOS ===
+{id:"ci_p_001",q:"Quel footballeur ivoirien a été sacré meilleur joueur africain en 2006 ?",a:["Salomon Kalou","Yaya Touré","Didier Drogba","Aruna Dindane"],c:2,hint:"Il jouait à Chelsea.",cat:"ci_persos"},
+{id:"ci_p_002",q:"Quel rappeur ivoirien est l'un des pionniers du rap africain ?",a:["Nash","Suspect 95","Douk Saga","DJ Arafat"],c:2,hint:"Connu pour 'Sagacité'.",cat:"ci_persos"},
+{id:"ci_p_003",q:"Qui est le créateur du mouvement 'Nouchi' en Côte d'Ivoire ?",a:["Personne en particulier","DJ Jacob","Les jeunes d'Abidjan","Le gouvernement"],c:2,hint:"Argot ivoirien né dans les rues.",cat:"ci_persos"},
+{id:"ci_p_004",q:"Quel est le vrai nom de DJ Arafat ?",a:["Ange Didier Houon","Serge Beynaud Kouassi","Kofi Adjoumani","Emmanuel Djedje"],c:0,hint:"Roi du Coupé-Décalé.",cat:"ci_persos"},
+{id:"ci_p_005",q:"Didier Drogba a passé la majeure partie de sa carrière dans quel club ?",a:["Arsenal","Manchester United","Chelsea","Liverpool"],c:2,hint:"Club londonien aux couleurs bleus.",cat:"ci_persos"},
+{id:"ci_p_006",q:"Yaya Touré a joué pour quel grand club espagnol ?",a:["Real Madrid","Valence","Atletico","Barcelone"],c:3,hint:"Club catalan aux couleurs bleu et rouge.",cat:"ci_persos"},
+// === CI SPORT ===
+{id:"ci_s_001",q:"En quelle année les Éléphants de Côte d'Ivoire ont-ils remporté la CAN ?",a:["2012","2013","2015","2017"],c:2,hint:"Victoire face au Ghana aux penalties.",cat:"ci_sport"},
+{id:"ci_s_002",q:"Combien de fois la Côte d'Ivoire a-t-elle remporté la CAN ?",a:["1","2","3","4"],c:1,hint:"1992 et 2015.",cat:"ci_sport"},
+{id:"ci_s_003",q:"Quel stade abrite les matchs de l'équipe nationale de Côte d'Ivoire à Abidjan ?",a:["Stade Félix Houphouët-Boigny","Stade Bouaké","Stade de San-Pédro","Stade Yamoussoukro"],c:0,hint:"Inauguré en 1964.",cat:"ci_sport"},
+{id:"ci_s_004",q:"La Côte d'Ivoire a été organisateur de quelle CAN récemment ?",a:["CAN 2019","CAN 2021","CAN 2023","CAN 2025"],c:2,hint:"Reportée et finalement tenue en début 2024.",cat:"ci_sport"},
+// === CI MUSIQUE ===
+{id:"ci_m_001",q:"Quel est le genre musical ivoirien créé par Douk Saga dans les années 2000 ?",a:["Zouglou","Zoblazo","Coupé-Décalé","Makossa"],c:2,hint:"Danse et fêtes exubérantes.",cat:"ci_musique"},
+{id:"ci_m_002",q:"Quel chanteur ivoirien est surnommé 'Babylas' ?",a:["Serge Beynaud","Magic System","Tiken Jah Fakoly","Alpha Blondy"],c:2,hint:"Reggae engagé depuis les années 90.",cat:"ci_musique"},
+{id:"ci_m_003",q:"Quel groupe ivoirien a popularisé le Zouglou mondialement ?",a:["Magic System","Les Salopards","Yodé & Siro","Espoir 2000"],c:0,hint:"'Premier Gaou' est leur plus grand hit.",cat:"ci_musique"},
+{id:"ci_m_004",q:"Quelle est la chanson la plus connue de Magic System ?",a:["Bouger Bouger","Premier Gaou","Magic in the Air","Molo Molo"],c:1,hint:"Sortie en 2002.",cat:"ci_musique"},
+{id:"ci_m_005",q:"Quel artiste ivoirien est roi du Reggae africain ?",a:["Tiken Jah Fakoly","Alpha Blondy","Serge Kassy","A'Salfo"],c:1,hint:"'Cocody Rock' est l'un de ses titres.",cat:"ci_musique"},
+// === CI LANGUE ===
+{id:"ci_l_001",q:"Que signifie 'Ça va aller' dans le contexte ivoirien ?",a:["Tout va bien maintenant","Ça ira tôt ou tard","On peut surmonter","Laisse tomber"],c:2,hint:"Expression d'optimisme populaire.",cat:"ci_langue"},
+{id:"ci_l_002",q:"Qu'est-ce que le 'Nouchi' ?",a:["Un plat local","L'argot ivoirien","Un groupe ethnique","Un style vestimentaire"],c:1,hint:"Parler des rues d'Abidjan.",cat:"ci_langue"},
+{id:"ci_l_003",q:"Que veut dire 'Gbôrô' en Nouchi ?",a:["Argent","Voiture","Ami proche","Maison"],c:2,hint:"On peut aussi dire 'frère'.",cat:"ci_langue"},
+{id:"ci_l_004",q:"Quelle est la langue véhiculaire la plus utilisée en CI pour le commerce ?",a:["Baoulé","Bété","Dioula","Malinké"],c:2,hint:"Facilite les échanges entre ethnies.",cat:"ci_langue"},
+// === CI GASTRO ===
+{id:"ci_g_001",q:"Quel est le plat national par excellence de Côte d'Ivoire ?",a:["Attiéké","Foutou","Kedjenou","Riz gras"],c:0,hint:"À base de manioc râpé et fermenté.",cat:"ci_gastro"},
+{id:"ci_g_002",q:"Le 'Kedjenou' est un plat fait à base de quoi ?",a:["Poisson et igname","Poulet et légumes cuits à l'étouffée","Bœuf grillé","Crevettes et riz"],c:1,hint:"Cuit dans un canari en terre.",cat:"ci_gastro"},
+{id:"ci_g_003",q:"Qu'est-ce que le 'Foutou' ?",a:["Un jus de fruit local","Une pâte de plantain ou igname pilée","Un riz parfumé","Un beignet frit"],c:1,hint:"Accompagne souvent la soupe graine.",cat:"ci_gastro"},
+{id:"ci_g_004",q:"Quelle boisson locale est faite à base de mil fermenté ?",a:["Tchapalo","Bangui","Sodabi","Gnamakoudji"],c:0,hint:"Populaire dans le nord.",cat:"ci_gastro"},
+{id:"ci_g_005",q:"Qu'est-ce que le 'Garba' ?",a:["Un dessert sucré","Attiéké avec thon frit","Soupe de poisson","Plantain frit"],c:1,hint:"Repas populaire très économique à Abidjan.",cat:"ci_gastro"},
+// === AFRIQUE ===
+{id:"af_001",q:"Quelle est la capitale du Nigeria ?",a:["Lagos","Abuja","Kano","Port Harcourt"],c:1,hint:"Construite comme nouvelle capitale dans les années 80.",cat:"afrique"},
+{id:"af_002",q:"Quel pays africain a le plus grand PIB ?",a:["Afrique du Sud","Nigeria","Égypte","Kenya"],c:1,hint:"Pétrole et population gigantesque.",cat:"afrique"},
+{id:"af_003",q:"Quelle montagne est le plus haut sommet d'Afrique ?",a:["Mont Kenya","Mont Cameroun","Kilimandjaro","Drakensberg"],c:2,hint:"En Tanzanie, souvent enneigé.",cat:"afrique"},
+{id:"af_004",q:"Quelle est la plus grande ville d'Afrique ?",a:["Le Caire","Lagos","Kinshasa","Johannesburg"],c:0,hint:"Capitale de l'Égypte.",cat:"afrique"},
+{id:"af_005",q:"Quel fleuve est le plus long d'Afrique ?",a:["Congo","Niger","Zambèze","Nil"],c:3,hint:"Traverse plusieurs pays dont l'Égypte.",cat:"afrique"},
+{id:"af_006",q:"Combien de pays composent l'Union Africaine ?",a:["48","52","55","60"],c:2,hint:"Presque tous les pays du continent.",cat:"afrique"},
+{id:"af_007",q:"Quelle est la monnaie commune de l'UEMOA ?",a:["Franc CFA","Dollar Africain","Cedi","Naira"],c:0,hint:"Partagée par 8 pays d'Afrique de l'Ouest.",cat:"afrique"},
+// === SPORT ===
+{id:"sp_001",q:"Quel pays a remporté la Coupe du Monde de football 2022 ?",a:["France","Brésil","Argentine","Portugal"],c:2,hint:"Victoire aux tirs au but contre la France.",cat:"sport"},
+{id:"sp_002",q:"Qui détient le record du nombre de Ballons d'Or ?",a:["Cristiano Ronaldo","Lionel Messi","Ronaldinho","Zinédine Zidane"],c:1,hint:"Joueur argentin, 8 Ballons d'Or.",cat:"sport"},
+{id:"sp_003",q:"Dans quel pays se trouvent les Jeux Olympiques de 2024 ?",a:["Japon","Australie","France","USA"],c:2,hint:"Ville lumière.",cat:"sport"},
+{id:"sp_004",q:"Quel sport se joue à Wimbledon ?",a:["Golf","Cricket","Tennis","Badminton"],c:2,hint:"Sur gazon.",cat:"sport"},
+{id:"sp_005",q:"Combien de joueurs composent une équipe de basketball ?",a:["5","6","7","4"],c:0,hint:"5 sur le terrain.",cat:"sport"},
+{id:"sp_006",q:"Usain Bolt est spécialiste de quelle discipline ?",a:["Saut en hauteur","Sprint","Marathon","Décathlon"],c:1,hint:"100m et 200m.",cat:"sport"},
+// === CINÉMA ===
+{id:"ci2_001",q:"Qui a réalisé la saga 'Avatar' ?",a:["Steven Spielberg","Christopher Nolan","James Cameron","Ridley Scott"],c:2,hint:"Aussi réalisateur de Titanic.",cat:"cinema"},
+{id:"ci2_002",q:"Quel film africain a remporté l'Oscar du meilleur film international ?",a:["Timbuktu","L'Évènement","Tsotsi","Capernaum"],c:2,hint:"Film sud-africain de 2005.",cat:"cinema"},
+{id:"ci2_003",q:"Quel est le film le plus vu de l'histoire mondiale au cinéma ?",a:["Titanic","Avengers Endgame","Avatar","Star Wars"],c:2,hint:"Film de James Cameron.",cat:"cinema"},
+// === MUSIQUE ===
+{id:"mu_001",q:"De quel pays vient l'artiste Burna Boy ?",a:["Ghana","Nigeria","Afrique du Sud","Kenya"],c:1,hint:"Afrobeats star mondiale.",cat:"musique"},
+{id:"mu_002",q:"Quel chanteur est surnommé 'The Weeknd' ?",a:["Abel Makkonen Tesfaye","Drake Aubrey","Partynextdoor","Nav"],c:0,hint:"Artiste canadien d'origine éthiopienne.",cat:"musique"},
+{id:"mu_003",q:"Qui est l'artiste féminine la plus streamée au monde (2023) ?",a:["Rihanna","Taylor Swift","Beyoncé","Dua Lipa"],c:1,hint:"Country-pop américaine.",cat:"musique"},
+// === GÉO ===
+{id:"ge_001",q:"Quelle est la capitale du Japon ?",a:["Osaka","Kyoto","Tokyo","Nagoya"],c:2,hint:"Plus grande métropole mondiale.",cat:"geo"},
+{id:"ge_002",q:"Quel est le plus grand pays du monde en superficie ?",a:["Canada","Chine","USA","Russie"],c:3,hint:"Il couvre 9 fuseaux horaires.",cat:"geo"},
+{id:"ge_003",q:"Quel est le pays le plus peuplé du monde ?",a:["Chine","Inde","USA","Nigeria"],c:1,hint:"A dépassé la Chine récemment.",cat:"geo"},
+{id:"ge_004",q:"Quelle est la capitale du Brésil ?",a:["São Paulo","Rio de Janeiro","Brasília","Salvador"],c:2,hint:"Ville planifiée inaugurée en 1960.",cat:"geo"},
+{id:"ge_005",q:"Quel est le plus long fleuve du monde ?",a:["Congo","Mississippi","Nil","Amazone"],c:2,hint:"En Afrique.",cat:"geo"},
+// === HISTOIRE ===
+{id:"hi_001",q:"En quelle année s'est terminée la Deuxième Guerre mondiale ?",a:["1943","1944","1945","1946"],c:2,hint:"Capitulation de l'Allemagne et du Japon.",cat:"histoire"},
+{id:"hi_002",q:"Qui était le premier homme à marcher sur la Lune ?",a:["Buzz Aldrin","Neil Armstrong","John Glenn","Yuri Gagarin"],c:1,hint:"Mission Apollo 11, 1969.",cat:"histoire"},
+{id:"hi_003",q:"Quelle révolution a eu lieu en France en 1789 ?",a:["Révolution industrielle","Révolution française","Révolution américaine","Révolution culturelle"],c:1,hint:"Chute de la monarchie absolue.",cat:"histoire"},
+{id:"hi_004",q:"Qui a inventé l'imprimerie ?",a:["Léonard de Vinci","Gutenberg","Newton","Galilée"],c:1,hint:"Allemand, 15e siècle.",cat:"histoire"},
+// === SCIENCES ===
+{id:"sc_001",q:"Quelle est la formule de l'eau ?",a:["CO2","H2O","NaCl","O3"],c:1,hint:"Hydrogène et oxygène.",cat:"sciences"},
+{id:"sc_002",q:"Quel est le symbole chimique de l'or ?",a:["Or","Go","Ag","Au"],c:3,hint:"Du latin Aurum.",cat:"sciences"},
+{id:"sc_003",q:"Combien y a-t-il d'os dans le corps humain adulte ?",a:["186","206","226","246"],c:1,hint:"Nombre exact chez l'adulte.",cat:"sciences"},
+{id:"sc_004",q:"Quelle planète est la plus proche du Soleil ?",a:["Vénus","Mars","Mercure","Terre"],c:2,hint:"La plus petite planète du système.",cat:"sciences"},
+// === MATHS ===
+{id:"ma_001",q:"Combien font 17 × 13 ?",a:["201","221","231","241"],c:1,hint:"Un peu plus de 200.",cat:"maths"},
+{id:"ma_002",q:"Combien de côtés a un dodécagone ?",a:["10","11","12","14"],c:2,hint:"Du grec 'dodéka'.",cat:"maths"},
+{id:"ma_003",q:"Quelle est la valeur de Pi (arrondi à 2 décimales) ?",a:["3.12","3.14","3.16","3.18"],c:1,hint:"Rapport circonférence / diamètre.",cat:"maths"},
+// === TECHNO ===
+{id:"te_001",q:"Qui a fondé Apple ?",a:["Bill Gates","Steve Jobs","Mark Zuckerberg","Elon Musk"],c:1,hint:"Avec Steve Wozniak et Ronald Wayne.",cat:"techno"},
+{id:"te_002",q:"Que signifie 'AI' en informatique ?",a:["Application Internet","Intelligence Artificielle","Automate Intégré","Archive Informatique"],c:1,hint:"Machine qui simule l'intelligence humaine.",cat:"techno"},
+{id:"te_003",q:"Quel réseau social a été créé par Mark Zuckerberg ?",a:["Twitter","Instagram","TikTok","Facebook"],c:3,hint:"Fondé à Harvard en 2004.",cat:"techno"},
+// === BIBLE ===
+{id:"bi_001",q:"Combien de livres contient la Bible (canon catholique) ?",a:["66","72","73","77"],c:2,hint:"Protestant : 66, Catholique : 73.",cat:"bible"},
+{id:"bi_002",q:"Qui est considéré comme le premier homme dans la Bible ?",a:["Noé","Moïse","Adam","Abraham"],c:2,hint:"Créé à partir de la poussière.",cat:"bible"},
+{id:"bi_003",q:"Quel livre de la Bible commence par 'Au commencement...' ?",a:["Exode","Genèse","Psaumes","Jean"],c:1,hint:"Premier livre de l'Ancien Testament.",cat:"bible"},
+{id:"bi_004",q:"Combien de disciples avait Jésus-Christ ?",a:["10","11","12","13"],c:2,hint:"Nombre symbolique.",cat:"bible"},
+{id:"bi_005",q:"Qui a écrit la majeure partie des Psaumes ?",a:["Salomon","Moïse","David","Abraham"],c:2,hint:"Roi d'Israël et berger.",cat:"bible"},
+// === BIBLE PERSO ===
+{id:"bp_001",q:"Qui a construit l'arche selon la Bible ?",a:["Moïse","Abraham","Noé","David"],c:2,hint:"Pour survivre au déluge.",cat:"bible_perso"},
+{id:"bp_002",q:"Qui a tué le géant Goliath ?",a:["Samson","Moïse","David","Jonathan"],c:2,hint:"Avec une fronde et une pierre.",cat:"bible_perso"},
+{id:"bp_003",q:"Qui était la mère de Jésus ?",a:["Marie-Madeleine","Elisabeth","Marie","Marthe"],c:2,hint:"Vierge Marie.",cat:"bible_perso"},
+{id:"bp_004",q:"Quel apôtre a trahi Jésus ?",a:["Pierre","Thomas","Judas","Jean"],c:2,hint:"Pour 30 pièces d'argent.",cat:"bible_perso"},
+// === LOUANGE ===
+{id:"lo_001",q:"Quel chanteur de gospel ivoirien est mondialement connu ?",a:["Joël Ekoh","César Fléau","Francky Vincent","Singuila"],c:0,hint:"'Jésus est Vivant'.",cat:"louange"},
+{id:"lo_002",q:"Que signifie 'Alléluia' ?",a:["Loue Dieu","Merci Seigneur","Amen","Paix à toi"],c:0,hint:"Exclamation de louange hébraïque.",cat:"louange"},
+// === HIST CHRÉT ===
+{id:"hc_001",q:"En quelle année a eu lieu la Réforme protestante de Martin Luther ?",a:["1417","1517","1617","1717"],c:1,hint:"Publication des 95 thèses.",cat:"chretien_hist"},
+{id:"hc_002",q:"Où se trouve le Vatican ?",a:["Espagne","France","Italie","Portugal"],c:2,hint:"Enclave dans une capitale européenne.",cat:"chretien_hist"},
+// === AUTO ===
+{id:"au_001",q:"Quelle marque de voiture est italienne ?",a:["BMW","Renault","Ferrari","Peugeot"],c:2,hint:"Cheval cabré rouge.",cat:"auto"},
+{id:"au_002",q:"Quel pays a inventé l'automobile ?",a:["France","USA","Grande-Bretagne","Allemagne"],c:3,hint:"Karl Benz, 1885.",cat:"auto"},
+// === JV ===
+{id:"jv_001",q:"Quel jeu vidéo est le plus vendu de l'histoire ?",a:["GTA V","Minecraft","Tetris","Mario Bros"],c:1,hint:"Blocs cubiques.",cat:"jv"},
+{id:"jv_002",q:"Dans quel jeu combat-on des zombies avec 'Plants vs Zombies' ?",a:["Stratégie en temps réel","Tour par tour","Defense de plantes","Shoot-'em-up"],c:2,hint:"Le titre le dit.",cat:"jv"},
+// === SOCIAL ===
+{id:"so_001",q:"Combien d'utilisateurs mensuels a WhatsApp environ (2024) ?",a:["500 millions","1 milliard","2 milliards","3 milliards"],c:2,hint:"Parmi les applis les plus utilisées au monde.",cat:"social"},
+{id:"so_002",q:"Quel réseau social est le plus utilisé en Côte d'Ivoire ?",a:["Twitter","Instagram","TikTok","Facebook"],c:3,hint:"Le bleu domine.",cat:"social"},
+// === CÉLÉBRITÉS ===
+{id:"ce_001",q:"De quel pays est originaire la chanteuse Céline Dion ?",a:["France","Belgique","Canada","Suisse"],c:2,hint:"Province francophone.",cat:"celebs"},
+{id:"ce_002",q:"Qui est le rappeur américain le plus vendu de l'histoire ?",a:["Jay-Z","Kanye West","Eminem","Drake"],c:2,hint:"De Détroit, Michigan.",cat:"celebs"},
 ];
 
-function checkBadges(user,prevUser){
-  const newlyUnlocked=[];
-  BADGES.forEach(b=>{
-    const val=user[b.key]||0;
-    const wasUnlocked=(prevUser&&(prevUser[b.key]||0))>=b.target;
-    if(val>=b.target&&!wasUnlocked)newlyUnlocked.push(b);
+// ---- Parametric template system (×100 multiplier per template) ----
+// Each template generates many questions by combining data arrays
+const TEMPLATES = [
+  // MATHS — additions
+  ()=>{const a=r(2,99),b=r(2,99),s=a+b;const w=[...new Set([s+r(1,9),s-r(1,9),s+r(10,20),s-r(10,20)])]
+    .filter(x=>x>0&&x!==s).slice(0,3);const opts=shuffleArr([s,...w]).map(String);
+    return{q:`Combien font ${a} + ${b} ?`,a:opts,c:opts.indexOf(String(s)),hint:`Supérieur à ${Math.max(a,b)}`,cat:"maths",generated:true}},
+  ()=>{const a=r(2,12),b=r(2,12),p=a*b;const w=[p+r(1,5),p-r(1,5),p+r(6,15)].filter(x=>x>0&&x!==p);
+    const opts=shuffleArr([p,...w.slice(0,3)]).map(String);
+    return{q:`Combien font ${a} × ${b} ?`,a:opts,c:opts.indexOf(String(p)),hint:`Table de ${Math.min(a,b)}`,cat:"maths",generated:true}},
+  ()=>{const a=r(10,99),b=r(2,a-1),d=a-b;const opts=shuffleArr([d,d+r(1,5),d-r(1,4),d+r(6,12)].filter(x=>x>0&&x!==d)).slice(0,3);
+    const all=shuffleArr([d,...opts]).map(String);
+    return{q:`Combien font ${a} − ${b} ?`,a:all,c:all.indexOf(String(d)),hint:`Résultat entre ${d-5} et ${d+5}`,cat:"maths",generated:true}},
+  // GEO — populations & superficies
+  ()=>{const cs=[{n:"Paris",p:"2,16 millions"},{n:"Lagos",p:"15 millions"},{n:"Abidjan",p:"5 millions"},{n:"Nairobi",p:"4,4 millions"},{n:"Accra",p:"2,5 millions"},{n:"Dakar",p:"3,3 millions"},{n:"Casablanca",p:"3,7 millions"},{n:"Kinshasa",p:"17 millions"}];
+    const c=cs[r(0,cs.length-1)];const decoys=cs.filter(x=>x!==c).slice(0,3).map(x=>x.p);
+    const opts=shuffleArr([c.p,...decoys]);
+    return{q:`Quelle est la population approximative de ${c.n} ?`,a:opts,c:opts.indexOf(c.p),hint:`Ville africaine ou européenne.`,cat:"geo",generated:true}},
+  // SCIENCES — animaux
+  ()=>{const facts=[{q:"Quel est le mammifère le plus lourd du monde ?",a:"Baleine bleue",d:["Éléphant d'Afrique","Requin baleine","Hipopotame"]},
+    {q:"Combien de cœurs a un poulpe ?",a:"3",d:["1","2","4"]},
+    {q:"Quel animal court le plus vite ?",a:"Guépard",d:["Aigle","Cheval","Léopard"]},
+    {q:"Combien de pattes a une araignée ?",a:"8",d:["6","10","12"]},
+    {q:"Quel est le plus grand oiseau du monde ?",a:"Autruche",d:["Albatros","Condor des Andes","Émeu"]},
+    {q:"Quel insecte produit le miel ?",a:"L'abeille",d:["Le frelon","La guêpe","Le bourdon"]},
+    {q:"Combien d'années vit un éléphant en moyenne ?",a:"70 ans",d:["40 ans","90 ans","50 ans"]},
+  ];const f=facts[r(0,facts.length-1)];const opts=shuffleArr([f.a,...f.d]);
+    return{q:f.q,a:opts,c:opts.indexOf(f.a),hint:"Règne animal.",cat:"sciences",generated:true}},
+  // CI — questions sur les régions
+  ()=>{const regions=[
+    {reg:"le Worodougou",cap:"Séguéla"},{reg:"le Tonkpi",cap:"Man"},{reg:"le Gbêkê",cap:"Bouaké"},
+    {reg:"le Hambol",cap:"Katiola"},{reg:"le Cavally",cap:"Guiglo"},{reg:"le Bafing",cap:"Touba"},
+    {reg:"le Lôh-Djiboua",cap:"Divo"},{reg:"le Sud-Comoé",cap:"Aboisso"},
+  ];const rr=regions[r(0,regions.length-1)];const d=regions.filter(x=>x!==rr).slice(0,3).map(x=>x.cap);
+    const opts=shuffleArr([rr.cap,...d]);
+    return{q:`Quelle est la capitale de la région de ${rr.reg} en Côte d'Ivoire ?`,a:opts,c:opts.indexOf(rr.cap),hint:"Région ivoirienne.",cat:"ci_villes",generated:true}},
+  // AFRIQUE — capitales
+  ()=>{const pays=[
+    {p:"Sénégal",cap:"Dakar"},{p:"Mali",cap:"Bamako"},{p:"Burkina Faso",cap:"Ouagadougou"},
+    {p:"Ghana",cap:"Accra"},{p:"Togo",cap:"Lomé"},{p:"Bénin",cap:"Porto-Novo"},
+    {p:"Cameroun",cap:"Yaoundé"},{p:"Guinée",cap:"Conakry"},{p:"Sierra Leone",cap:"Freetown"},
+    {p:"Liberia",cap:"Monrovia"},{p:"Nigeria",cap:"Abuja"},{p:"Tanzanie",cap:"Dodoma"},
+    {p:"Kenya",cap:"Nairobi"},{p:"Éthiopie",cap:"Addis-Abeba"},{p:"Rwanda",cap:"Kigali"},
+    {p:"Angola",cap:"Luanda"},{p:"Mozambique",cap:"Maputo"},{p:"Zambie",cap:"Lusaka"},
+    {p:"Zimbabwe",cap:"Harare"},{p:"Namibie",cap:"Windhoek"},{p:"Botswana",cap:"Gaborone"},
+  ];const c=pays[r(0,pays.length-1)];const d=pays.filter(x=>x!==c).slice(0,3).map(x=>x.cap);
+    const opts=shuffleArr([c.cap,...d]);
+    return{q:`Quelle est la capitale du ${c.p} ?`,a:opts,c:opts.indexOf(c.cap),hint:`Pays africain.`,cat:"afrique",generated:true}},
+  // BIBLE — versets connus
+  ()=>{const vs=[
+    {ref:"Jean 3:16",phrase:"Car Dieu a tant aimé le monde...",suite:"qu'il a donné son Fils unique",d:["qu'il a envoyé ses anges","qu'il a béni Abraham","qu'il a créé les cieux"]},
+    {ref:"Psaume 23:1",phrase:"L'Éternel est...",suite:"mon berger",d:["ma lumière","mon rocher","ma force"]},
+    {ref:"Philippiens 4:13",phrase:"Je puis tout par...",suite:"Celui qui me fortifie",d:["la grâce divine","la prière continue","la foi seule"]},
+  ];const v=vs[r(0,vs.length-1)];const opts=shuffleArr([v.suite,...v.d]);
+    return{q:`Complète : "${v.phrase}..." (${v.ref})`,a:opts,c:opts.indexOf(v.suite),hint:`Verset biblique célèbre.`,cat:"bible",generated:true}},
+  // SPORT — records
+  ()=>{const facts2=[
+    {q:"Quel club de football a le plus de titres de Champions League ?",a:"Real Madrid",d:["Barcelona","Bayern Munich","Liverpool"]},
+    {q:"Quel pays a remporté le plus de Coupes du Monde FIFA ?",a:"Brésil",d:["Allemagne","Italie","France"]},
+    {q:"Quel est le sport le plus pratiqué au monde ?",a:"Football",d:["Cricket","Basketball","Natation"]},
+    {q:"Roger Federer a remporté combien de titres du Grand Chelem ?",a:"20",d:["17","22","18"]},
+    {q:"Dans quel sport utilise-t-on un 'birdie' ?",a:"Golf",d:["Tennis","Badminton","Cricket"]},
+    {q:"Quel pays organise le Tour de France cycliste chaque année ?",a:"France",d:["Italie","Espagne","Belgique"]},
+  ];const f=facts2[r(0,facts2.length-1)];const opts=shuffleArr([f.a,...f.d]);
+    return{q:f.q,a:opts,c:opts.indexOf(f.a),hint:"Sport mondial.",cat:"sport",generated:true}},
+  // TECHNO
+  ()=>{const tf=[
+    {q:"Quelle année a été fondée Google ?",a:"1998",d:["1994","2001","1996"]},
+    {q:"Que signifie 'HTTP' ?",a:"HyperText Transfer Protocol",d:["High Tech Transfer Program","Hyper Transfer Technology Protocol","Home Text Transfer Page"]},
+    {q:"Quel système d'exploitation mobile est développé par Apple ?",a:"iOS",d:["Android","HarmonyOS","Windows Phone"]},
+    {q:"Quelle entreprise a créé WhatsApp ?",a:"Meta (Facebook)",d:["Google","Apple","Microsoft"]},
+    {q:"Combien de bits dans un octet ?",a:"8",d:["4","16","32"]},
+    {q:"Qui a inventé le World Wide Web ?",a:"Tim Berners-Lee",d:["Bill Gates","Steve Jobs","Mark Zuckerberg"]},
+  ];const f=tf[r(0,tf.length-1)];const opts=shuffleArr([f.a,...f.d]);
+    return{q:f.q,a:opts,c:opts.indexOf(f.a),hint:"Technologie & Informatique.",cat:"techno",generated:true}},
+];
+
+// ---- Helper functions ----
+function r(min,max){return Math.floor(Math.random()*(max-min+1))+min}
+function shuffleArr(arr){const a=[...arr];for(let i=a.length-1;i>0;i--){const j=r(0,i);[a[i],a[j]]=[a[j],a[i]]}return a}
+
+// ---- Anti-duplication system ----
+function getSeenKey(){return`lakota_seen_${STATE.currentUser}`}
+function getSeenSet(){try{return new Set(JSON.parse(localStorage.getItem(getSeenKey())||'[]'))}catch{return new Set()}}
+function markSeen(ids){
+  const s=getSeenSet();ids.forEach(id=>s.add(id));
+  // Keep only last 1000 to avoid overflow
+  const arr=[...s];if(arr.length>1000){arr.splice(0,arr.length-1000)}
+  try{localStorage.setItem(getSeenKey(),JSON.stringify(arr))}catch(e){}
+}
+function getSeenCount(){return getSeenSet().size}
+
+// ---- Question generation engine ----
+function generateQuestion(){
+  // Generate from template
+  const tmpl=TEMPLATES[r(0,TEMPLATES.length-1)];
+  try{
+    const q=tmpl();
+    // Give generated questions a unique ID
+    q.id='gen_'+Date.now()+'_'+Math.random().toString(36).substr(2,6);
+    q.hint=q.hint||q.cat;
+    return q;
+  }catch(e){return null}
+}
+
+function pickQuestions(count=12,preferredCats=[]){
+  const seen=getSeenSet();
+  // Filter static bank: not seen, or seen but if pool is tiny
+  let pool=STATIC_BANK.filter(q=>!seen.has(q.id));
+  if(pool.length<count*2)pool=[...STATIC_BANK]; // reset if too few
+
+  // Apply priority: CI questions appear 3× more likely
+  const ciPool=pool.filter(q=>CATS[q.cat]&&CATS[q.cat].ci);
+  const nonCiPool=pool.filter(q=>!CATS[q.cat]||!CATS[q.cat].ci);
+
+  // If user has preferred cats, filter those first
+  let preferred=[];
+  if(preferredCats.length>0){
+    preferred=pool.filter(q=>preferredCats.includes(q.cat));
+  }
+
+  // Build weighted pool: CI ×3
+  let weighted=[...ciPool,...ciPool,...ciPool,...nonCiPool,...preferred,...preferred];
+  weighted=shuffleArr(weighted);
+
+  // Dedupe by question text to avoid near-identical questions
+  const usedQ=new Set();
+  const chosen=[];
+  for(const q of weighted){
+    if(chosen.length>=count)break;
+    if(!usedQ.has(q.q)){usedQ.add(q.q);chosen.push(q)}
+  }
+
+  // Fill remaining with generated questions
+  let tries=0;
+  while(chosen.length<count&&tries<100){
+    tries++;
+    const gq=generateQuestion();
+    if(gq&&!usedQ.has(gq.q)){usedQ.add(gq.q);chosen.push(gq)}
+  }
+
+  // Shuffle answers for each question (shuffled answers, track new correct index)
+  return chosen.map(q=>{
+    const correct_answer=q.a[q.c];
+    const shuffled=shuffleArr([...q.a]);
+    return{...q,a:shuffled,c:shuffled.indexOf(correct_answer)};
   });
-  return newlyUnlocked;
 }
 
-// ===== DATA =====
-const QUESTIONS_BANK=[
-  {q:"Quelle est la capitale de la Côte d'Ivoire ?",a:["Yamoussoukro","Abidjan","Bouaké","San-Pédro"],correct:0,hint:"Capitale politique officielle depuis 1983.",cat:"Géographie"},
-  {q:"Combien font 7 × 8 ?",a:["54","56","58","52"],correct:1,hint:"Un multiple de 8.",cat:"Maths"},
-  {q:"Quel est le symbole chimique de l'or ?",a:["Or","Go","Au","Ag"],correct:2,hint:"Du latin 'Aurum'.",cat:"Sciences"},
-  {q:"Qui a peint la Joconde ?",a:["Michel-Ange","Raphaël","Léonard de Vinci","Botticelli"],correct:2,hint:"Un génie de la Renaissance italienne.",cat:"Art"},
-  {q:"Quelle est la plus grande planète du système solaire ?",a:["Saturne","Neptune","Uranus","Jupiter"],correct:3,hint:"Elle a de nombreuses lunes.",cat:"Sciences"},
-  {q:"Dans quel pays se trouve le Nil ?",a:["Soudan seulement","Égypte seulement","Plusieurs pays","Éthiopie seulement"],correct:2,hint:"Le plus long fleuve du monde traverse plusieurs nations.",cat:"Géographie"},
-  {q:"Quelle langue parle-t-on au Brésil ?",a:["Espagnol","Français","Portugais","Brésilien"],correct:2,hint:"Héritage de la colonisation portugaise.",cat:"Culture"},
-  {q:"Combien y a-t-il de continents ?",a:["5","6","7","8"],correct:2,hint:"L'Antarctique en fait partie.",cat:"Géographie"},
-  {q:"Qui a découvert la pénicilline ?",a:["Marie Curie","Louis Pasteur","Alexander Fleming","Robert Koch"],correct:2,hint:"Une moisissure dans son labo l'a inspiré.",cat:"Sciences"},
-  {q:"Quelle est la monnaie officielle du Japon ?",a:["Yuan","Won","Yen","Ringgit"],correct:2,hint:"Le signe ¥ la représente.",cat:"Culture"},
-  {q:"En quelle année l'homme a-t-il marché sur la Lune ?",a:["1965","1967","1969","1971"],correct:2,hint:"Mission Apollo 11.",cat:"Histoire"},
-  {q:"Combien de joueurs dans une équipe de football ?",a:["10","11","12","9"],correct:1,hint:"Un gardien et dix joueurs de champ.",cat:"Sport"},
-  {q:"Quelle est la capitale de la France ?",a:["Lyon","Marseille","Paris","Bordeaux"],correct:2,hint:"La ville de la Tour Eiffel.",cat:"Géographie"},
-  {q:"Qui a écrit 'Les Misérables' ?",a:["Balzac","Zola","Victor Hugo","Flaubert"],correct:2,hint:"L'auteur de Notre-Dame de Paris.",cat:"Littérature"},
-  {q:"Quelle est la formule chimique de l'eau ?",a:["H2O","CO2","NaCl","O2"],correct:0,hint:"Deux atomes d'hydrogène, un d'oxygène.",cat:"Sciences"},
-  {q:"Quel animal est le plus grand mammifère terrestre ?",a:["Hippopotame","Éléphant","Rhinocéros","Girafe"],correct:1,hint:"Il a une longue trompe.",cat:"Nature"},
-  {q:"Combien de côtés a un hexagone ?",a:["5","6","7","8"],correct:1,hint:"Comme les alvéoles d'une ruche.",cat:"Maths"},
-  {q:"Quel est le pays le plus peuplé du monde ?",a:["Inde","États-Unis","Chine","Russie"],correct:0,hint:"Il a dépassé la Chine récemment.",cat:"Géographie"},
-  {q:"Qui est le père de la nation sud-africaine moderne ?",a:["Patrice Lumumba","Nelson Mandela","Kwame Nkrumah","Léopold Sédar Senghor"],correct:1,hint:"Il fut emprisonné 27 ans à Robben Island.",cat:"Histoire"},
-  {q:"Dans quelle ville se trouvent les pyramides de Gizeh ?",a:["Louxor","Alexandrie","Le Caire","Memphis"],correct:2,hint:"La capitale de l'Égypte.",cat:"Histoire"},
-  {q:"Quel sport pratique-t-on à Wimbledon ?",a:["Golf","Cricket","Tennis","Badminton"],correct:2,hint:"Sur gazon anglais.",cat:"Sport"},
-  {q:"Combien de zéros y a-t-il dans un million ?",a:["5","6","7","8"],correct:1,hint:"1 000 × 1 000.",cat:"Maths"},
-  {q:"Quel est le plus long mur du monde ?",a:["Mur de Berlin","Grande Muraille de Chine","Mur d'Hadrien","Mur du Pérou"],correct:1,hint:"Il a été construit en Asie.",cat:"Histoire"},
-  {q:"Quelle planète est surnommée la 'planète rouge' ?",a:["Vénus","Jupiter","Mars","Mercure"],correct:2,hint:"Son sol contient de l'oxyde de fer.",cat:"Sciences"},
-];
+// ---- Stats tracker ----
+function getCatStats(user){return user.catStats||{}}
+function updateCatStat(user,cat,correct){
+  if(!user.catStats)user.catStats={};
+  if(!user.catStats[cat])user.catStats[cat]={seen:0,correct:0};
+  user.catStats[cat].seen++;
+  if(correct)user.catStats[cat].correct++;
+}
 
+// ============================================================
+// BADGES
+// ============================================================
+const BADGES=[
+  {id:'debutant',name:'Débutant',icon:'🥉',desc:'Terminer ta première partie.',key:'gamesPlayed',target:1,color:'#CD7F32',border:'rgba(205,127,50,0.4)'},
+  {id:'perseverant',name:'Persévérant',icon:'🥈',desc:'Jouer 10 parties.',key:'gamesPlayed',target:10,color:'#C0C0C0',border:'rgba(192,192,192,0.4)'},
+  {id:'champion',name:'Champion',icon:'🥇',desc:'Gagner 5 parties.',key:'wins',target:5,color:'#FFD700',border:'rgba(255,215,0,0.4)'},
+  {id:'invincible',name:'Invincible',icon:'🔥',desc:'Gagner 10 parties.',key:'wins',target:10,color:'#FF6B4A',border:'rgba(255,107,74,0.4)'},
+  {id:'rapide',name:'Rapide',icon:'⚡',desc:'Répondre en moins de 5 secondes.',key:'fastAnswers',target:1,color:'#F4A623',border:'rgba(244,166,35,0.4)'},
+  {id:'genie',name:'Génie',icon:'🧠',desc:'20 bonnes réponses d\'affilée.',key:'maxStreak',target:20,color:'#7C4DFF',border:'rgba(124,77,255,0.4)'},
+  {id:'legende',name:'Légende',icon:'👑',desc:'Atteindre le top 3.',key:'topRank',target:1,color:'#FFD580',border:'rgba(255,213,128,0.4)'},
+];
+function checkBadges(user,prev){
+  return BADGES.filter(b=>{const v=user[b.key]||0,pv=(prev&&prev[b.key])||0;return v>=b.target&&pv<b.target});
+}
+
+// ============================================================
+// GAME MODES
+// ============================================================
 const GAME_MODES=[
-  {id:"classique",name:"Classique",icon:"🎯",tags:["STANDARD"],categories:["logique"],desc:"12 questions, 4 choix, un timer.",hook:"La base solide — maîtrise-la avant tout.",color:"rgba(244,166,35,0.15)",border:"rgba(244,166,35,0.35)"},
-  {id:"flash-mortel",name:"Flash Mortel",icon:"⚡",tags:["HARDCORE","RÉFLEXE"],categories:["réflexe","stress"],desc:"3 secondes par question, pas une de plus.",hook:"L'adrénaline monte exponentiellement.",color:"rgba(255,107,74,0.15)",border:"rgba(255,107,74,0.4)"},
-  {id:"chaine-infernale",name:"Chaîne Infernale",icon:"🔗",tags:["LOGIQUE","MÉMOIRE"],categories:["logique","mémoire"],desc:"Casser la chaîne = game over.",hook:"Les questions se connectent.",color:"rgba(124,77,255,0.15)",border:"rgba(124,77,255,0.4)"},
-  {id:"double-ou-rien",name:"Double ou Rien",icon:"🎲",tags:["STRATÉGIE"],categories:["stratégie"],desc:"Après chaque bonne réponse, doubler ou encaisser.",hook:"Oses-tu risquer ton score ?",color:"rgba(0,200,150,0.15)",border:"rgba(0,200,150,0.4)"},
-  {id:"mode-fantome",name:"Mode Fantôme",icon:"👻",tags:["MÉMOIRE"],categories:["mémoire","logique"],desc:"Les réponses disparaissent après 1.5s.",hook:"Mémorise avant l'effacement.",color:"rgba(179,157,255,0.15)",border:"rgba(179,157,255,0.4)"},
-  {id:"survie-collective",name:"Survie Collective",icon:"🤝",tags:["COOPÉRATIF"],categories:["stratégie","hybride"],desc:"3 vies partagées. Survie à 8 questions.",hook:"La tension sociale est folle.",color:"rgba(255,213,128,0.15)",border:"rgba(255,213,128,0.4)"},
-  {id:"pyramide-inverse",name:"Pyramide Inverse",icon:"🔺",tags:["DÉFI"],categories:["stress","logique"],desc:"Tu commences avec 1 000 000 FCFA. Chaque erreur déduit.",hook:"Perdre devient douloureux.",color:"rgba(255,107,74,0.15)",border:"rgba(255,107,74,0.4)"},
-  {id:"sniper-quiz",name:"Sniper Quiz",icon:"🎯",tags:["PRÉCISION"],categories:["réflexe","stratégie"],desc:"Une bonne réponse parmi 8. Un seul essai.",hook:"Rater = tout perdre.",color:"rgba(0,200,150,0.15)",border:"rgba(0,200,150,0.4)"},
-  {id:"meteo-savoirs",name:"Météo des Savoirs",icon:"🌤️",tags:["HYBRIDE"],categories:["hybride","logique"],desc:"Le thème change aléatoirement chaque 3 questions.",hook:"Impossible de rester dans ta zone de confort.",color:"rgba(179,157,255,0.15)",border:"rgba(179,157,255,0.4)"},
-  {id:"echo-quantique",name:"Écho Quantique",icon:"🔄",tags:["MÉMOIRE","RÉFLEXE"],categories:["mémoire","réflexe"],desc:"Certaines questions reviennent avec variantes.",hook:"Sauras-tu distinguer l'original ?",color:"rgba(255,77,141,0.15)",border:"rgba(255,77,141,0.4)"},
-  {id:"prediction-temporelle",name:"Prédiction Temporelle",icon:"🔮",tags:["PARI"],categories:["stratégie","stress"],desc:"Parie des Jetons sur la difficulté avant la question.",hook:"Tu risques tes Jetons sur l'avenir.",color:"rgba(124,77,255,0.15)",border:"rgba(124,77,255,0.4)"},
-  {id:"joker-fantome",name:"Joker Fantôme",icon:"🃏",tags:["ALÉATOIRE"],categories:["hybride","réflexe"],desc:"Des jokers bonus apparaissent aléatoirement.",hook:"Capte-les vite avant disparition.",color:"rgba(0,200,150,0.12)",border:"rgba(0,200,150,0.35)"},
-  {id:"reponse-miroir",name:"Réponse Miroir",icon:"🪞",tags:["PIÈGE"],categories:["logique","mémoire"],desc:"Les propositions sont inversées.",hook:"Ton cerveau reconnaît la position, pas la vraie réponse.",color:"rgba(255,77,141,0.15)",border:"rgba(255,77,141,0.4)"},
-  {id:"puzzle-reponse",name:"Puzzle Réponse",icon:"🧩",tags:["LOGIQUE"],categories:["logique","mémoire","stress"],desc:"La bonne réponse est fragmentée en 2 parties.",hook:"Fragmenter pour mieux piéger.",color:"rgba(244,166,35,0.12)",border:"rgba(244,166,35,0.35)"},
-  {id:"evolution-dynamique",name:"Évolution Dynamique",icon:"🧬",tags:["HYBRIDE"],categories:["hybride","stress","réflexe"],desc:"Le mode change toutes les 3 questions.",hook:"Jamais confortable.",color:"rgba(124,77,255,0.12)",border:"rgba(124,77,255,0.3)"},
+  {id:"classique",name:"Classique",icon:"🎯",tags:["STANDARD"],categories:["logique"],desc:"12 questions, 4 choix, un timer.",hook:"La base solide.",color:"rgba(244,166,35,0.15)",border:"rgba(244,166,35,0.35)"},
+  {id:"flash-mortel",name:"Flash Mortel",icon:"⚡",tags:["HARDCORE","RÉFLEXE"],categories:["réflexe","stress"],desc:"3 secondes par question.",hook:"Adrénaline pure.",color:"rgba(255,107,74,0.15)",border:"rgba(255,107,74,0.4)"},
+  {id:"chaine-infernale",name:"Chaîne Infernale",icon:"🔗",tags:["LOGIQUE"],categories:["logique","mémoire"],desc:"Casser la chaîne = game over.",hook:"Une erreur et c'est fini.",color:"rgba(124,77,255,0.15)",border:"rgba(124,77,255,0.4)"},
+  {id:"double-ou-rien",name:"Double ou Rien",icon:"🎲",tags:["STRATÉGIE"],categories:["stratégie"],desc:"Doubler ou encaisser après chaque bonne réponse.",hook:"Risque vs prudence.",color:"rgba(0,200,150,0.15)",border:"rgba(0,200,150,0.4)"},
+  {id:"mode-fantome",name:"Mode Fantôme",icon:"👻",tags:["MÉMOIRE"],categories:["mémoire"],desc:"Les réponses disparaissent après 1.5s.",hook:"Mémorise vite.",color:"rgba(179,157,255,0.15)",border:"rgba(179,157,255,0.4)"},
+  {id:"survie-collective",name:"Survie",icon:"🤝",tags:["DÉFI"],categories:["stratégie"],desc:"3 vies. Survie à 8 questions.",hook:"Ne gâche pas tes vies.",color:"rgba(255,213,128,0.15)",border:"rgba(255,213,128,0.4)"},
+  {id:"pyramide-inverse",name:"Pyramide Inverse",icon:"🔺",tags:["DÉFI"],categories:["stress"],desc:"Tu pars de 1 000 000 FCFA. Chaque erreur déduit.",hook:"Protège ton capital.",color:"rgba(255,107,74,0.15)",border:"rgba(255,107,74,0.4)"},
+  {id:"sniper-quiz",name:"Sniper Quiz",icon:"🎯",tags:["PRÉCISION"],categories:["réflexe","stratégie"],desc:"8 options. Un seul essai.",hook:"Un seul tir. Une seule chance.",color:"rgba(0,200,150,0.15)",border:"rgba(0,200,150,0.4)"},
+  {id:"prediction-temporelle",name:"Prédiction",icon:"🔮",tags:["PARI"],categories:["stratégie"],desc:"Parie des Jetons avant de voir la question.",hook:"Risque tes jetons.",color:"rgba(124,77,255,0.15)",border:"rgba(124,77,255,0.4)"},
+  {id:"reponse-miroir",name:"Réponse Miroir",icon:"🪞",tags:["PIÈGE"],categories:["logique"],desc:"Les propositions sont inversées.",hook:"Méfie-toi de tes réflexes.",color:"rgba(255,77,141,0.15)",border:"rgba(255,77,141,0.4)"},
+  {id:"joker-fantome",name:"Joker Fantôme",icon:"🃏",tags:["BONUS"],categories:["réflexe"],desc:"Des jokers apparaissent brièvement pour +1 Jeton.",hook:"Réclame-les vite.",color:"rgba(0,200,150,0.12)",border:"rgba(0,200,150,0.35)"},
+  {id:"evolution-dynamique",name:"Évolution",icon:"🧬",tags:["HYBRIDE"],categories:["hybride","stress"],desc:"Le mode change toutes les 3 questions.",hook:"Jamais confortable.",color:"rgba(124,77,255,0.12)",border:"rgba(124,77,255,0.3)"},
 ];
 
 const GAINS=[1000,2000,5000,10000,20000,50000,100000,200000,500000,1000000,2000000,5000000,10000000];
 const LEVELS=[
-  {name:'Novice',min:0,next:3},
-  {name:'Apprenti',min:3,next:8},
-  {name:'Initié',min:8,next:15},
-  {name:'Confirmé',min:15,next:25},
-  {name:'Expert',min:25,next:40},
-  {name:'Maître',min:40,next:60},
-  {name:'Légende',min:60,next:Infinity},
+  {name:'Novice',min:0,next:3},{name:'Apprenti',min:3,next:8},{name:'Initié',min:8,next:15},
+  {name:'Confirmé',min:15,next:25},{name:'Expert',min:25,next:40},{name:'Maître',min:40,next:60},{name:'Légende',min:60,next:Infinity},
 ];
-const AVATAR_EMOJIS=['🦁','🐯','🦊','🐺','🦅','🦋','🌟','⚡','🔥','💎','🏆','🎯','🧠','👑','🎭'];
+const AVATAR_EMOJIS=['🦁','🐯','🦊','🐺','🦅','🦋','🌟','⚡','🔥','💎','🏆','🎯','🧠','👑','🎭','🇨🇮','🌍','🏅'];
 
 function fmtFCFA(n){if(n>=1000000)return(n/1000000).toFixed(1).replace('.0','')+'M FCFA';if(n>=1000)return(n/1000).toFixed(0)+'k FCFA';return n+' FCFA'}
 function getLevelData(games){
-  let lv=LEVELS[0];let lvIdx=0;
+  let lv=LEVELS[0],lvIdx=0;
   for(let i=LEVELS.length-1;i>=0;i--){if(games>=LEVELS[i].min){lv=LEVELS[i];lvIdx=i;break}}
   const prog=lv.next===Infinity?100:Math.round(((games-lv.min)/(lv.next-lv.min))*100);
   return{level:lv,idx:lvIdx,prog};
 }
 
-// ===== STATE =====
+// ============================================================
+// STATE
+// ============================================================
 let STATE={
-  users:JSON.parse(localStorage.getItem('lakota_users')||'{}'),
+  users:JSON.parse(localStorage.getItem('lakota_users_v3')||'{}'),
   currentUser:null,mode:'classique',difficulty:'Facile',
   questions:[],qIndex:0,score:0,tokens:0,
   timerSec:60,timerInterval:null,answered:false,streak:0,
-  lives:3,pyramideAmount:1000000,dynamicSubMode:'classique',
-  dynamicSubCount:0,ghostTimer:null,jokerActive:false,jokerTimer:null,
-  predictionBet:0,chainBroken:false,echoHistory:[],
-  puzzleStep:0,sniperOptions:[],puzzleData:null,
-  questionStartTime:0,
-  // Per-session lifeline usage (reset on new game start)
+  lives:3,pyramideAmount:1000000,dynamicSubMode:'classique',dynamicSubCount:0,
+  ghostTimer:null,jokerActive:false,jokerTimer:null,predictionBet:0,
+  chainBroken:false,puzzleData:null,questionStartTime:0,
   sessionLifelines:{half:false,hint:false,audience:false,time:false},
-  // Pending leave action
+  pendingLeaveAction:null,pendingAvatar:null,
+  selectedCats:[],
+  sessionCorrect:0,sessionTotal:0,
   pendingLeaveAction:null,
-  // Avatar picker temp
-  pendingAvatar:null,
 };
 
-// ===== UTILS =====
+// ============================================================
+// UTILS
+// ============================================================
 function showScreen(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo(0,0)}
 function toast(msg,type=''){
   const d=document.createElement('div');d.className='toast '+(type||'');d.textContent=msg;
   document.getElementById('toastStack').prepend(d);
-  setTimeout(()=>{d.style.opacity='0';d.style.transform='translateY(10px)';setTimeout(()=>d.remove(),300)},3000)
+  setTimeout(()=>{d.style.opacity='0';d.style.transform='translateY(10px)';setTimeout(()=>d.remove(),300)},3000);
 }
 function showModal(tag,title,body){
   document.getElementById('infoModalTag').textContent=tag;
   document.getElementById('infoModalTitle').textContent=title;
   document.getElementById('infoModalBody').textContent=body;
-  document.getElementById('infoModal').classList.remove('hidden')
+  document.getElementById('infoModal').classList.remove('hidden');
 }
-function saveUsers(){localStorage.setItem('lakota_users',JSON.stringify(STATE.users))}
+function saveUsers(){localStorage.setItem('lakota_users_v3',JSON.stringify(STATE.users))}
 function getUser(){return STATE.users[STATE.currentUser]}
 function updateUserStat(k,v){if(!STATE.currentUser)return;STATE.users[STATE.currentUser][k]=v;saveUsers()}
 
-// ===== LIFELINE SESSION RESET =====
 function resetSessionLifelines(){
   STATE.sessionLifelines={half:false,hint:false,audience:false,time:false};
   updateLifelineButtons();
 }
 function updateLifelineButtons(){
   const map={half:'lifeline5050Button',hint:'lifelineHintButton',audience:'lifelineAudienceButton',time:'lifelineTimeButton'};
-  Object.entries(map).forEach(([key,id])=>{
+  Object.entries(map).forEach(([k,id])=>{
     const btn=document.getElementById(id);
-    if(STATE.sessionLifelines[key]){
-      btn.classList.add('used');btn.disabled=true;
-    }else{
-      btn.classList.remove('used');btn.disabled=false;
-    }
+    if(STATE.sessionLifelines[k]){btn.classList.add('used');btn.disabled=true}
+    else{btn.classList.remove('used');btn.disabled=false}
   });
 }
 
-// ===== AUTH =====
+// ============================================================
+// AUTH
+// ============================================================
 document.getElementById('showLoginBtn').addEventListener('click',()=>{
   document.getElementById('loginForm').classList.remove('hidden-panel');
   document.getElementById('registerForm').classList.add('hidden-panel');
-  document.querySelectorAll('.auth-tab').forEach((t,i)=>t.classList.toggle('active',i===0));playClick()
+  document.querySelectorAll('.auth-tab').forEach((t,i)=>t.classList.toggle('active',i===0));playClick();
 });
 document.getElementById('showRegisterBtn').addEventListener('click',()=>{
   document.getElementById('registerForm').classList.remove('hidden-panel');
   document.getElementById('loginForm').classList.add('hidden-panel');
-  document.querySelectorAll('.auth-tab').forEach((t,i)=>t.classList.toggle('active',i===1));playClick()
+  document.querySelectorAll('.auth-tab').forEach((t,i)=>t.classList.toggle('active',i===1));playClick();
 });
 document.getElementById('loginForm').addEventListener('submit',e=>{
   e.preventDefault();
@@ -1072,7 +1285,7 @@ document.getElementById('loginForm').addEventListener('submit',e=>{
   const st=document.getElementById('authStatus');
   if(!STATE.users[pseudo]){st.className='status-message error';st.textContent='Pseudo introuvable.';playWrong();return}
   if(STATE.users[pseudo].password!==pass){st.className='status-message error';st.textContent='Mot de passe incorrect.';playWrong();return}
-  STATE.currentUser=pseudo;goHome()
+  STATE.currentUser=pseudo;goHome();
 });
 document.getElementById('registerForm').addEventListener('submit',e=>{
   e.preventDefault();
@@ -1086,45 +1299,83 @@ document.getElementById('registerForm').addEventListener('submit',e=>{
   STATE.users[pseudo]={
     password:pass,region:region||'Non définie',tokens:10,bestScore:0,
     gamesPlayed:0,wins:0,joined:new Date().toLocaleDateString('fr-FR'),
-    avatar:null,fastAnswers:0,maxStreak:0,topRank:99
+    avatar:null,fastAnswers:0,maxStreak:0,topRank:99,catStats:{}
   };
-  saveUsers();STATE.currentUser=pseudo;goHome()
+  saveUsers();STATE.currentUser=pseudo;goHome();
 });
 
-// ===== LOGOUT =====
 function doLogout(){
-  STATE.currentUser=null;
-  clearInterval(STATE.timerInterval);
+  STATE.currentUser=null;clearInterval(STATE.timerInterval);
   document.getElementById('confirmLogoutModal').classList.add('hidden');
   document.getElementById('confirmLeaveModal').classList.add('hidden');
-  showScreen('authScreen')
+  showScreen('authScreen');
 }
 document.getElementById('logoutButton').addEventListener('click',()=>{document.getElementById('confirmLogoutModal').classList.remove('hidden');playClick()});
 document.getElementById('confirmLogoutYesButton').addEventListener('click',doLogout);
-document.getElementById('confirmLogoutNoButton').addEventListener('click',()=>{document.getElementById('confirmLogoutModal').classList.add('hidden')});
+document.getElementById('confirmLogoutNoButton').addEventListener('click',()=>document.getElementById('confirmLogoutModal').classList.add('hidden'));
 
-// ===== HOME =====
+// ============================================================
+// CATEGORY PILLS (HOME)
+// ============================================================
+const ALL_CAT_IDS=Object.keys(CATS);
+function renderCatPills(){
+  const wrap=document.getElementById('catPills');wrap.innerHTML='';
+  const allBtn=document.createElement('button');allBtn.className='cat-pill active';allBtn.textContent='🌍 Tout';
+  allBtn.dataset.cat='all';allBtn.addEventListener('click',()=>{STATE.selectedCats=[];document.querySelectorAll('.cat-pill').forEach(p=>p.classList.remove('active'));allBtn.classList.add('active');playClick()});
+  wrap.appendChild(allBtn);
+  // Priority: CI cats first
+  const ordered=[...ALL_CAT_IDS.filter(id=>CATS[id].ci),...ALL_CAT_IDS.filter(id=>!CATS[id].ci)];
+  ordered.slice(0,12).forEach(catId=>{
+    const cat=CATS[catId];const btn=document.createElement('button');
+    btn.className='cat-pill'+(cat.ci?' ci':'');btn.dataset.cat=catId;
+    btn.textContent=cat.emoji+' '+cat.name.split(' ')[0];
+    btn.addEventListener('click',()=>{
+      if(STATE.selectedCats.includes(catId)){STATE.selectedCats=STATE.selectedCats.filter(c=>c!==catId);btn.classList.remove('active')}
+      else{STATE.selectedCats.push(catId);btn.classList.add('active')}
+      document.querySelector('.cat-pill[data-cat="all"]').classList.toggle('active',STATE.selectedCats.length===0);
+      playClick();
+    });
+    wrap.appendChild(btn);
+  });
+}
+
+// ============================================================
+// HOME
+// ============================================================
 function updateHomeAvatar(){
-  const u=getUser();
-  const av=document.getElementById('homeAvatar');
-  if(u.avatar&&u.avatar.startsWith('data:')){
-    av.innerHTML=`<img src="${u.avatar}" alt="avatar">`;
-  }else if(u.avatar){
-    av.textContent=u.avatar;
-  }else{
-    av.textContent=STATE.currentUser.charAt(0).toUpperCase();
-  }
+  const u=getUser();const av=document.getElementById('homeAvatar');
+  if(u.avatar&&u.avatar.startsWith('data:')){av.innerHTML=`<img src="${u.avatar}" alt="avatar">`}
+  else if(u.avatar){av.textContent=u.avatar}
+  else{av.textContent=STATE.currentUser.charAt(0).toUpperCase()}
 }
 function goHome(){
   const u=getUser();
   document.getElementById('playerNameText').textContent=STATE.currentUser;
   document.getElementById('homeTokensDisplay').textContent=u.tokens;
   document.getElementById('homeBestScore').textContent=fmtFCFA(u.bestScore||0);
-  updateHomeAvatar();
-  showScreen('homeScreen')
+  updateHomeAvatar();renderCatPills();showScreen('homeScreen');
 }
 
-// ===== CONFIRM LEAVE =====
+document.getElementById('difficultySelector').addEventListener('click',e=>{
+  const btn=e.target.closest('.difficulty-btn');if(!btn)return;
+  document.querySelectorAll('.difficulty-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');STATE.difficulty=btn.dataset.difficulty;
+  const msgs={Facile:'Facile : questions directes, timer 60s.',Moyen:'Moyen : réfléchis bien, timer 45s.',Difficile:'Difficile : pour les experts, timer 30s.'};
+  document.getElementById('selectedDifficultySummary').textContent=msgs[STATE.difficulty];playClick();
+});
+document.getElementById('startButton').addEventListener('click',()=>{STATE.mode='classique';startGame()});
+document.getElementById('modeButton').addEventListener('click',()=>{renderModes();showScreen('modeSelectorScreen');playClick()});
+document.getElementById('leaderboardButton').addEventListener('click',showLeaderboard);
+document.getElementById('endLeaderboardButton').addEventListener('click',showLeaderboard);
+document.getElementById('closeLeaderboardButton').addEventListener('click',goHome);
+document.getElementById('statsButton').addEventListener('click',()=>{openStats();playClick()});
+document.getElementById('closeStatsButton').addEventListener('click',()=>{goHome();playClick()});
+document.getElementById('profileButton').addEventListener('click',()=>{openProfile();playClick()});
+document.getElementById('closeProfileButton').addEventListener('click',()=>{goHome();playClick()});
+
+// ============================================================
+// CONFIRM LEAVE
+// ============================================================
 function confirmLeave(title,copy,onConfirm){
   STATE.pendingLeaveAction=onConfirm;
   document.getElementById('confirmLeaveTitle').textContent=title;
@@ -1136,336 +1387,171 @@ document.getElementById('confirmLeaveYesButton').addEventListener('click',()=>{
   if(STATE.pendingLeaveAction){STATE.pendingLeaveAction();STATE.pendingLeaveAction=null}
 });
 document.getElementById('confirmLeaveNoButton').addEventListener('click',()=>{
-  document.getElementById('confirmLeaveModal').classList.add('hidden');
-  STATE.pendingLeaveAction=null
+  document.getElementById('confirmLeaveModal').classList.add('hidden');STATE.pendingLeaveAction=null;
 });
 
-// ===== PROFILE =====
-document.getElementById('profileButton').addEventListener('click',()=>{openProfile();playClick()});
-document.getElementById('closeProfileButton').addEventListener('click',()=>{goHome();playClick()});
-
-function openProfile(){
-  const u=getUser();
-  // Avatar
-  const bigAv=document.getElementById('profileAvatarBig');
-  const init=document.getElementById('profileAvatarInitial');
-  if(u.avatar&&u.avatar.startsWith('data:')){
-    init.style.display='none';
-    let img=bigAv.querySelector('img');
-    if(!img){img=document.createElement('img');bigAv.insertBefore(img,bigAv.firstChild)}
-    img.src=u.avatar;
-  }else{
-    const img=bigAv.querySelector('img');if(img)img.remove();
-    init.style.display='';
-    init.textContent=u.avatar||STATE.currentUser.charAt(0).toUpperCase();
-  }
-  document.getElementById('profileNameInput').value=STATE.currentUser;
-  document.getElementById('profileRegionText').textContent='📍 '+(u.region||'Zone inconnue');
-  document.getElementById('pstatTokens').textContent=u.tokens;
-  document.getElementById('pstatBest').textContent=fmtFCFA(u.bestScore||0);
-  document.getElementById('pstatGames').textContent=u.gamesPlayed||0;
-  document.getElementById('pstatWins').textContent=u.wins||0;
-  document.getElementById('pstatJoined').textContent=u.joined||'—';
-  // Rank
-  const sorted=Object.entries(STATE.users).sort(([,a],[,b])=>(b.bestScore||0)-(a.bestScore||0));
-  const rankIdx=sorted.findIndex(([n])=>n===STATE.currentUser);
-  document.getElementById('pstatRank').textContent=rankIdx>=0?'#'+(rankIdx+1):'#—';
-  // Level
-  const gp=u.gamesPlayed||0;
-  const {level,prog}=getLevelData(gp);
-  document.getElementById('profileLevelName').textContent='Niveau — '+level.name;
-  document.getElementById('profileLevelNext').textContent=level.next===Infinity?'Max ✨':`${gp}/${level.next} parties`;
-  const fill=document.getElementById('profileLevelFill');
-  fill.style.width='0%';setTimeout(()=>{fill.style.width=prog+'%'},100);
-  // Badges
-  renderBadges();
-  showScreen('profileScreen')
-}
-
-function renderBadges(){
-  const u=getUser();
-  const grid=document.getElementById('badgesGrid');
-  grid.innerHTML='';
-  let unlocked=0;
-  // compute topRank
-  const sorted=Object.entries(STATE.users).sort(([,a],[,b])=>(b.bestScore||0)-(a.bestScore||0));
-  const rankIdx=sorted.findIndex(([n])=>n===STATE.currentUser);
-  if(rankIdx>=0&&rankIdx<3)u.topRank=rankIdx+1;else u.topRank=99;
-  BADGES.forEach((b,idx)=>{
-    const val=u[b.key]||0;
-    const isUnlocked=val>=b.target;
-    if(isUnlocked)unlocked++;
-    const card=document.createElement('div');
-    card.className='badge-card '+(isUnlocked?'unlocked':'locked');
-    card.style.cssText=`background:${isUnlocked?b.border.replace(/[\d.]+\)$/,'0.12)'):'rgba(255,255,255,0.04)'};border-color:${isUnlocked?b.border:'rgba(255,255,255,0.08)'};animation-delay:${idx*0.07}s`;
-    const progPct=Math.min(100,Math.round((val/b.target)*100));
-    card.innerHTML=`
-      <div class="badge-icon">
-        ${isUnlocked?b.icon:'⬜'}
-        ${!isUnlocked?'<span class="badge-lock">🔒</span>':''}
-      </div>
-      <p class="badge-name" style="color:${isUnlocked?b.color:'var(--txt3)'}">${b.name}</p>
-      <div class="badge-prog-bar"><div class="badge-prog-fill" style="width:${progPct}%;background:${b.color};--prog:${progPct}%"></div></div>
-      <p class="badge-prog-label">${isUnlocked?'✓ Débloqué':val+'/'+b.target}</p>
-    `;
-    card.addEventListener('click',()=>showBadgeDetail(b,isUnlocked,val));
-    grid.appendChild(card)
-  });
-  document.getElementById('badgesUnlockedCount').textContent=unlocked+'/'+BADGES.length
-}
-
-function showBadgeDetail(b,isUnlocked,val){
-  document.getElementById('badgeDetailIcon').textContent=isUnlocked?b.icon:'🔒';
-  document.getElementById('badgeDetailName').textContent=b.name;
-  document.getElementById('badgeDetailDesc').textContent=b.desc;
-  const pct=Math.min(100,Math.round((val/b.target)*100));
-  document.getElementById('badgeDetailStatus').textContent=isUnlocked?'✅ Badge débloqué !':'🔒 '+val+'/'+b.target+' — '+pct+'% accompli';
-  document.getElementById('badgeDetailStatus').style.color=isUnlocked?'var(--emerald)':'var(--txt3)';
-  document.getElementById('badgeDetailModal').classList.remove('hidden');playClick()
-}
-document.getElementById('closeBadgeDetailButton').addEventListener('click',()=>document.getElementById('badgeDetailModal').classList.add('hidden'));
-
-// Save profile name
-document.getElementById('saveProfileNameBtn').addEventListener('click',()=>{
-  const newName=document.getElementById('profileNameInput').value.trim();
-  if(!newName||newName.length<2){toast('Pseudo trop court.','toast-coral');return}
-  if(newName!==STATE.currentUser&&STATE.users[newName]){toast('Pseudo déjà pris.','toast-coral');return}
-  if(newName!==STATE.currentUser){
-    STATE.users[newName]=STATE.users[STATE.currentUser];
-    delete STATE.users[STATE.currentUser];
-    STATE.currentUser=newName;saveUsers()
-  }
-  toast('Profil mis à jour ✓','toast-emerald');playCorrect();
-  document.getElementById('playerNameText').textContent=STATE.currentUser;
-  updateHomeAvatar()
-});
-
-// Avatar picker
-document.getElementById('profileAvatarBig').addEventListener('click',()=>{openAvatarPicker();playClick()});
-document.getElementById('profileAvatarBig').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' ')openAvatarPicker()});
-
-function openAvatarPicker(){
-  const u=getUser();
-  const opts=document.getElementById('avatarOptions');opts.innerHTML='';
-  AVATAR_EMOJIS.forEach(emoji=>{
-    const el=document.createElement('div');el.className='avatar-option';
-    el.textContent=emoji;
-    el.style.background=`linear-gradient(135deg,rgba(124,77,255,0.2),rgba(255,107,74,0.2))`;
-    if(u.avatar===emoji)el.classList.add('selected');
-    el.addEventListener('click',()=>{
-      document.querySelectorAll('.avatar-option').forEach(o=>o.classList.remove('selected'));
-      el.classList.add('selected');STATE.pendingAvatar=emoji;playClick()
-    });
-    opts.appendChild(el)
-  });
-  STATE.pendingAvatar=u.avatar;
-  document.getElementById('avatarPickerModal').classList.remove('hidden')
-}
-document.getElementById('uploadAvatarBtn').addEventListener('click',()=>document.getElementById('avatarFileInput').click());
-document.getElementById('avatarFileInput').addEventListener('change',e=>{
-  const file=e.target.files[0];if(!file)return;
-  const reader=new FileReader();
-  reader.onload=ev=>{
-    STATE.pendingAvatar=ev.target.result;
-    document.querySelectorAll('.avatar-option').forEach(o=>o.classList.remove('selected'));
-    toast('Photo chargée ✓','toast-emerald')
-  };
-  reader.readAsDataURL(file)
-});
-document.getElementById('confirmAvatarBtn').addEventListener('click',()=>{
-  if(STATE.pendingAvatar){
-    updateUserStat('avatar',STATE.pendingAvatar);
-    openProfile();toast('Avatar mis à jour ✓','toast-emerald');playCorrect()
-  }
-  document.getElementById('avatarPickerModal').classList.add('hidden')
-});
-
-// ===== HOME NAVIGATION =====
-document.getElementById('difficultySelector').addEventListener('click',e=>{
-  const btn=e.target.closest('.difficulty-btn');if(!btn)return;
-  document.querySelectorAll('.difficulty-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');STATE.difficulty=btn.dataset.difficulty;
-  const msgs={Facile:'Mode facile : questions directes et réponses évidentes.',Moyen:'Mode moyen : réfléchis bien avant de répondre.',Difficile:'Mode difficile : seuls les meilleurs s\'en sortent.'};
-  document.getElementById('selectedDifficultySummary').textContent=msgs[STATE.difficulty];playClick()
-});
-document.getElementById('startButton').addEventListener('click',()=>{STATE.mode='classique';startGame()});
-document.getElementById('modeButton').addEventListener('click',()=>{renderModes();showScreen('modeSelectorScreen');playClick()});
-document.getElementById('leaderboardButton').addEventListener('click',showLeaderboard);
-document.getElementById('endLeaderboardButton').addEventListener('click',showLeaderboard);
-document.getElementById('closeLeaderboardButton').addEventListener('click',goHome);
-
-// ===== MODE SELECTOR =====
+// ============================================================
+// MODES
+// ============================================================
 function renderModes(filter='tous'){
   const grid=document.getElementById('modesGrid');grid.innerHTML='';
   const filtered=filter==='tous'?GAME_MODES:GAME_MODES.filter(m=>m.categories.includes(filter));
   filtered.forEach((mode,idx)=>{
     const card=document.createElement('div');card.className='mode-card';
-    card.style.cssText=`background:${mode.color};border-color:${mode.border};animation-delay:${idx*0.04}s`;
-    card.innerHTML=`
-      <div class="mode-card-row">
-        <div class="mode-icon" style="background:${mode.border.replace(/[\d.]+\)$/,'0.2)')}">${mode.icon}</div>
-        <div class="mode-info">
-          <h3>${mode.name}</h3>
-          <div class="mode-tags">${mode.tags.map(t=>`<span class="mode-tag" style="background:${mode.border.replace(/[\d.]+\)$/,'0.2)')};color:var(--txt)">${t}</span>`).join('')}</div>
-        </div>
-      </div>
-      <p class="mode-desc">${mode.desc}</p>
-      <p class="mode-hook">★ ${mode.hook}</p>
-      <button class="mode-play-btn" type="button">▶ Jouer ce mode</button>
-    `;
+    card.style.cssText=`background:${mode.color};border-color:${mode.border};animation-delay:${idx*.04}s`;
+    card.innerHTML=`<div class="mode-card-row">
+      <div class="mode-icon" style="background:${mode.border.replace(/[\d.]+\)$/,'0.2)')}">${mode.icon}</div>
+      <div class="mode-info"><h3>${mode.name}</h3><div class="mode-tags">${mode.tags.map(t=>`<span class="mode-tag" style="background:${mode.border.replace(/[\d.]+\)$/,'0.2)')};color:var(--txt)">${t}</span>`).join('')}</div></div>
+    </div>
+    <p class="mode-desc">${mode.desc}</p><p class="mode-hook">★ ${mode.hook}</p>
+    <button class="mode-play-btn" type="button">▶ Jouer ce mode</button>`;
     card.querySelector('button').addEventListener('click',e=>{addRipple(e.currentTarget,e);STATE.mode=mode.id;startGame()});
-    grid.appendChild(card)
-  })
+    grid.appendChild(card);
+  });
 }
 document.getElementById('backToHomeFromModes').addEventListener('click',()=>{goHome();playClick()});
 document.getElementById('modeFilters').addEventListener('click',e=>{
   const btn=e.target.closest('.mode-filter-btn');if(!btn)return;
   document.querySelectorAll('.mode-filter-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');renderModes(btn.dataset.filter);playClick()
+  btn.classList.add('active');renderModes(btn.dataset.filter);playClick();
 });
 
-// ===== GAME ENGINE =====
-function shuffleArray(arr){const a=[...arr];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a}
-
-function prepareQuestions(){
-  let pool=shuffleArray(QUESTIONS_BANK);
-  if(STATE.mode==='echo-quantique'){pool=pool.slice(0,8);[4,6].forEach(pos=>{const echoed={...pool[pos-4],q:pool[pos-4].q+' (variante)',isEcho:true};pool.splice(pos,0,echoed)});pool=pool.slice(0,12)}
-  if(STATE.mode==='sniper-quiz'){pool=pool.slice(0,8).map(q=>{const wrongs=QUESTIONS_BANK.filter(x=>x!==q).map(x=>x.a[x.correct]);const extras=shuffleArray(wrongs).slice(0,7);const allOpts=shuffleArray([q.a[q.correct],...extras]);return{...q,sniperOptions:allOpts,sniperCorrect:q.a[q.correct]}})}
-  if(STATE.mode==='reponse-miroir'){pool=pool.slice(0,12).map(q=>{const s=shuffleArray([0,1,2,3]);return{...q,a:s.map(i=>q.a[i]),correct:s.indexOf(q.correct)}})}
-  return pool.slice(0,12)
-}
-
+// ============================================================
+// GAME ENGINE
+// ============================================================
 function startGame(){
   unlockAudio();
   const modeData=GAME_MODES.find(m=>m.id===STATE.mode)||GAME_MODES[0];
   clearInterval(STATE.timerInterval);
   if(STATE.ghostTimer)clearTimeout(STATE.ghostTimer);
   if(STATE.jokerTimer)clearTimeout(STATE.jokerTimer);
-  STATE.questions=prepareQuestions();
+
+  // Generate questions (anti-dup, weighted CI)
+  STATE.questions=pickQuestions(12,STATE.selectedCats);
+
   STATE.qIndex=0;STATE.score=0;STATE.streak=0;STATE.answered=false;
-  STATE.chainBroken=false;STATE.lives=3;STATE.puzzleStep=0;
-  STATE.dynamicSubMode='classique';STATE.dynamicSubCount=0;
-  STATE.pyramideAmount=1000000;STATE.predictionBet=0;
+  STATE.chainBroken=false;STATE.lives=3;STATE.dynamicSubMode='classique';STATE.dynamicSubCount=0;
+  STATE.pyramideAmount=1000000;STATE.predictionBet=0;STATE.sessionCorrect=0;STATE.sessionTotal=0;
   const u=getUser();STATE.tokens=u.tokens;
-  // Reset lifelines for new session
   resetSessionLifelines();
+
   document.getElementById('gameModeName').textContent=modeData.name;
   document.getElementById('levelDisplay').textContent=STATE.difficulty;
   updateScoreDisplay();updateTokensDisplay();buildGainsList();
+
   const bar=document.getElementById('modeBadgeBar');
   if(STATE.mode!=='classique'){
     bar.style.display='flex';
     const pill=document.getElementById('modeBadgePill');
-    pill.textContent=modeData.name;
-    pill.style.background=modeData.border.replace(/[\d.]+\)$/,'0.25)');
-    pill.style.color='var(--txt)';
-    pill.style.border=`1px solid ${modeData.border}`
+    pill.textContent=modeData.name;pill.style.background=modeData.border.replace(/[\d.]+\)$/,'0.25)');
+    pill.style.color='var(--txt)';pill.style.border=`1px solid ${modeData.border}`;
   }else{bar.style.display='none'}
-  showScreen('gameScreen');loadQuestion()
+
+  showScreen('gameScreen');loadQuestion();
 }
 
 function loadQuestion(){
   if(STATE.qIndex>=STATE.questions.length||STATE.qIndex>=GAINS.length){endGame(true);return}
   if(STATE.mode==='evolution-dynamique'){
-    if(STATE.dynamicSubCount%3===0){const subs=['classique','flash-mortel','double-ou-rien','mode-fantome'];STATE.dynamicSubMode=subs[Math.floor(STATE.dynamicSubCount/3)%subs.length];document.getElementById('modeSpecialInfo').textContent='Phase : '+STATE.dynamicSubMode.replace('-',' ')}
-    STATE.dynamicSubCount++
+    if(STATE.dynamicSubCount%3===0){
+      const subs=['classique','flash-mortel','double-ou-rien','mode-fantome'];
+      STATE.dynamicSubMode=subs[Math.floor(STATE.dynamicSubCount/3)%subs.length];
+      document.getElementById('modeSpecialInfo').textContent='Phase : '+STATE.dynamicSubMode;
+    }
+    STATE.dynamicSubCount++;
   }
   const q=STATE.questions[STATE.qIndex];
   STATE.answered=false;STATE.questionStartTime=Date.now();
   document.getElementById('questionIndexDisplay').textContent=(STATE.qIndex+1)+'/'+Math.min(STATE.questions.length,GAINS.length);
   document.getElementById('nextGainDisplay').textContent=fmtFCFA(GAINS[STATE.qIndex]);
   document.getElementById('questionText').textContent=q.q;
-  document.getElementById('questionHint').textContent='Thème : '+q.cat;
   document.getElementById('questionBadge').textContent='— Question '+(STATE.qIndex+1)+' —';
   document.getElementById('modeSpecialUI').innerHTML='';
+
+  // Category tag
+  const catInfo=CATS[q.cat];
+  const catTag=document.getElementById('questionCatTag');
+  const ciFlag=document.getElementById('questionCiFlag');
+  if(catInfo){
+    catTag.textContent=catInfo.emoji+' '+catInfo.name;
+    catTag.style.background=catInfo.color+'22';
+    catTag.style.borderColor=catInfo.color+'55';
+    catTag.style.color=catInfo.color;
+    ciFlag.style.display=catInfo.ci?'inline':'none';
+  }
+
   const effectiveMode=STATE.mode==='evolution-dynamique'?STATE.dynamicSubMode:STATE.mode;
   if(STATE.mode==='sniper-quiz')renderSniperAnswers(q);
-  else if(STATE.mode==='puzzle-reponse')renderPuzzleAnswers(q);
   else renderStandardAnswers(q);
+
   if(STATE.mode==='pyramide-inverse')document.getElementById('modeSpecialInfo').textContent='Capital : '+fmtFCFA(STATE.pyramideAmount);
   if(STATE.mode==='chaine-infernale'||effectiveMode==='chaine-infernale')renderChainIndicator();
-  if(STATE.mode==='prediction-temporelle')renderPredictionBet(q);
+  if(STATE.mode==='prediction-temporelle')renderPredictionBet();
   if(STATE.mode==='joker-fantome')scheduleJoker();
   if(STATE.mode==='mode-fantome'||effectiveMode==='mode-fantome'){
     STATE.ghostTimer=setTimeout(()=>{
-      document.querySelectorAll('.answer-label').forEach(el=>{el.dataset.original=el.textContent;el.textContent='???';el.style.opacity='0.4'})
-    },1500)
+      document.querySelectorAll('.answer-label').forEach(el=>{el.dataset.orig=el.textContent;el.textContent='???';el.style.opacity='0.4'});
+    },1500);
   }
+
   let timerDur=60;
   if(STATE.mode==='flash-mortel'||effectiveMode==='flash-mortel')timerDur=Math.max(3,8-STATE.qIndex);
   else if(STATE.difficulty==='Difficile')timerDur=30;
   else if(STATE.difficulty==='Moyen')timerDur=45;
+
   startTimer(timerDur);updateGainsList();
   const qcard=document.querySelector('.question-card');
-  qcard.style.animation='none';requestAnimationFrame(()=>{qcard.style.animation='fadeUp 0.35s ease both'})
+  qcard.style.animation='none';requestAnimationFrame(()=>{qcard.style.animation='fadeUp 0.35s ease both'});
 }
 
 function renderStandardAnswers(q){
-  const grid=document.getElementById('answersGrid');grid.innerHTML='';grid.style.display='';grid.className='answers-grid';
+  const grid=document.getElementById('answersGrid');
+  grid.innerHTML='';grid.className='answers-grid';
   const colors=['blue','orange','green','violet'];const letters=['A','B','C','D'];
   q.a.forEach((ans,i)=>{
-    if(ans===undefined)return;
-    const btn=document.createElement('button');btn.className=`answer-btn answer-${colors[i]} glass`;btn.dataset.index=i;btn.type='button';
+    const btn=document.createElement('button');btn.className=`answer-btn answer-${colors[i]} glass`;btn.type='button';
     btn.innerHTML=`<span class="answer-letter">${letters[i]}</span><span class="answer-label">${ans}</span>`;
-    btn.addEventListener('click',e=>{addRipple(btn,e);handleAnswer(i,q.correct)});
-    grid.appendChild(btn)
-  })
+    btn.addEventListener('click',e=>{addRipple(btn,e);handleAnswer(i,q.c)});
+    grid.appendChild(btn);
+  });
 }
 
 function renderSniperAnswers(q){
   const grid=document.getElementById('answersGrid');grid.innerHTML='';grid.className='sniper-grid';
-  (q.sniperOptions||q.a).forEach((opt,i)=>{
+  // 8 options: correct + 7 wrong from other questions
+  const correct=q.a[q.c];
+  const others=shuffleArr(STATIC_BANK.filter(x=>x.cat===q.cat&&x.a[x.c]!==correct)).slice(0,7).map(x=>x.a[x.c]);
+  const opts=shuffleArr([correct,...others.slice(0,7)]);
+  opts.forEach((opt,i)=>{
     const btn=document.createElement('button');btn.className='sniper-btn glass';btn.type='button';
     btn.innerHTML=`<span class="sniper-num">${i+1}</span><span>${opt}</span>`;
-    btn.addEventListener('click',e=>{addRipple(btn,e);handleSniperAnswer(opt,q.sniperCorrect||q.a[q.correct],btn)});
-    grid.appendChild(btn)
-  })
+    btn.addEventListener('click',e=>{addRipple(btn,e);
+      const isCorrect=opt===correct;
+      btn.style.borderColor=isCorrect?'var(--emerald)':'var(--coral)';
+      btn.style.background=isCorrect?'rgba(0,200,150,0.15)':'rgba(255,107,74,0.15)';
+      clearInterval(STATE.timerInterval);STATE.answered=true;
+      if(isCorrect){playCorrect();handleCorrect()}else{playWrong();toast('Une seule chance !','toast-coral');endGame(false)}
+    });
+    grid.appendChild(btn);
+  });
 }
 
-function renderPuzzleAnswers(q){
-  STATE.puzzleStep=0;
-  const correct=q.a[q.correct];
-  const fragment1=correct.substring(0,Math.ceil(correct.length/2));
-  const fragment2=correct.substring(Math.ceil(correct.length/2));
-  const wrongs=q.a.filter((_,i)=>i!==q.correct).map(a=>a.substring(0,Math.ceil(a.length/2)));
-  const opts1=shuffleArray([fragment1,...wrongs.slice(0,3)]);
-  STATE.puzzleData={fragment1,fragment2,opts1,correctFull:correct};
-  renderPuzzleStep1(q,opts1,fragment1);
-  document.getElementById('modeSpecialInfo').textContent='Assemblage en 2 étapes'
-}
-function renderPuzzleStep1(q,opts1,fragment1){
-  renderStandardAnswers({...q,a:opts1,correct:opts1.indexOf(fragment1)});
-  document.querySelectorAll('.answer-btn').forEach((btn,i)=>{
-    btn.onclick=e=>{
-      addRipple(btn,e);
-      if(opts1[i]===fragment1){btn.classList.add('correct');toast('Fragment 1 ✓','toast-gold');setTimeout(()=>renderPuzzleStep2(q),700)}
-      else{btn.classList.add('wrong');handleWrong()}
-    }
-  })
-}
-function renderPuzzleStep2(q){
-  const{fragment2}=STATE.puzzleData;
-  const wrongs2=q.a.filter((_,i)=>i!==q.correct).map(a=>a.substring(Math.ceil(a.length/2)));
-  const opts2=shuffleArray([fragment2,...wrongs2.slice(0,3)]);
-  document.getElementById('questionHint').textContent='Choisis le fragment 2';
-  renderStandardAnswers({...q,a:opts2,correct:opts2.indexOf(fragment2)});
-  document.querySelectorAll('.answer-btn').forEach((btn,i)=>{
-    btn.onclick=e=>{addRipple(btn,e);if(opts2[i]===fragment2){btn.classList.add('correct');handleCorrect()}else{btn.classList.add('wrong');handleWrong()}}
-  })
-}
 function renderChainIndicator(){
   const ui=document.getElementById('modeSpecialUI');const chain=document.createElement('div');chain.className='chain-indicator';
   for(let i=0;i<Math.min(STATE.questions.length,12);i++){
-    const link=document.createElement('div');link.className='chain-link'+(i<STATE.qIndex?' ok':i===STATE.qIndex?' current':'');link.textContent=i+1;chain.appendChild(link)
+    const link=document.createElement('div');
+    link.className='chain-link'+(i<STATE.qIndex?' ok':i===STATE.qIndex?' current':'');
+    link.textContent=i+1;chain.appendChild(link);
   }
-  ui.appendChild(chain)
+  ui.appendChild(chain);
 }
-function renderPredictionBet(q){
+
+function renderPredictionBet(){
   const ui=document.getElementById('modeSpecialUI');const u=getUser();const maxBet=Math.min(u.tokens,5);
   ui.innerHTML=`<div class="bet-wrap"><p class="bet-label">Parie des Jetons sur ta réponse</p><div class="bet-display" id="betDisplay">0 Jeton</div><input type="range" class="bet-slider" id="betSlider" min="0" max="${maxBet}" value="0" step="1"><p class="bet-hint">Gagne 2× si tu as raison</p></div>`;
-  const sl=document.getElementById('betSlider');
-  sl.addEventListener('input',()=>{STATE.predictionBet=parseInt(sl.value);document.getElementById('betDisplay').textContent=STATE.predictionBet+' Jeton(s)'})
+  document.getElementById('betSlider').addEventListener('input',function(){STATE.predictionBet=parseInt(this.value);document.getElementById('betDisplay').textContent=STATE.predictionBet+' Jeton(s)'});
 }
+
 function scheduleJoker(){
   const delay=3000+Math.random()*5000;
   STATE.jokerTimer=setTimeout(()=>{
@@ -1477,96 +1563,101 @@ function scheduleJoker(){
     ui.appendChild(joker);STATE.jokerActive=true;
     document.getElementById('claimJokerBtn').addEventListener('click',()=>{
       STATE.tokens++;updateTokensDisplay();updateUserStat('tokens',STATE.tokens);
-      toast('Joker récupéré ! 🃏','toast-emerald');joker.remove();STATE.jokerActive=false;playCorrect()
+      toast('Joker récupéré ! 🃏','toast-emerald');joker.remove();STATE.jokerActive=false;playCorrect();
     });
-    setTimeout(()=>{if(STATE.jokerActive){joker.remove();STATE.jokerActive=false}},10000)
-  },delay)
+    setTimeout(()=>{if(STATE.jokerActive){joker.remove();STATE.jokerActive=false}},10000);
+  },delay);
 }
 
-function handleSniperAnswer(chosen,correct,btn){
-  if(STATE.answered)return;STATE.answered=true;clearInterval(STATE.timerInterval);
-  if(chosen===correct){btn.classList.add('correct');playCorrect();handleCorrect()}
-  else{btn.classList.add('wrong');playWrong();document.querySelectorAll('.sniper-btn').forEach(b=>{if(b.textContent.includes(correct))b.classList.add('correct')});handleWrong()}
-}
-
-function handleAnswer(answerIdx,correctIdx){
+function handleAnswer(idx,correctIdx){
   if(STATE.answered)return;STATE.answered=true;clearInterval(STATE.timerInterval);
   if(STATE.ghostTimer)clearTimeout(STATE.ghostTimer);
-  if(STATE.mode==='mode-fantome'){document.querySelectorAll('.answer-label').forEach(el=>{if(el.dataset.original){el.textContent=el.dataset.original;el.style.opacity=''}})}
+  if(STATE.mode==='mode-fantome'){document.querySelectorAll('.answer-label').forEach(el=>{if(el.dataset.orig){el.textContent=el.dataset.orig;el.style.opacity=''}})}
   const btns=document.querySelectorAll('.answer-btn');
-  if(btns[answerIdx])btns[answerIdx].classList.add(answerIdx===correctIdx?'correct':'wrong');
-  if(answerIdx!==correctIdx&&btns[correctIdx])btns[correctIdx].classList.add('correct');
-  if(answerIdx===correctIdx){playCorrect();handleCorrect()}else{playWrong();handleWrong()}
+  if(btns[idx])btns[idx].classList.add(idx===correctIdx?'correct':'wrong');
+  if(idx!==correctIdx&&btns[correctIdx])btns[correctIdx].classList.add('correct');
+  if(idx===correctIdx){playCorrect();handleCorrect()}else{playWrong();handleWrong()}
 }
 
 function handleCorrect(){
-  STATE.streak++;
+  STATE.streak++;STATE.sessionCorrect++;STATE.sessionTotal++;
   const elapsed=(Date.now()-STATE.questionStartTime)/1000;
-  const gain=GAINS[STATE.qIndex];
-  let tokensEarned=1;
-  if(STATE.streak>=3)tokensEarned=2;
-  const u=getUser();
-  const prevU={...u};
+  const q=STATE.questions[STATE.qIndex];
+  const u=getUser();const prevU={...u};
+
+  // Update cat stats
+  updateCatStat(u,q.cat,true);
+
   // Fast answer badge
   if(elapsed<5){u.fastAnswers=(u.fastAnswers||0)+1}
-  // Max streak
   if(STATE.streak>(u.maxStreak||0))u.maxStreak=STATE.streak;
-  if(STATE.mode==='double-ou-rien'){STATE.score=gain;saveUsers();showDoubleOrRien(gain);return}
+
+  const gain=GAINS[STATE.qIndex];
+  let tokensEarned=1;if(STATE.streak>=3)tokensEarned=2;
+
+  if(STATE.mode==='double-ou-rien'){STATE.score=gain;u.maxStreak=Math.max(u.maxStreak||0,STATE.streak);saveUsers();showDoubleOrRien(gain);return}
   if(STATE.mode==='pyramide-inverse')STATE.score=1000000-STATE.pyramideAmount+gain;
   else STATE.score=gain;
+
   if(STATE.mode==='prediction-temporelle'&&STATE.predictionBet>0){
     const bonus=STATE.predictionBet*2;STATE.tokens+=bonus;
-    toast(`Pari gagnant ! +${bonus} Jetons 🔮`,'toast-gold');STATE.predictionBet=0
+    toast(`Pari gagnant ! +${bonus} Jetons 🔮`,'toast-gold');STATE.predictionBet=0;
   }
-  STATE.tokens+=tokensEarned;
-  u.tokens=STATE.tokens;
+  STATE.tokens+=tokensEarned;u.tokens=STATE.tokens;
   if(STATE.score>(u.bestScore||0))u.bestScore=STATE.score;
   saveUsers();
-  // Check new badges
+
+  // Mark questions seen
+  if(q.id&&!q.generated)markSeen([q.id]);
+
   const newBadges=checkBadges(u,prevU);
-  newBadges.forEach(b=>{setTimeout(()=>toast(`🏅 Badge débloqué : ${b.name} ${b.icon}`,'toast-gold'),600)});
+  newBadges.forEach(b=>setTimeout(()=>toast(`🏅 Badge : ${b.name} ${b.icon}`,'toast-gold'),600));
   triggerWinFlash();showScorePop('+'+fmtFCFA(gain));
   const sv=document.getElementById('scoreDisplay');sv.classList.remove('bump');requestAnimationFrame(()=>sv.classList.add('bump'));
-  updateScoreDisplay();updateTokensDisplay();
-  showResult(true,gain)
+  updateScoreDisplay();updateTokensDisplay();showResult(true,gain);
 }
 
 function handleWrong(){
-  STATE.streak=0;
+  STATE.streak=0;STATE.sessionTotal++;
+  const q=STATE.questions[STATE.qIndex];
+  const u=getUser();updateCatStat(u,q.cat,false);saveUsers();
+
   if(STATE.mode==='prediction-temporelle'&&STATE.predictionBet>0){
     STATE.tokens-=STATE.predictionBet;if(STATE.tokens<0)STATE.tokens=0;
     toast(`Pari perdu ! -${STATE.predictionBet} Jeton(s) 😬`,'toast-coral');
-    updateUserStat('tokens',STATE.tokens);updateTokensDisplay();STATE.predictionBet=0
+    updateUserStat('tokens',STATE.tokens);updateTokensDisplay();STATE.predictionBet=0;
   }
   if(STATE.mode==='pyramide-inverse'){
     const ded=GAINS[STATE.qIndex]*2;STATE.pyramideAmount=Math.max(0,STATE.pyramideAmount-ded);
     STATE.score=STATE.pyramideAmount;updateScoreDisplay();
     document.getElementById('modeSpecialInfo').textContent='Capital : '+fmtFCFA(STATE.pyramideAmount);
     if(STATE.pyramideAmount<=0){endGame(false);return}
-    showResult(false,0);return
+    showResult(false,0);return;
   }
   if(STATE.mode==='survie-collective'){
     STATE.lives--;document.getElementById('modeSpecialInfo').textContent='Vies : '+'❤️'.repeat(STATE.lives);
     if(STATE.lives<=0){endGame(false);return}
-    showResult(false,0);return
+    showResult(false,0);return;
   }
   if(STATE.mode==='chaine-infernale'){STATE.chainBroken=true;toast('Chaîne brisée ! 💔','toast-coral');endGame(false);return}
-  if(STATE.mode==='sniper-quiz'){toast('Une seule chance — échec ! 🎯','toast-coral');endGame(false);return}
-  endGame(false)
+  endGame(false);
 }
 
 function showDoubleOrRien(gain){
   const ui=document.getElementById('modeSpecialUI');
-  ui.innerHTML=`<div class="double-ou-rien-choice"><button class="btn btn-primary" id="doubleBtn" type="button">🎲 Doubler → ${fmtFCFA(gain*2)}</button><button class="btn btn-secondary" id="encaisserBtn" type="button">✓ Encaisser → ${fmtFCFA(gain)}</button></div>`;
+  ui.innerHTML=`<div class="double-ou-rien-choice">
+    <button class="btn btn-primary" id="doubleBtn" type="button">🎲 Doubler → ${fmtFCFA(gain*2)}</button>
+    <button class="btn btn-secondary" id="encaisserBtn" type="button">✓ Encaisser → ${fmtFCFA(gain)}</button>
+  </div>`;
   document.getElementById('encaisserBtn').addEventListener('click',()=>{
     STATE.score=gain;STATE.tokens+=1;updateTokensDisplay();updateUserStat('tokens',STATE.tokens);
     const u=getUser();if(gain>(u.bestScore||0)){u.bestScore=gain;saveUsers()}
-    showResult(true,gain)
+    showResult(true,gain);
   });
   document.getElementById('doubleBtn').addEventListener('click',()=>{
     STATE.score=gain*2;const u=getUser();if(STATE.score>(u.bestScore||0)){u.bestScore=STATE.score;saveUsers()}
-    showResult(true,STATE.score)
-  })
+    showResult(true,STATE.score);
+  });
 }
 
 function showResult(correct,gain){
@@ -1576,77 +1667,79 @@ function showResult(correct,gain){
   showScreen('resultScreen');
   setTimeout(()=>{
     if(correct){STATE.qIndex++;showScreen('gameScreen');
-      if(STATE.mode==='flash-mortel')loadQuestion();else showTransition()
-    }else endGame(false)
-  },1600)
+      if(STATE.mode==='flash-mortel')loadQuestion();else showTransition();}
+    else endGame(false);
+  },1600);
 }
 
 function showTransition(){showScreen('transitionScreen');setTimeout(()=>{showScreen('gameScreen');loadQuestion()},1200)}
 
-function startTimer(seconds){
-  STATE.timerSec=seconds;const maxSec=seconds;
-  clearInterval(STATE.timerInterval);updateTimerDisplay(seconds,maxSec);
+function startTimer(sec){
+  STATE.timerSec=sec;const max=sec;clearInterval(STATE.timerInterval);
+  updateTimerDisplay(sec,max);
   STATE.timerInterval=setInterval(()=>{
-    STATE.timerSec--;updateTimerDisplay(STATE.timerSec,maxSec);
+    STATE.timerSec--;updateTimerDisplay(STATE.timerSec,max);
     if(STATE.timerSec<=10&&STATE.timerSec>0)playTick();
     if(STATE.timerSec<=0){clearInterval(STATE.timerInterval);if(!STATE.answered){STATE.answered=true;playWrong();toast('Temps écoulé ⏱️','toast-coral');handleWrong()}}
-  },1000)
+  },1000);
 }
 
 function updateTimerDisplay(sec,max){
-  const m=String(Math.floor(sec/60)).padStart(2,'0');const s=String(sec%60).padStart(2,'0');
-  const td=document.getElementById('timerDisplay');const tb=document.getElementById('timerBar');
+  const m=String(Math.floor(sec/60)).padStart(2,'0'),s=String(sec%60).padStart(2,'0');
+  const td=document.getElementById('timerDisplay'),tb=document.getElementById('timerBar');
   td.textContent=`${m}:${s}`;document.getElementById('timerRingValue').textContent=sec;
   const pct=sec/max;tb.style.width=(pct*100)+'%';
-  const circ=100.5;document.getElementById('timerRingCircle').style.strokeDashoffset=circ*(1-pct);
-  if(sec<=10){td.classList.add('danger');tb.classList.add('danger')}else{td.classList.remove('danger');tb.classList.remove('danger')}
+  document.getElementById('timerRingCircle').style.strokeDashoffset=100.5*(1-pct);
+  if(sec<=10){td.classList.add('danger');tb.classList.add('danger')}
+  else{td.classList.remove('danger');tb.classList.remove('danger')}
 }
 
-function updateScoreDisplay(){let sc=STATE.mode==='pyramide-inverse'?STATE.pyramideAmount:STATE.score;document.getElementById('scoreDisplay').textContent=fmtFCFA(sc)}
+function updateScoreDisplay(){document.getElementById('scoreDisplay').textContent=fmtFCFA(STATE.mode==='pyramide-inverse'?STATE.pyramideAmount:STATE.score)}
 function updateTokensDisplay(){document.getElementById('tokensDisplay').textContent=STATE.tokens;document.getElementById('homeTokensDisplay').textContent=STATE.tokens}
 function buildGainsList(){
   const list=document.getElementById('gainsList');list.innerHTML='';
   for(let i=GAINS.length-1;i>=0;i--){
     const item=document.createElement('div');item.className='gain-item future';item.id='gain-'+i;
     item.innerHTML=`<span><span class="gain-dot"></span> Q${i+1}</span><span>${fmtFCFA(GAINS[i])}</span>`;
-    list.appendChild(item)
+    list.appendChild(item);
   }
 }
 function updateGainsList(){
   for(let i=0;i<GAINS.length;i++){const el=document.getElementById('gain-'+i);if(!el)continue;el.className='gain-item '+(i<STATE.qIndex?'passed':i===STATE.qIndex?'active':'future')}
-  const active=document.querySelector('.gain-item.active');if(active)active.scrollIntoView({block:'nearest',behavior:'smooth'})
+  const ac=document.querySelector('.gain-item.active');if(ac)ac.scrollIntoView({block:'nearest',behavior:'smooth'});
 }
 
-// ===== LIFELINES (1 usage per session) =====
+// ============================================================
+// LIFELINES
+// ============================================================
 document.getElementById('lifeline5050Button').addEventListener('click',e=>{
   if(STATE.sessionLifelines.half||STATE.answered)return;
   if(STATE.tokens<2){toast('Pas assez de Jetons (2 requis).','toast-coral');return}
   addRipple(e.currentTarget,e);
   const q=STATE.questions[STATE.qIndex];let elim=0;
-  document.querySelectorAll('.answer-btn').forEach((btn,i)=>{if(i!==q.correct&&elim<2){btn.classList.add('eliminated');elim++}});
+  document.querySelectorAll('.answer-btn').forEach((btn,i)=>{if(i!==q.c&&elim<2){btn.classList.add('eliminated');elim++}});
   STATE.tokens-=2;STATE.sessionLifelines.half=true;
   updateTokensDisplay();updateUserStat('tokens',STATE.tokens);updateLifelineButtons();
-  toast('50/50 activé — utilisé pour cette session.','toast-violet');playClick()
+  toast('50/50 activé — utilisé pour cette session.','toast-violet');playClick();
 });
 document.getElementById('lifelineHintButton').addEventListener('click',e=>{
   if(STATE.sessionLifelines.hint||STATE.answered)return;
   if(STATE.tokens<2){toast('Pas assez de Jetons (2 requis).','toast-coral');return}
   addRipple(e.currentTarget,e);
   const q=STATE.questions[STATE.qIndex];
-  showModal('Indice',`Q${STATE.qIndex+1} — Indice`,q.hint||'Aucun indice disponible.');
+  showModal('Indice',`Q${STATE.qIndex+1}`,q.hint||'Réfléchis à la catégorie : '+q.cat);
   STATE.tokens-=2;STATE.sessionLifelines.hint=true;
-  updateTokensDisplay();updateUserStat('tokens',STATE.tokens);updateLifelineButtons();playClick()
+  updateTokensDisplay();updateUserStat('tokens',STATE.tokens);updateLifelineButtons();playClick();
 });
 document.getElementById('lifelineAudienceButton').addEventListener('click',e=>{
   if(STATE.sessionLifelines.audience||STATE.answered)return;
   if(STATE.tokens<2){toast('Pas assez de Jetons (2 requis).','toast-coral');return}
   addRipple(e.currentTarget,e);
   const q=STATE.questions[STATE.qIndex];
-  const pcts=[0,0,0,0].map((_,i)=>i===q.correct?Math.floor(Math.random()*20)+50:Math.floor(Math.random()*15)+5);
-  const labels=['A','B','C','D'];
-  showModal('Sondage Public','Avis du public',pcts.map((p,i)=>`${labels[i]}: ${p}%`).join(' | '));
+  const pcts=q.a.map((_,i)=>i===q.c?Math.floor(Math.random()*20)+50:Math.floor(Math.random()*15)+5);
+  showModal('Sondage Public','Avis du public',pcts.map((p,i)=>`${['A','B','C','D'][i]}: ${p}%`).join(' | '));
   STATE.tokens-=2;STATE.sessionLifelines.audience=true;
-  updateTokensDisplay();updateUserStat('tokens',STATE.tokens);updateLifelineButtons();playClick()
+  updateTokensDisplay();updateUserStat('tokens',STATE.tokens);updateLifelineButtons();playClick();
 });
 document.getElementById('lifelineTimeButton').addEventListener('click',e=>{
   if(STATE.sessionLifelines.time||STATE.answered)return;
@@ -1654,29 +1747,24 @@ document.getElementById('lifelineTimeButton').addEventListener('click',e=>{
   addRipple(e.currentTarget,e);
   STATE.timerSec+=15;STATE.tokens-=1;STATE.sessionLifelines.time=true;
   updateTokensDisplay();updateUserStat('tokens',STATE.tokens);updateLifelineButtons();
-  toast('+15 secondes ⏱️ — utilisé pour cette session.','toast-emerald');playClick()
+  toast('+15 secondes ⏱️','toast-emerald');playClick();
 });
 
-// ===== BOTTOM ACTIONS WITH CONFIRMATION =====
+// BOTTOM BAR
 document.getElementById('backHomeButton').addEventListener('click',()=>{
-  confirmLeave('Retour à l\'accueil ?','Tu vas quitter la partie en cours et perdre ton score actuel.',()=>{
-    clearInterval(STATE.timerInterval);goHome()
-  })
+  confirmLeave('Retour à l\'accueil ?','Tu vas quitter la partie en cours.',()=>{clearInterval(STATE.timerInterval);goHome()});
 });
 document.getElementById('surrenderButton').addEventListener('click',()=>{
-  confirmLeave('Abandonner la partie ?','Tu vas perdre toute ta progression. Cette action est irréversible.',()=>{
-    clearInterval(STATE.timerInterval);endGame(false,true)
-  })
+  confirmLeave('Abandonner ?','Tu vas perdre ta progression.',()=>{clearInterval(STATE.timerInterval);endGame(false,true)});
 });
 document.getElementById('bottomLogoutButton').addEventListener('click',()=>{
-  confirmLeave('Se déconnecter ?','Tu vas quitter la partie et perdre ta progression. Es-tu sûr ?',()=>{
-    clearInterval(STATE.timerInterval);
-    document.getElementById('confirmLogoutModal').classList.remove('hidden')
-  })
+  confirmLeave('Se déconnecter ?','Tu vas quitter la partie.',()=>{clearInterval(STATE.timerInterval);document.getElementById('confirmLogoutModal').classList.remove('hidden')});
 });
 document.getElementById('closeInfoModalButton').addEventListener('click',()=>document.getElementById('infoModal').classList.add('hidden'));
 
-// ===== END GAME =====
+// ============================================================
+// END GAME
+// ============================================================
 function endGame(completed,surrendered=false){
   clearInterval(STATE.timerInterval);
   if(STATE.ghostTimer)clearTimeout(STATE.ghostTimer);
@@ -1687,46 +1775,198 @@ function endGame(completed,surrendered=false){
   if(finalSc>(u.bestScore||0))u.bestScore=finalSc;
   if(completed)u.wins=(u.wins||0)+1;
   u.tokens=STATE.tokens;
-  // Check streak badge
   if(STATE.streak>(u.maxStreak||0))u.maxStreak=STATE.streak;
-  // topRank check
   const sorted=Object.entries(STATE.users).sort(([,a],[,b])=>(b.bestScore||0)-(a.bestScore||0));
   const rankIdx=sorted.findIndex(([n])=>n===STATE.currentUser);
   if(rankIdx>=0&&rankIdx<3)u.topRank=rankIdx+1;
+
+  // Mark all seen questions
+  const toMark=STATE.questions.filter(q=>q.id&&!q.generated).map(q=>q.id);
+  if(toMark.length>0)markSeen(toMark);
   saveUsers();
+
   const newBadges=checkBadges(u,prevU);
-  newBadges.forEach(b=>{setTimeout(()=>toast(`🏅 Badge débloqué : ${b.name} ${b.icon}`,'toast-gold'),800)});
+  newBadges.forEach(b=>setTimeout(()=>toast(`🏅 Badge : ${b.name} ${b.icon}`,'toast-gold'),800));
+
   document.getElementById('finalScore').textContent=fmtFCFA(finalSc);
   document.getElementById('endTokensDisplay').textContent=STATE.tokens;
   document.getElementById('endModeDisplay').textContent=GAME_MODES.find(m=>m.id===STATE.mode)?.name||'Classique';
-  const msgs=completed?['Parfait ! Tu as tout réussi !','Champion ! Impressionnant !']:['Bonne tentative, reviens plus fort !','Presque ! Réessaie !','La prochaine sera la bonne !'];
+  document.getElementById('endCorrect').textContent=STATE.sessionCorrect+'/'+STATE.sessionTotal;
+
+  // Best category this session
+  const cats=STATE.questions.map(q=>q.cat);const freq={};cats.forEach(c=>freq[c]=(freq[c]||0)+1);
+  const best=Object.entries(freq).sort((a,b)=>b[1]-a[1])[0];
+  document.getElementById('endBestCat').textContent=best&&CATS[best[0]]?(CATS[best[0]].emoji+' '+CATS[best[0]].name.split(' ')[0]):'—';
+
+  const msgs=completed?['Parfait ! Champion !','Impressionnant ! Bravo !']:['Bonne tentative !','Presque ! Réessaie !'];
   document.getElementById('resultMessage').textContent=msgs[Math.floor(Math.random()*msgs.length)];
   if(completed)playWin();
   showScreen('endScreen');
   document.getElementById('homeTokensDisplay').textContent=STATE.tokens;
-  document.getElementById('homeBestScore').textContent=fmtFCFA(u.bestScore||0)
+  document.getElementById('homeBestScore').textContent=fmtFCFA(u.bestScore||0);
 }
 document.getElementById('restartButton').addEventListener('click',startGame);
 document.getElementById('changeModeButton').addEventListener('click',()=>{renderModes();showScreen('modeSelectorScreen')});
 
-// ===== LEADERBOARD =====
+// ============================================================
+// LEADERBOARD
+// ============================================================
 function showLeaderboard(){
   const list=document.getElementById('leaderboardList');list.innerHTML='';
   const sorted=Object.entries(STATE.users).filter(([,u])=>u.bestScore>0).sort(([,a],[,b])=>b.bestScore-a.bestScore);
   if(sorted.length===0){list.innerHTML=`<div style="text-align:center;padding:2rem;color:var(--txt3)">Aucun score enregistré.</div>`}
   else sorted.forEach(([name,u],i)=>{
-    const item=document.createElement('div');item.className='lb-item'+(i===0?' top-1':'');item.style.animationDelay=i*0.06+'s';
-    item.innerHTML=`<div class="lb-rank">${i===0?'🥇':i===1?'🥈':i===2?'🥉':'#'+(i+1)}</div><div><div class="lb-name">${name}</div><div class="lb-meta">${u.region||'Zone inconnue'} · ${u.gamesPlayed||0} parties</div></div><div class="lb-score">${fmtFCFA(u.bestScore||0)}</div>`;
-    list.appendChild(item)
+    const item=document.createElement('div');item.className='lb-item'+(i===0?' top-1':'');item.style.animationDelay=i*.06+'s';
+    item.innerHTML=`<div class="lb-rank">${i===0?'🥇':i===1?'🥈':i===2?'🥉':'#'+(i+1)}</div>
+    <div><div class="lb-name">${name}</div><div class="lb-meta">${u.region||'CI'} · ${u.gamesPlayed||0} parties · ${u.wins||0} victoires</div></div>
+    <div class="lb-score">${fmtFCFA(u.bestScore||0)}</div>`;
+    list.appendChild(item);
   });
-  showScreen('leaderboardScreen')
+  showScreen('leaderboardScreen');
 }
 
-// ===== LOADER =====
-window.addEventListener('load',()=>{setTimeout(()=>{document.getElementById('pageLoader').classList.add('hidden')},1800)});
+// ============================================================
+// PROFILE
+// ============================================================
+function updateHomeAvatar2(){
+  const u=getUser();const av=document.getElementById('homeAvatar');
+  if(u.avatar&&u.avatar.startsWith('data:')){av.innerHTML=`<img src="${u.avatar}" alt="avatar">`}
+  else if(u.avatar){av.textContent=u.avatar}
+  else{av.textContent=STATE.currentUser.charAt(0).toUpperCase()}
+}
+function openProfile(){
+  const u=getUser();
+  const bigAv=document.getElementById('profileAvatarBig');
+  const init=document.getElementById('profileAvatarInitial');
+  if(u.avatar&&u.avatar.startsWith('data:')){
+    init.style.display='none';
+    let img=bigAv.querySelector('img');
+    if(!img){img=document.createElement('img');bigAv.insertBefore(img,bigAv.firstChild)}
+    img.src=u.avatar;
+  }else{const img=bigAv.querySelector('img');if(img)img.remove();init.style.display='';init.textContent=u.avatar||STATE.currentUser.charAt(0).toUpperCase()}
+  document.getElementById('profileNameInput').value=STATE.currentUser;
+  document.getElementById('profileRegionText').textContent='📍 '+(u.region||'Zone inconnue');
+  document.getElementById('pstatTokens').textContent=u.tokens;
+  document.getElementById('pstatBest').textContent=fmtFCFA(u.bestScore||0);
+  document.getElementById('pstatGames').textContent=u.gamesPlayed||0;
+  document.getElementById('pstatWins').textContent=u.wins||0;
+  document.getElementById('pstatJoined').textContent=u.joined||'—';
+  const sorted=Object.entries(STATE.users).sort(([,a],[,b])=>(b.bestScore||0)-(a.bestScore||0));
+  const rankIdx=sorted.findIndex(([n])=>n===STATE.currentUser);
+  document.getElementById('pstatRank').textContent=rankIdx>=0?'#'+(rankIdx+1):'#—';
+  const gp=u.gamesPlayed||0;const{level,prog}=getLevelData(gp);
+  document.getElementById('profileLevelName').textContent='Niveau — '+level.name;
+  document.getElementById('profileLevelNext').textContent=level.next===Infinity?'Max ✨':`${gp}/${level.next} parties`;
+  const fill=document.getElementById('profileLevelFill');fill.style.width='0%';setTimeout(()=>{fill.style.width=prog+'%'},100);
+  renderBadges();showScreen('profileScreen');
+}
 
-// ===== INIT =====
+function renderBadges(){
+  const u=getUser();const grid=document.getElementById('badgesGrid');grid.innerHTML='';let unlocked=0;
+  const sorted=Object.entries(STATE.users).sort(([,a],[,b])=>(b.bestScore||0)-(a.bestScore||0));
+  const rankIdx=sorted.findIndex(([n])=>n===STATE.currentUser);
+  if(rankIdx>=0&&rankIdx<3)u.topRank=rankIdx+1;else u.topRank=99;
+  BADGES.forEach((b,idx)=>{
+    const val=u[b.key]||0;const isUnlocked=val>=b.target;if(isUnlocked)unlocked++;
+    const card=document.createElement('div');
+    card.className='badge-card '+(isUnlocked?'unlocked':'locked');
+    card.style.cssText=`background:${isUnlocked?b.border.replace(/[\d.]+\)$/,'0.12)'):'rgba(255,255,255,0.04)'};border-color:${isUnlocked?b.border:'rgba(255,255,255,0.08)'};animation-delay:${idx*.07}s`;
+    const pct=Math.min(100,Math.round((val/b.target)*100));
+    card.innerHTML=`<div class="badge-icon">${isUnlocked?b.icon:'⬜'}<span class="badge-lock">${!isUnlocked?'🔒':''}</span></div>
+    <p class="badge-name" style="color:${isUnlocked?b.color:'var(--txt3)'}">${b.name}</p>
+    <div class="badge-prog-bar"><div class="badge-prog-fill" style="width:${pct}%;background:${b.color}"></div></div>
+    <p class="badge-prog-label">${isUnlocked?'✓ Débloqué':val+'/'+b.target}</p>`;
+    card.addEventListener('click',()=>{
+      document.getElementById('badgeDetailIcon').textContent=isUnlocked?b.icon:'🔒';
+      document.getElementById('badgeDetailName').textContent=b.name;
+      document.getElementById('badgeDetailDesc').textContent=b.desc;
+      const p=Math.min(100,Math.round((val/b.target)*100));
+      document.getElementById('badgeDetailStatus').textContent=isUnlocked?'✅ Badge débloqué !':'🔒 '+val+'/'+b.target+' — '+p+'%';
+      document.getElementById('badgeDetailStatus').style.color=isUnlocked?'var(--emerald)':'var(--txt3)';
+      document.getElementById('badgeDetailModal').classList.remove('hidden');playClick();
+    });
+    grid.appendChild(card);
+  });
+  document.getElementById('badgesUnlockedCount').textContent=unlocked+'/'+BADGES.length;
+}
+document.getElementById('closeBadgeDetailButton').addEventListener('click',()=>document.getElementById('badgeDetailModal').classList.add('hidden'));
+
+document.getElementById('saveProfileNameBtn').addEventListener('click',()=>{
+  const newName=document.getElementById('profileNameInput').value.trim();
+  if(!newName||newName.length<2){toast('Pseudo trop court.','toast-coral');return}
+  if(newName!==STATE.currentUser&&STATE.users[newName]){toast('Pseudo déjà pris.','toast-coral');return}
+  if(newName!==STATE.currentUser){STATE.users[newName]=STATE.users[STATE.currentUser];delete STATE.users[STATE.currentUser];STATE.currentUser=newName;saveUsers()}
+  toast('Profil mis à jour ✓','toast-emerald');playCorrect();
+  document.getElementById('playerNameText').textContent=STATE.currentUser;updateHomeAvatar();
+});
+
+document.getElementById('profileAvatarBig').addEventListener('click',()=>openAvatarPicker());
+function openAvatarPicker(){
+  const u=getUser();const opts=document.getElementById('avatarOptions');opts.innerHTML='';
+  AVATAR_EMOJIS.forEach(emoji=>{
+    const el=document.createElement('div');el.className='avatar-option';el.textContent=emoji;
+    el.style.background='linear-gradient(135deg,rgba(124,77,255,0.2),rgba(255,107,74,0.2))';
+    if(u.avatar===emoji)el.classList.add('selected');
+    el.addEventListener('click',()=>{document.querySelectorAll('.avatar-option').forEach(o=>o.classList.remove('selected'));el.classList.add('selected');STATE.pendingAvatar=emoji;playClick()});
+    opts.appendChild(el);
+  });
+  STATE.pendingAvatar=u.avatar;
+  document.getElementById('avatarPickerModal').classList.remove('hidden');
+}
+document.getElementById('uploadAvatarBtn').addEventListener('click',()=>document.getElementById('avatarFileInput').click());
+document.getElementById('avatarFileInput').addEventListener('change',e=>{
+  const file=e.target.files[0];if(!file)return;
+  const reader=new FileReader();
+  reader.onload=ev=>{STATE.pendingAvatar=ev.target.result;document.querySelectorAll('.avatar-option').forEach(o=>o.classList.remove('selected'));toast('Photo chargée ✓','toast-emerald')};
+  reader.readAsDataURL(file);
+});
+document.getElementById('confirmAvatarBtn').addEventListener('click',()=>{
+  if(STATE.pendingAvatar){updateUserStat('avatar',STATE.pendingAvatar);openProfile();toast('Avatar mis à jour ✓','toast-emerald');playCorrect()}
+  document.getElementById('avatarPickerModal').classList.add('hidden');
+});
+
+// ============================================================
+// STATS SCREEN
+// ============================================================
+function openStats(){
+  const u=getUser();
+  const cs=getCatStats(u);
+  const totalSeen=getSeenCount();
+  const totalQ=u.gamesPlayed*12;
+  const totalCorrect=Object.values(cs).reduce((s,v)=>s+v.correct,0);
+  const totalQSeen=Object.values(cs).reduce((s,v)=>s+v.seen,0);
+  const pct=totalQSeen>0?Math.round((totalCorrect/totalQSeen)*100):0;
+  document.getElementById('statsOverviewRow').innerHTML=`
+    <div class="stats-cat-card"><p class="stats-cat-label">Parties</p><p class="stats-cat-val">${u.gamesPlayed||0}</p></div>
+    <div class="stats-cat-card"><p class="stats-cat-label">Précision</p><p class="stats-cat-val">${pct}%</p></div>
+    <div class="stats-cat-card"><p class="stats-cat-label">Victoires</p><p class="stats-cat-val">${u.wins||0}</p></div>
+  `;
+  document.getElementById('seenQCount').textContent=`${totalSeen} questions déjà vues sur cette session (renouvellement automatique).`;
+  const perfList=document.getElementById('catPerfList');perfList.innerHTML='';
+  const catEntries=Object.entries(cs).sort((a,b)=>b[1].seen-a[1].seen).slice(0,10);
+  if(catEntries.length===0){perfList.innerHTML='<p style="color:var(--txt3);font-size:0.78rem">Joue pour voir tes stats par catégorie !</p>'}
+  catEntries.forEach(([catId,stat])=>{
+    const cat=CATS[catId]||{name:catId,emoji:'📌'};
+    const acc=stat.seen>0?Math.round((stat.correct/stat.seen)*100):0;
+    const item=document.createElement('div');item.className='cat-perf-item';
+    item.innerHTML=`<span class="cat-perf-emoji">${cat.emoji}</span>
+    <div class="cat-perf-info">
+      <p class="cat-perf-name">${cat.name}</p>
+      <div class="cat-perf-bar-wrap"><div class="cat-perf-bar" style="width:${acc}%"></div></div>
+    </div>
+    <span class="cat-perf-pct">${acc}%</span>`;
+    perfList.appendChild(item);
+  });
+  showScreen('statsScreen');
+}
+
+// ============================================================
+// INIT
+// ============================================================
 renderModes();
+window.addEventListener('load',()=>{
+  setTimeout(()=>document.getElementById('pageLoader').classList.add('hidden'),1800);
+});
 </script>
 </body>
 </html>
